@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Buffalo Finance Decoder · #DoTheMath</title>
+<meta name="description" content="Seven financial indicators from twenty years of Buffalo's audited annual reports reveal the city's structural fiscal challenges. A #DoTheMath analysis using the Strong Towns Finance Decoder.">
+<meta property="og:title" content="Buffalo's Fiscal Health: Decoded">
+<meta property="og:description" content="Seven indicators from twenty years of audited data. Buffalo's recovery is real, but its balance sheet is carrying $1.2 billion in unfunded retiree healthcare and half its infrastructure value is gone.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&family=Lato:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Lato', sans-serif; background: #faf7ef; color: #1a1a1a; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  #fd {
+    --navy:     #0c2240;
+    --navy-mid: #163660;
+    --navy-light: #1e4a7a;
+    --sky:      #c5dffc;
+    --sky-pale: #e4effc;
+    --gold:     #FFA800;
+    --gold-dim: #cc8600;
+    --gold-pale:#fff4dc;
+    --coral:    #fd6262;
+    --coral-pale:#fde8e8;
+    --teal:     #1a7a5a;
+    --teal-pale:#e0f4ee;
+    --cream:    #f5eed8;
+    --offwhite: #faf7ef;
+    --text:     #1a1a1a;
+    --text-mid: #4a4a4a;
+  }
+  #fd *, #fd *::before, #fd *::after { box-sizing: border-box; }
+  /* ===== HERO ===== */
+  #fd .hero {
+    background: var(--navy) !important;
+    color: var(--cream) !important;
+    padding: 72px 24px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  #fd .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(197,223,252,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(197,223,252,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  #fd .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -120px; right: -60px;
+    width: 400px; height: 400px;
+    background: var(--gold);
+    opacity: 0.06;
+    border-radius: 50%;
+  }
+  #fd .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+  #fd .hero-badge {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700; font-size: 0.75rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--navy); background: var(--gold);
+    padding: 6px 16px; border-radius: 2px; margin-bottom: 24px;
+  }
+  #fd .hero h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900; font-size: clamp(2.4rem, 6vw, 3.8rem);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 16px; color: var(--cream) !important;
+  }
+  #fd .hero h1 span { color: var(--gold) !important; }
+  #fd .hero .subtitle {
+    font-size: 1.15rem; color: var(--sky) !important;
+    max-width: 760px; line-height: 1.55; margin-bottom: 28px;
+  }
+  #fd .hero .subtitle a { color: var(--sky); }
+  #fd .hero .source { font-size: 0.85rem; color: rgba(197,223,252,0.5) !important; }
+  #fd .hero .source a { color: var(--gold) !important; text-decoration: none; }
+  /* ===== LAYOUT ===== */
+  #fd .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  /* ===== PRINCIPLE INTRO ===== */
+  #fd .principle-intro { padding: 40px 24px 36px; background: var(--cream); border-bottom: 3px solid var(--navy); }
+  #fd .principle-intro-inner { max-width: 860px; margin: 0 auto; }
+  #fd .principle-intro h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 1.6rem; color: var(--navy); margin-bottom: 20px; }
+  #fd .principle-intro p { font-size: 1.05rem; color: var(--text-mid); margin-bottom: 16px; line-height: 1.6; }
+  #fd .principle-intro strong { color: var(--navy); }
+  /* ===== THREE QUESTIONS ===== */
+  #fd .questions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 28px; margin-bottom: 8px; }
+  #fd .question-card { background: white; border-radius: 6px; padding: 22px 20px; border-top: 4px solid var(--navy); box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  #fd .question-card .q-number { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+  #fd .question-card .q-name { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.85rem; color: var(--navy); margin-bottom: 6px; }
+  #fd .question-card .q-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.45; font-style: italic; }
+  /* ===== HOW DID WE GET HERE ===== */
+  #fd .history-section { padding: 44px 24px; background: var(--offwhite); border-bottom: 1px solid #e0dac8; }
+  #fd .history-inner { max-width: 860px; margin: 0 auto; }
+  #fd .history-inner h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 1.6rem; color: var(--navy); margin-bottom: 20px; }
+  #fd .history-inner p { font-size: 1rem; color: var(--text-mid); margin-bottom: 16px; line-height: 1.65; }
+  #fd .history-inner strong { color: var(--navy); }
+  #fd .context-expand { margin-top: 12px; }
+  #fd .context-expand summary {
+    font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--navy);
+    cursor: pointer; display: inline-flex; align-items: center; gap: 6px; padding: 6px 0; list-style: none;
+  }
+  #fd .context-expand summary::-webkit-details-marker { display: none; }
+  #fd .context-expand summary::before {
+    content: '+'; display: inline-flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; border-radius: 50%; background: var(--navy); color: white;
+    font-size: 0.85rem; font-weight: 700; line-height: 1; flex-shrink: 0;
+  }
+  #fd .context-expand[open] summary::before { content: '\2212'; }
+  #fd .context-expand p { font-size: 1rem; color: var(--text-mid); margin-top: 12px; line-height: 1.65; }
+  /* ===== EXECUTIVE SUMMARY ===== */
+  #fd .summary { padding: 40px 24px; background: white; border-bottom: 1px solid #e0dac8; }
+  #fd .summary-inner { max-width: 860px; margin: 0 auto; }
+  #fd .summary h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 1.6rem; color: var(--navy); margin-bottom: 20px; }
+  #fd .summary p { font-size: 1.05rem; color: var(--text-mid); margin-bottom: 14px; }
+  #fd .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0 16px; }
+  #fd .stat-card { background: var(--offwhite); border-radius: 8px; padding: 20px 16px; border-top: 4px solid var(--navy); box-shadow: 0 1px 4px rgba(0,0,0,0.06); text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+  #fd .stat-card.stat-red { border-top-color: var(--coral); }
+  #fd .stat-card.stat-amber { border-top-color: var(--gold); }
+  #fd .stat-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+  #fd .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; line-height: 1; color: var(--navy); margin-bottom: 4px; }
+  #fd .stat-card.stat-red .stat-number { color: var(--coral); }
+  #fd .stat-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 10px; }
+  #fd .stat-context { font-size: 0.84rem; color: var(--text-mid); line-height: 1.45; }
+  #fd .summary-footnote { font-size: 0.92rem; color: var(--text-mid); font-style: italic; }
+  /* ===== CATEGORY GROUP ===== */
+  #fd .category-group { border-bottom: 1px solid #e0dac8; }
+  #fd .category-details { max-width: 860px; margin: 0 auto; }
+  #fd .category-summary { display: flex; align-items: center; gap: 14px; padding: 28px 24px; cursor: pointer; list-style: none; user-select: none; }
+  #fd .category-summary::-webkit-details-marker { display: none; }
+  #fd .category-badge { display: inline-block; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 2px; flex-shrink: 0; }
+  #fd .category-question { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 1.25rem; color: var(--navy); flex: 1; }
+  #fd .category-chevron { width: 20px; height: 20px; flex-shrink: 0; position: relative; }
+  #fd .category-chevron::before { content: ''; position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; border-right: 2.5px solid var(--navy); border-bottom: 2.5px solid var(--navy); transform: translate(-50%, -65%) rotate(45deg); transition: transform 0.2s; }
+  #fd .category-details[open] .category-chevron::before { transform: translate(-50%, -35%) rotate(-135deg); }
+  #fd .category-charts { padding: 0 0 16px; }
+  #fd .category-group:nth-child(odd) { background: var(--offwhite); }
+  #fd .category-group:nth-child(even) { background: white; }
+  /* ===== CHART SECTIONS ===== */
+  #fd .chart-section { padding: 32px 24px; border-bottom: 1px solid rgba(224,218,200,0.5); }
+  #fd .chart-section:last-child { border-bottom: none; }
+  #fd .chart-inner { max-width: 860px; margin: 0 auto; }
+  #fd .chart-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  #fd .chart-number { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--sky); line-height: 1; flex-shrink: 0; width: 50px; text-align: center; }
+  #fd .chart-title-group { flex: 1; min-width: 200px; }
+  #fd .chart-category { display: inline-block; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; margin-bottom: 8px; }
+  #fd .cat-sustainability { background: var(--coral-pale); color: #c43c3c; }
+  #fd .cat-vulnerability  { background: var(--gold-pale);  color: #8a5d00; }
+  #fd .cat-flexibility    { background: var(--sky-pale);   color: #14446a; }
+  #fd .chart-title-group h3 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 1.35rem; color: var(--navy); line-height: 1.2; }
+  #fd .chart-canvas-wrap { margin-bottom: 24px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(12,34,64,0.10); background: white; padding: 20px 16px 12px; position: relative; height: 380px; }
+  #fd .chart-body { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  #fd .acct-title { display: block; font-size: 0.7em; font-weight: 400; color: #6b7280; letter-spacing: 0.02em; margin-top: 2px; }
+  #fd .chart-section.layout-wide .chart-canvas-wrap { max-width: none; }
+  #fd .chart-what { font-size: 0.95rem; color: var(--text-mid); line-height: 1.55; }
+  #fd .chart-what strong { color: var(--navy); }
+  #fd .chart-takeaway { background: var(--cream); border-radius: 6px; padding: 20px; font-size: 0.92rem; line-height: 1.55; }
+  #fd .chart-takeaway .takeaway-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  /* ===== BIG TAKEAWAY ===== */
+  #fd .big-takeaway { background: var(--navy) !important; color: var(--cream) !important; padding: 48px 24px; position: relative; overflow: hidden; }
+  #fd .big-takeaway::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(197,223,252,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(197,223,252,0.03) 1px, transparent 1px); background-size: 48px 48px; }
+  #fd .big-takeaway-inner { max-width: 860px; margin-left: auto !important; margin-right: auto !important; position: relative; z-index: 1; }
+  #fd .big-takeaway h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1.15; margin-bottom: 24px; color: var(--cream); }
+  #fd .big-takeaway h2 span { color: var(--gold) !important; }
+  #fd .big-takeaway p { font-size: 1.05rem; color: var(--sky) !important; max-width: 760px; margin-bottom: 16px; line-height: 1.6; }
+  #fd .ask-list { max-width: 760px; margin: 0 0 1.5rem 1.5em; padding: 0; }
+  #fd .ask-item { color: var(--sky); font-size: 0.95rem; line-height: 1.7; margin: 0 0 0.4em 0; padding: 0 0 0 1em; text-indent: -1em; }
+  #fd .ask-item::before { content: '\2022\00a0'; color: var(--gold); }
+  #fd .big-takeaway .cta-row { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
+  #fd .btn-gold { display: inline-block; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy) !important; background: var(--gold); padding: 14px 28px; border-radius: 3px; text-decoration: none; transition: background 0.2s; }
+  #fd .btn-gold:hover { background: #ffb833; }
+  #fd .btn-outline { display: inline-block; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cream) !important; border: 2px solid rgba(245,238,216,0.3); padding: 12px 28px; border-radius: 3px; text-decoration: none; transition: border-color 0.2s; }
+  #fd .btn-outline:hover { border-color: var(--cream); }
+  #fd .share-row { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  #fd .share-label { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(197,223,252,0.5); }
+  #fd .share-btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.75rem; color: var(--sky); background: rgba(197,223,252,0.1); border: 1px solid rgba(197,223,252,0.2); padding: 8px 16px; border-radius: 3px; cursor: pointer; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+  #fd .share-btn:hover { background: rgba(197,223,252,0.2); border-color: rgba(197,223,252,0.4); }
+  #fd .share-btn.copied { background: rgba(26,122,90,0.3); border-color: var(--teal); color: #a0f0d0; }
+  /* ===== RESOURCES ===== */
+  #fd .resources-section { padding: 36px 24px; background: var(--cream); border-bottom: 1px solid #e0dac8; }
+  #fd .resources-inner { max-width: 860px; margin: 0 auto; }
+  #fd .resources-inner h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 1.4rem; color: var(--navy); margin-bottom: 20px; }
+  #fd .resource-links { display: flex; flex-wrap: wrap; gap: 12px; }
+  #fd .resource-link { display: flex; flex-direction: column; gap: 4px; background: white; border: 1px solid #e0dac8; border-radius: 6px; padding: 16px 20px; text-decoration: none; color: var(--navy); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; transition: border-color 0.2s, box-shadow 0.2s; flex: 1 1 calc(50% - 6px); min-width: 240px; }
+  #fd .resource-link:hover { border-color: var(--gold); box-shadow: 0 2px 8px rgba(255,168,0,0.15); }
+  #fd .resource-link .arrow { color: var(--gold); font-size: 1.1rem; }
+  #fd .resource-link .res-title { display: flex; align-items: center; gap: 8px; }
+  #fd .resource-link .res-desc { font-weight: 400; font-family: 'Lato', sans-serif; font-size: 0.78rem; color: var(--text-mid); line-height: 1.4; }
+  /* ===== FOOTER ===== */
+  #fd footer { background: var(--navy) !important; color: var(--sky) !important; padding: 28px 24px; text-align: center; border-top: 3px solid var(--gold); }
+  #fd footer p { font-size: 0.82rem; color: rgba(197,223,252,0.7) !important; line-height: 1.6; }
+  #fd footer a { color: var(--gold) !important; font-weight: 700; text-decoration: none; }
+  #fd footer strong { color: var(--cream) !important; }
+  /* ===== NAV ===== */
+  #fd .toc { background: white; border-bottom: 1px solid #e0dac8; padding: 14px 24px; position: sticky; top: 0; z-index: 100; left: 0; right: 0; box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+  #fd .toc-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; gap: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; position: relative; }
+  #fd .toc-inner::-webkit-scrollbar { display: none; }
+  #fd .toc-brand { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 0.75rem; color: var(--navy); letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; text-decoration: none; }
+  #fd .toc-divider { width: 1px; height: 20px; background: #d0c9b5; flex-shrink: 0; }
+  #fd .toc-links { display: flex; gap: 4px; flex-shrink: 0; }
+  #fd .toc-links a { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.68rem; color: var(--text-mid); text-decoration: none; padding: 5px 10px; border-radius: 3px; white-space: nowrap; transition: background 0.15s, color 0.15s; }
+  #fd .toc-links a.pg { color: var(--navy); }
+  .toc-links a:hover, #fd .toc-links a.active { background: var(--sky-pale); color: var(--navy); }
+  #fd .toc-links a.active { background: var(--navy); color: white; }
+  #fd .toc::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 48px; background: linear-gradient(to right, rgba(255,255,255,0), white 80%); pointer-events: none; z-index: 2; }
+  #fd .toc.scrolled-end::after { opacity: 0; }
+  /* ===== TOOLTIP / LINKS ===== */
+  #fd .chartjs-tooltip { font-family: 'Lato', sans-serif !important; }
+  #fd a.il { color: inherit; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 2px; text-decoration-thickness: 2px; transition: color 0.15s; }
+  #fd a.il:hover { color: var(--navy); }
+  #fd .hero a.il, #fd .big-takeaway a.il { text-decoration-color: var(--gold); }
+  #fd .hero a.il:hover { color: var(--gold) !important; }
+  #fd .big-takeaway a.il:hover { color: var(--gold) !important; }
+  /* ===== SKIP LINK ===== */
+  #fd .skip-link { position: absolute; top: -100px; left: 16px; background: var(--navy); color: white; padding: 8px 16px; border-radius: 0 0 4px 4px; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; z-index: 200; transition: top 0.2s; text-decoration: none; }
+  #fd .skip-link:focus { top: 0; }
+  /* ===== CATEGORY ACCENT BORDERS ===== */
+  #fd .category-group#sustainability { border-left: 4px solid var(--coral); }
+  #fd .category-group#flexibility { border-left: 4px solid var(--sky); }
+  #fd .category-group#vulnerability { border-left: 4px solid var(--gold); }
+  /* ===== CHART FADE-IN ===== */
+  #fd .chart-section.will-animate { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+  #fd .chart-section.animated { opacity: 1; transform: translateY(0); }
+  #fd .chart-hint { font-size: 0.72rem; color: #9ca3af; text-align: right; margin-top: 6px; font-style: italic; }
+  /* ===== INNER CHART EXPAND ===== */
+  #fd .more-charts-toggle { margin: 8px 24px 16px; max-width: 860px; }
+  #fd .more-charts-toggle summary { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.04em; color: var(--navy); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--cream); border: 1px solid #e0dac8; border-radius: 4px; list-style: none; transition: background 0.15s; }
+  #fd .more-charts-toggle summary::-webkit-details-marker { display: none; }
+  #fd .more-charts-toggle summary:hover { background: #ebe5cf; }
+  #fd .more-charts-toggle summary .toggle-arrow { font-size: 0.6rem; display: inline-block; transition: transform 0.2s; }
+  #fd .more-charts-toggle[open] summary .toggle-arrow { transform: rotate(180deg); }
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    #fd .hero { padding: 56px 20px 40px; }
+    #fd .hero h1 { font-size: 2rem; }
+    #fd .hero .subtitle { font-size: 1rem; }
+    #fd .toc { padding: 10px 16px; }
+    #fd .toc-brand { font-size: 0.65rem; }
+    #fd .toc-links a { font-size: 0.6rem; padding: 4px 7px; }
+    #fd .principle-intro { padding: 32px 20px 28px; }
+    #fd .principle-intro h2 { font-size: 1.35rem; }
+    #fd .principle-intro p { font-size: 0.95rem; }
+    #fd .questions-grid { grid-template-columns: 1fr; gap: 12px; }
+    #fd .history-section { padding: 32px 20px; }
+    #fd .history-inner h2 { font-size: 1.35rem; }
+    #fd .summary { padding: 32px 20px; }
+    #fd .summary h2 { font-size: 1.35rem; }
+    #fd .stat-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    #fd .stat-number { font-size: 2.1rem; }
+    #fd .stat-context { font-size: 0.78rem; }
+    #fd .category-summary { padding: 20px 16px; gap: 10px; }
+    #fd .category-question { font-size: 1.05rem; }
+    #fd .category-badge { font-size: 0.58rem; padding: 3px 8px; }
+    #fd .chart-section { padding: 28px 16px; }
+    #fd .chart-number { font-size: 1.8rem; width: 36px; }
+    #fd .chart-title-group h3 { font-size: 1.1rem; }
+    #fd .acct-title { font-size: 0.62em; }
+    #fd .chart-canvas-wrap { padding: 14px 12px 8px; height: 340px; }
+    #fd .chart-what { font-size: 0.88rem; }
+    #fd .chart-takeaway { padding: 16px; font-size: 0.85rem; }
+    #fd .big-takeaway { padding: 36px 20px; }
+    #fd .big-takeaway h2 { font-size: 1.5rem; }
+    #fd .big-takeaway p { font-size: 0.95rem; }
+    #fd .cta-row { flex-direction: column; }
+    #fd .btn-gold, #fd .btn-outline { display: block; text-align: center; width: 100%; }
+    #fd .share-row { justify-content: center; }
+    #fd .share-label { width: 100%; text-align: center; }
+    #fd .resources-section { padding: 36px 20px; }
+    #fd .resource-links { flex-direction: column; }
+    #fd .resource-link { display: flex; width: 100%; }
+    #fd footer { padding: 32px 20px; }
+    #fd footer p { font-size: 0.76rem; }
+    #fd .category-group#sustainability, #fd .category-group#flexibility, #fd .category-group#vulnerability { border-left-width: 3px; }
+  }
+  @media (max-width: 480px) {
+    #fd .hero { padding: 68px 16px 44px; }
+    #fd .hero h1 { font-size: 1.65rem; }
+    #fd .hero-badge { font-size: 0.65rem; padding: 5px 12px; }
+    #fd .stat-grid { grid-template-columns: 1fr; }
+    #fd .toc-brand { display: none; }
+    #fd .toc-divider { display: none; }
+    #fd .toc-links { gap: 2px; }
+    #fd .toc-links a { font-size: 0.58rem; padding: 4px 6px; }
+    #fd .chart-header { gap: 8px; }
+    #fd .chart-number { font-size: 1.5rem; width: 30px; }
+    #fd .chart-title-group h3 { font-size: 1rem; }
+    #fd .chart-canvas-wrap { padding: 12px 8px 8px; height: 300px; }
+    #fd .category-summary { padding: 16px 12px; }
+    #fd .category-question { font-size: 0.95rem; }
+  }
+  @media print {
+    #fd .toc { display: none; }
+    #fd .chart-section { break-inside: avoid; }
+    #fd .category-details { display: block !important; }
+    #fd .category-details > .category-charts { display: block !important; }
+    #fd .category-chevron { display: none; }
+    #fd .context-expand { display: block; }
+    #fd .context-expand summary { display: none; }
+  }
+</style>
+</head>
+<body>
+<div id="fd">
+<a href="#dothemath" class="skip-link">Skip to main content</a>
+<!-- STICKY NAV -->
+<nav class="toc">
+  <div class="toc-inner">
+    <a class="toc-brand" href="index.html">Buffalo · #DoTheMath</a>
+    <div class="toc-divider"></div>
+    <div class="toc-links">
+      <a class="pg" href="index.html">Home</a>
+      <a class="pg" href="does-it-own-more-than-it-owes.html">Explainer</a>
+      <a class="pg" href="net-position-toggle.html">Card</a>
+      <div class="toc-divider"></div>
+      <a href="#dothemath">#DoTheMath</a>
+      <a href="#context">Context</a>
+      <a href="#summary">Summary</a>
+      <a href="#sustainability">Sustainability</a>
+      <a href="#flexibility">Flexibility</a>
+      <a href="#vulnerability">Vulnerability</a>
+      <a href="#action">Take Action</a>
+    </div>
+  </div>
+</nav>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Finance Decoder Report</div>
+    <h1>Buffalo's Fiscal<br>Health: <span>Decoded</span></h1>
+    <p class="subtitle">A city that can't pay its bills can't invest in its future. Strong Towns calls this <a class="il" href="https://www.strongtowns.org/journal/2021-5-12-6-principles-for-building-a-strong-town" target="_blank">the solvency principle</a>. Buffalo spent a decade under state fiscal control, looked like it had recovered, and is now facing a <a class="il" href="https://www.audacy.com/wben/news/local/buffalos-budget-gap-could-hit-usd100-million-in-2026-27" target="_blank">fiscal cliff in 2026</a> as federal aid runs out and legacy costs keep climbing. The charts below show what the numbers actually say.</p>
+    <p class="source">Data: 2006&ndash;2025 via <a href="https://www.buffalocomptrollerny.gov/150/Annual-Comprehensive-Financial-Reports-A" target="_blank">Buffalo Annual Comprehensive Financial Reports</a></p>
+  </div>
+</header>
+<!-- #DoTheMath INTRO -->
+<section class="principle-intro" id="dothemath">
+  <div class="principle-intro-inner">
+    <h2>The Finance Decoder &amp; <a class="il" href="https://academy.strongtowns.org/p/lm-doingmath" target="_blank" style="color:var(--gold)">#DoTheMath</a></h2>
+    <p>Strong Towns Buffalo's <strong>#DoTheMath</strong> initiative uses the <a class="il" href="https://archive.strongtowns.org/journal/2025/3/24/introducing-the-strong-towns-finance-decoder" target="_blank"><strong>Finance Decoder</strong></a> to chart 20 years of city financial data. We're not prescribing specific fixes here. The goal is to give everyday Buffalonians the context to ask sharper questions of their elected officials. Every budget, project, and policy should be able to answer these three:</p>
+    <div class="questions-grid">
+      <div class="question-card">
+        <div class="q-number">01</div>
+        <div class="q-name">Sustainability</div>
+        <div class="q-text">"Can Buffalo sustain today's service levels over the long term?"</div>
+      </div>
+      <div class="question-card">
+        <div class="q-number">02</div>
+        <div class="q-name">Flexibility</div>
+        <div class="q-text">"How much budgetary slack does Buffalo have to adapt to unexpected change?"</div>
+      </div>
+      <div class="question-card">
+        <div class="q-number">03</div>
+        <div class="q-name">Vulnerability</div>
+        <div class="q-text">"How dependent is the city of Buffalo on external funding?"</div>
+      </div>
+    </div>
+    <p style="margin-top:24px;"><a class="il" href="https://www.strongtowns.org/accounting" target="_blank"><strong>Transparent local accounting</strong></a> would let Buffalo invest in transit, housing, and parks on a predictable schedule. Instead, for decades the city has balanced its books with money that was never going to last. Economists call this <em><a class="il" href="https://www.behavioraleconomics.com/resources/mini-encyclopedia-of-be/time-temporal-discounting/" target="_blank">temporal discounting</a></em>: treating tomorrow's obligations as less real than today's. State aid bumps, reserve drawdowns, and federal pandemic relief (ARPA) have each taken a turn plugging the gap. It is a pattern almost as old as the post-World War II suburban expansion that hollowed out Buffalo's tax base, and the warning signs keep coming: most recently, S&amp;P revised Buffalo's outlook to Negative in 2021 and again in <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank"><strong>September 2025</strong></a>.</p>
+  </div>
+</section>
+<!-- HOW DID WE GET HERE -->
+<section class="history-section" id="context">
+  <div class="history-inner">
+    <h2>How did we get here?</h2>
+    <p>Strong Towns founder Charles Marohn <a class="il" href="https://archive.strongtowns.org/journal/2017/12/8/the-real-reason-your-city-has-no-money" target="_blank">argues</a> cities go broke for one reason: they build places that cost more to maintain than they'll ever produce in revenue. Buffalo is a textbook case. A city built for 580,000 people in 1950 now serves roughly 278,000, yet still maintains a comparable network of roads, water mains, sewers, and public buildings. By 2003, things were bad enough that New York State imposed <strong>"hard control"</strong> through the <a class="il" href="https://bfsa.ny.gov/" target="_blank">Buffalo Fiscal Stability Authority (BFSA)</a>, which controlled the city's finances under "hard" authority until 2012 and continues to provide oversight today in an advisory role.</p>
+    <details class="context-expand">
+      <summary>The BFSA era and the $1.2 billion accounting shock</summary>
+      <p>The BFSA era (2003&ndash;2012) brought discipline: debt was paid down, interest costs fell, and the budget stabilized. But two accounting changes revealed what that recovery couldn't fix. <strong>GASB 68</strong> put pension liabilities on the books starting in FY2015, a manageable hit since <a class="il" href="https://www.osc.ny.gov/common-retirement-fund" target="_blank">New York's state-administered pension systems</a> are relatively well-funded &mdash; Buffalo's net position stayed positive through 2016. Then <strong>GASB 75</strong> (FY2018) required cities to report the full cost of retiree healthcare (OPEB). Buffalo's OPEB liability is roughly <strong>$1.2 billion</strong>, and recognizing it turned the balance sheet deeply negative almost overnight. The debt had been building for decades; the accounting finally showed it.</p>
+    </details>
+    <details class="context-expand">
+      <summary>Why cities like Buffalo end up here</summary>
+      <p>After World War II, cities spread out with wide roads, parking lots, and low-density development ("<a class="il" href="https://archive.strongtowns.org/curbside-chat-1/2015/12/14/americas-suburban-experiment" target="_blank">The Suburban Experiment</a>"). This kind of new growth <a class="il" href="https://www.strongtowns.org/journal/2020-5-14-americas-growth-ponzi-scheme-md2020" target="_blank">appears to work at first</a> because it creates a quick revenue boost. But when maintenance bills come due and the money isn't there, the response is often more new development to chase short-term cash. Buffalo's story follows this pattern: population left for the suburbs, the city's tax base eroded, and the remaining residents inherited infrastructure obligations they couldn't afford. The fix is straightforward but hard: <a class="il" href="https://archive.strongtowns.org/journal/2019/6/17/if-were-not-going-to-maintain-what-we-have-then-why-bother-building-anything-new" target="_blank">maintain</a> what you have, grow <a class="il" href="https://archive.strongtowns.org/journal/2017/6/12/the-power-of-growing-incrementally" target="_blank">gradually</a>, and <a class="il" href="https://www.strongtowns.org/journal/2024-7-22-what-strong-towns-really-says-about-infrastructure-spending" target="_blank">invest</a> in things that pay for themselves.</p>
+    </details>
+  </div>
+</section>
+<!-- EXECUTIVE SUMMARY -->
+<section class="summary" id="summary">
+  <div class="summary-inner">
+    <h2>The Numbers at a Glance</h2>
+    <p>Four numbers every Buffalo resident should know, pulled directly from the city's <a class="il" href="https://www.buffalocomptrollerny.gov/150/Annual-Comprehensive-Financial-Reports-A" target="_blank"><strong>2025 Annual Comprehensive Financial Report (ACFR)</strong></a>.</p>
+    <div class="stat-grid">
+      <div class="stat-card stat-red">
+        <div class="stat-number">&minus;$1.6B</div>
+        <div class="stat-label">Net financial position</div>
+        <div class="stat-context">Counting only money-like assets, Buffalo owes about $1.56 billion more than it holds, driven largely by unfunded long-term obligations.</div>
+      </div>
+      <div class="stat-card stat-red">
+        <div class="stat-number">$1.2B</div>
+        <div class="stat-label">Unfunded retiree healthcare</div>
+        <div class="stat-context">Buffalo's unfunded retiree-healthcare obligation (OPEB) is the single biggest driver of the city's negative net position.</div>
+      </div>
+      <div class="stat-card stat-amber">
+        <div class="stat-number" data-count-down="100">50%</div>
+        <div class="stat-label">Infrastructure value remaining</div>
+        <div class="stat-context">Half of Buffalo's infrastructure value has been consumed by wear and tear, down from about 64% in 2006.</div>
+      </div>
+      <div class="stat-card stat-amber">
+        <div class="stat-number">58%</div>
+        <div class="stat-label">Revenue from outside aid</div>
+        <div class="stat-context">Well over half of Buffalo's revenue comes from state and federal sources &mdash; and it has rarely dipped below half in twenty years.</div>
+      </div>
+    </div>
+    <p class="summary-footnote">The charts below break it down, grouped by those three questions.</p>
+  </div>
+</section>
+<!-- ===== SUSTAINABILITY ===== -->
+<section class="category-group" id="sustainability">
+  <details class="category-details" open>
+    <summary class="category-summary">
+      <span class="category-badge cat-sustainability">Sustainability</span>
+      <span class="category-question">Can Buffalo keep this up long-term?</span>
+      <span class="category-chevron"></span>
+    </summary>
+    <div class="category-charts">
+      <!-- Chart: Net Financial Position -->
+      <div class="chart-section layout-wide" id="c7">
+        <div class="chart-inner">
+          <div class="chart-header">
+            <div class="chart-number">01</div>
+            <div class="chart-title-group">
+              <h3>The Bottom Line: How Deep in the Hole Is Buffalo? <span class="acct-title">[Net Financial Position]</span></h3>
+            </div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart7"></canvas>
+            <div class="chart-hint">Hover chart for details</div>
+          </div>
+          <div class="chart-body">
+            <div class="chart-what">
+              <strong>What this chart shows:</strong> Everything Buffalo has, minus everything it owes: pensions, bonds, retiree healthcare (OPEB), and other debts. The result is about negative $1.56 billion. In 2006, the gap was around $319 million. The cliff at <strong>2018</strong> is the GASB 75 accounting change described above, which put the full retiree-healthcare liability on the books.
+            </div>
+            <div class="chart-takeaway">
+              <div class="takeaway-label">What this means for you</div>
+              Most of this deficit is promises the city made to current and retired employees, mainly healthcare in retirement, that aren't due today but will come due over time. These obligations don't disappear. They will likely be addressed through some combination of higher taxes, reduced benefits, or changes to city services.
+            </div>
+          </div>
+        </div>
+      </div>
+      <details class="more-charts-toggle">
+        <summary>3 more sustainability charts <span class="toggle-arrow">&#9660;</span></summary>
+      <!-- Chart: Net Debt-to-Revenue -->
+      <div class="chart-section" id="c3">
+        <div class="chart-inner">
+          <div class="chart-header">
+            <div class="chart-number">02</div>
+            <div class="chart-title-group">
+              <h3>How Many Years Would It Take to Pay Off the Debt? <span class="acct-title">[Net Debt-to-Total Revenues]</span></h3>
+            </div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart6"></canvas>
+            <div class="chart-hint">Hover chart for details</div>
+          </div>
+          <div class="chart-body">
+            <div class="chart-what">
+              <strong>Think of it this way:</strong> If Buffalo devoted every dollar of revenue to paying off debt and spent nothing else, it would take about <strong>1.9 years</strong>. At the peak in 2018 it would have taken nearly <strong>2.9 years</strong>. Before the GASB changes brought the full picture onto the books, it appeared to be well under 1.0x.
+            </div>
+            <div class="chart-takeaway">
+              <div class="takeaway-label">Read the fine print</div>
+              The improvement from 2.9x toward 1.9x looks encouraging, but much of it reflects growing revenue (including one-time federal pandemic relief and increased state aid) rather than the city paying down what it owes. Buffalo actually pays off its traditional loans and bonds quickly. The real weight is the pension and retiree-healthcare obligations that don't have a payoff date the way bonds do.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Chart: Financial Assets-to-Liabilities -->
+      <div class="chart-section" id="c4">
+        <div class="chart-inner">
+          <div class="chart-header">
+            <div class="chart-number">03</div>
+            <div class="chart-title-group">
+              <h3>Could the City Cover Its Bills Tomorrow? <span class="acct-title">[Financial Assets-to-Total Liabilities]</span></h3>
+            </div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart1"></canvas>
+            <div class="chart-hint">Hover chart for details</div>
+          </div>
+          <div class="chart-body">
+            <div class="chart-what">
+              Ignore roads, bridges, and buildings. Count only what Buffalo has in cash, investments, and money owed to it, then measure that against everything the city owes. The city covers about <strong>41 cents on the dollar</strong>. Before 2018 the ratio looked much healthier, but that was before the full weight of long-term obligations hit the books.
+            </div>
+            <div class="chart-takeaway">
+              <div class="takeaway-label">So what?</div>
+              The ratio bottomed near 27 cents in 2018 and has recovered somewhat, but the gap remains wide. This is temporal discounting on a balance sheet: for every $100 Buffalo owes, it has about $41 on hand. The other $59 is a promise that future residents will figure it out.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Chart: Total Assets-to-Liabilities -->
+      <div class="chart-section" id="c5">
+        <div class="chart-inner">
+          <div class="chart-header">
+            <div class="chart-number">04</div>
+            <div class="chart-title-group">
+              <h3>If Buffalo Sold Everything, Could It Pay What It Owes? <span class="acct-title">[Assets-to-Liabilities]</span></h3>
+            </div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart2"></canvas>
+            <div class="chart-hint">Hover chart for details</div>
+          </div>
+          <div class="chart-body">
+            <div class="chart-what">
+              This time, count <em>everything</em>: roads, bridges, fire stations, water mains, plus cash. Divide by total obligations. Below 1.0, the city owes more than it owns. Buffalo stayed above that line through the BFSA era, slipped just under in 2016, then dropped to <strong>0.61</strong> when the full picture hit the books in <strong>2018</strong>. It has been below 1.0 ever since.
+            </div>
+            <div class="chart-takeaway">
+              <div class="takeaway-label">What this tells you</div>
+              The previous chart asks what Buffalo could cover with cash and financial assets alone: about 41 cents on the dollar. This chart adds every physical asset and the number only reaches about 73 cents. The difference is mostly infrastructure the city needs to function. A city can sell or lease some assets, and Buffalo is already exploring that with its parking assets, but it is not a path out of a structural gap.
+            </div>
+          </div>
+        </div>
+      </div>
+      </details><!-- /more-charts-toggle -->
+    </div>
+  </details>
+</section>
+<!-- ===== FLEXIBILITY ===== -->
+<section class="category-group" id="flexibility">
+  <details class="category-details">
+    <summary class="category-summary">
+      <span class="category-badge cat-flexibility">Flexibility</span>
+      <span class="category-question">How much room does Buffalo have to adapt?</span>
+      <span class="category-chevron"></span>
+    </summary>
+    <div class="category-charts">
+      <!-- Chart: Infrastructure condition -->
+      <div class="chart-section layout-wide" id="c1">
+        <div class="chart-inner">
+          <div class="chart-header">
+            <div class="chart-number">05</div>
+            <div class="chart-title-group">
+              <h3>How Fast Is Buffalo's Infrastructure Wearing Out? <span class="acct-title">[Net Book Value-to-Cost of Tangible Capital Assets]</span></h3>
+            </div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart5"></canvas>
+            <div class="chart-hint">Hover chart for details</div>
+          </div>
+          <div class="chart-body">
+            <div class="chart-what">
+              How much useful life is left in Buffalo's roads, water mains, bridges, and buildings, measured as a share of their original recorded cost? The answer has fallen steadily from about <strong>64% to 50%</strong> over two decades. A slight uptick in 2024&ndash;25 suggests some recent capital investment, but the long-term trend is clear.
+            </div>
+            <div class="chart-takeaway">
+              <div class="takeaway-label">The catch</div>
+              Deferred maintenance compounds. Skip a year of repaving and the road degrades faster, costing more to fix later. Buffalo built more than it can afford to maintain, and much of that infrastructure was built in the same era, which means large portions are aging on the same schedule. Strong Towns argues that cities should <a class="il" href="https://www.strongtowns.org/journal/2024-7-22-what-strong-towns-really-says-about-infrastructure-spending" target="_blank">prioritize maintaining existing infrastructure</a> over building new, and that every new investment should be evaluated by whether it generates enough revenue to cover its long-term maintenance costs.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Chart: Interest burden -->
+      <div class="chart-section" id="c2">
+        <div class="chart-inner">
+          <div class="chart-header">
+            <div class="chart-number">06</div>
+            <div class="chart-title-group">
+              <h3>How Much Revenue Goes Straight to Interest Payments? <span class="acct-title">[Interest-to-Total Revenues]</span></h3>
+            </div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart4"></canvas>
+            <div class="chart-hint">Hover chart for details</div>
+          </div>
+          <div class="chart-body">
+            <div class="chart-what">
+              Of every dollar Buffalo collects, how many cents go to interest alone, before a penny of principal is paid down? In 2006, more than <strong>5 cents of every dollar</strong>. By 2025, just <strong>0.6 cents</strong>. This is one of Buffalo's clearest wins: disciplined debt management under the BFSA and rapid repayment of bonded debt dramatically reduced the city's interest burden.
+            </div>
+            <div class="chart-takeaway">
+              <div class="takeaway-label">Look closer</div>
+              Low interest payments sound like good news, but they hide the real cost squeeze. Buffalo's biggest obligations (retiree healthcare and pensions) don't show up as interest charges. They grow quietly in the background and show up in the other charts instead.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>
+<!-- ===== VULNERABILITY ===== -->
+<section class="category-group" id="vulnerability">
+  <details class="category-details">
+    <summary class="category-summary">
+      <span class="category-badge cat-vulnerability">Vulnerability</span>
+      <span class="category-question">How dependent is Buffalo on outside help?</span>
+      <span class="category-chevron"></span>
+    </summary>
+    <div class="category-charts">
+      <!-- Chart: Government transfers -->
+      <div class="chart-section" id="c6">
+        <div class="chart-inner">
+          <div class="chart-header">
+            <div class="chart-number">07</div>
+            <div class="chart-title-group">
+              <h3>How Much Money Comes from State and Federal Government? <span class="acct-title">[Government Transfers-to-Total Revenue]</span></h3>
+            </div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart3"></canvas>
+            <div class="chart-hint">Hover chart for details</div>
+          </div>
+          <div class="chart-body">
+            <div class="chart-what">
+              What share of Buffalo's revenue comes from Albany or Washington (grants, state aid like AIM, and shared sales tax) instead of local property and user charges? The answer: roughly <strong>half or more, every single year</strong> &mdash; about <strong>48% in 2006, rising past 58% by 2025</strong>. The bump in 2021&ndash;2024 reflects pandemic-era federal relief stacked on top of an already-high baseline.
+            </div>
+            <div class="chart-takeaway">
+              <div class="takeaway-label">The 2026 fiscal cliff</div>
+              A city that generates more of its revenue locally has more control over its own future. Buffalo has leaned on outside money for two decades, so its budget is unusually exposed to decisions made elsewhere. The <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank">$37 million in federal pandemic relief</a> that plugged budget gaps in FY 2025 has run its course, and future state and federal aid is subject to decisions Buffalo does not control. The more the city can close the gap with money it can count on every year, the stronger its position.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>
+<!-- CLOSING CTA -->
+<section class="big-takeaway" id="action">
+  <div class="big-takeaway-inner">
+    <h2>Buffalo's recovery is real.<br><span>Its balance sheet isn't fixed.</span></h2>
+    <p>There are real signs of progress in Buffalo: new investment, rising property values, and growing revenue. But the numbers above show a city still carrying about $1.2 billion in unfunded retiree healthcare, infrastructure that has lost half its recorded useful life, and a persistent reliance &mdash; around half its budget &mdash; on revenue sources it does not control. With federal pandemic relief having run its course and S&amp;P flagging a <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank">Negative</a> outlook, the question is whether Buffalo can build a budget on money it can count on every year.</p>
+    <p>Every Buffalonian deserves the context to hold their leaders accountable. <strong>Send these charts to your <a class="il" href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank">Common Council member</a></strong> and ask:</p>
+    <div class="ask-list">
+      <div class="ask-item">How will the city balance the budget now that the $37 million in federal pandemic relief has run out?</div>
+      <div class="ask-item">What is the plan to address the $1.2 billion retiree-healthcare obligation?</div>
+      <div class="ask-item">How much of next year's budget depends on money that might not be there the year after (recurring local revenue vs. one-time or outside sources)?</div>
+    </div>
+    <p>Tell them you want a budget built on Strong Towns <a class="il" href="https://www.strongtowns.org/journal/2021-5-12-6-principles-for-building-a-strong-town" target="_blank">principles</a>: maintain what we have, grow in ways that pay for themselves, and stop budgeting for today at tomorrow's expense.</p>
+    <div class="cta-row">
+      <a href="https://www.strongtownsbuffalo.com/contact" class="btn-gold" target="_blank">Get Involved with Strong Towns Buffalo</a>
+      <a href="https://www.strongtowns.org/membership" class="btn-outline" target="_blank">Join the Strong Towns Movement</a>
+    </div>
+    <div class="share-row">
+      <span class="share-label">Share this page:</span>
+      <button class="share-btn" id="copyLinkBtn" onclick="copyPageLink(this)">&#128279; Copy Link</button>
+      <a class="share-btn" id="emailBtn" href="#" onclick="return openShareEmail()">&#9993; Email to a Friend</a>
+      <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=" id="linkedinBtn" target="_blank">in Share on LinkedIn</a>
+      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=" id="fbBtn" target="_blank">f Share</a>
+    </div>
+  </div>
+</section>
+<!-- RESOURCES -->
+<section class="resources-section">
+  <div class="resources-inner">
+    <h2>Hungry for more?</h2>
+    <p style="color:var(--text-mid);margin:0 0 1.5rem;font-size:0.95rem;line-height:1.6;">See what the city publishes, dig into the numbers behind this page, or learn more about Strong Towns principles.</p>
+    <div class="resource-links">
+      <a href="data-sources.html" class="resource-link"><span class="res-title"><span class="arrow">&#10132;</span> Finance Decoder Data</span><span class="res-desc">The raw numbers behind every chart on this page, and exactly where each comes from.</span></a>
+      <a href="https://www.buffalocomptrollerny.gov/150/Annual-Comprehensive-Financial-Reports-A" class="resource-link" target="_blank"><span class="res-title"><span class="arrow">&#10132;</span> Buffalo's ACFRs</span><span class="res-desc">The official annual financial reports published by the City Comptroller.</span></a>
+      <a href="https://www.strongtowns.org/decoder" class="resource-link" target="_blank"><span class="res-title"><span class="arrow">&#10132;</span> The Finance Decoder</span><span class="res-desc">How the tool works, what it measures, and how cities compare.</span></a>
+      <a href="https://www.strongtowns.org/book" class="resource-link" target="_blank"><span class="res-title"><span class="arrow">&#10132;</span> Strong Towns: A Bottom-Up Revolution</span><span class="res-desc">The book that started the movement, by Charles Marohn.</span></a>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p><strong>Strong Towns Buffalo</strong> is a volunteer-led local conversation of the <a href="https://strongtowns.org" target="_blank">Strong Towns</a> movement.<br>
+    Charts generated with the <a href="https://strongtowns.org/decoder" target="_blank">Strong Towns Finance Decoder</a> using data from the City of Buffalo's <a href="https://www.buffalocomptrollerny.gov/150/Annual-Comprehensive-Financial-Reports-A" target="_blank">Annual Comprehensive Financial Reports (ACFRs)</a>, 2006&ndash;2025.</p>
+    <p style="font-size:0.75rem;opacity:0.7;margin-top:0.75rem;">All ratios use government-wide financial statements (full accrual basis, including capital assets) for the total primary government. Figures are not adjusted for inflation. Retiree healthcare (OPEB) and pension figures reflect GASB accounting standards and represent long-term obligations, not cash due today. This page is intended to inform public discussion, not to provide financial advice. If you spot an error, <a href="https://www.strongtownsbuffalo.com/contact" target="_blank">let us know</a>.</p>
+    <p style="font-size:0.75rem;opacity:0.5;margin-top:0.5rem;">Last updated June 2026.</p>
+  </div>
+</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+<script>
+// ===== DATA (City of Buffalo ACFRs, FY2006-FY2025, total primary government) =====
+const years = [2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+const data = {
+  finAssetsToLiab: [0.617,0.689,0.702,0.703,0.692,0.651,0.628,0.620,0.564,0.537,0.556,0.463,0.271,0.272,0.332,0.411,0.461,0.443,0.446,0.407],
+  assetsToLiab:    [1.237,1.285,1.301,1.255,1.223,1.138,1.101,1.084,1.039,1.022,0.924,0.898,0.606,0.655,0.582,0.633,0.736,0.706,0.756,0.734],
+  govTransfers:    [47.69,54.63,53.04,55.17,56.28,54.00,53.48,53.72,57.21,55.15,55.39,54.90,56.36,53.37,50.58,59.25,58.83,58.80,60.06,57.76],
+  interestToRev:   [5.31,4.26,3.58,3.39,3.25,3.05,2.66,2.69,1.96,1.55,1.75,1.46,1.36,1.14,0.94,1.13,0.56,0.55,0.48,0.61],
+  netBookToTCA:    [64.18,63.57,62.62,61.60,60.39,58.74,58.02,56.78,55.86,55.28,54.48,53.59,51.83,51.16,50.11,49.02,48.61,48.09,49.29,50.41],
+  netDebtToRev:    [0.642,0.494,0.500,0.542,0.604,0.775,0.878,0.797,0.984,0.981,1.149,1.343,2.873,2.633,2.810,2.391,2.182,2.035,1.917,1.874],
+  netFinPosition:  [-319.18,-280.98,-274.21,-303.99,-337.55,-417.82,-473.80,-491.50,-571.21,-605.01,-668.15,-780.99,-1652.60,-1571.38,-1603.89,-1558.12,-1500.03,-1531.64,-1556.23,-1563.47]
+};
+// ===== CHART DEFAULTS =====
+Chart.defaults.font.family = "'Lato', sans-serif";
+Chart.defaults.font.size = 12;
+Chart.defaults.color = '#4a4a4a';
+Chart.defaults.plugins.legend.display = false;
+const navy = '#0c2240';
+const gold = '#FFA800';
+const coral = '#fd6262';
+const sky  = '#c5dffc';
+const skyPale = 'rgba(197,223,252,0.15)';
+const coralPale = 'rgba(253,98,98,0.12)';
+const goldPale = 'rgba(255,168,0,0.12)';
+const tooltipConfig = { backgroundColor: navy, titleFont: { weight: '700' }, bodyFont: { size: 13 }, padding: 12, cornerRadius: 4 };
+const yi = yr => years.indexOf(yr);
+const fmtNum = (n, decimals = 0) => {
+  const sign = n < 0 ? '-' : '';
+  const parts = Math.abs(n).toFixed(decimals).split('.');
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return sign + parts.join('.');
+};
+// The cliff in Buffalo's net position is FY2018, when GASB 75 put the full retiree
+// healthcare (OPEB) liability on the books (~$877M drop from FY2017 to FY2018).
+const gasb75Line = {
+  type: 'line', xMin: yi(2018), xMax: yi(2018),
+  borderColor: 'rgba(192,57,43,0.35)', borderWidth: 1.5, borderDash: [4,3],
+  label: { display: true, content: 'GASB 75 (OPEB)', position: 'start',
+    backgroundColor: 'rgba(192,57,43,0.8)', color: '#fff',
+    font: { size: 10, family: "'Raleway', sans-serif", weight: '700' },
+    padding: { x: 6, y: 3 }, borderRadius: 2 }
+};
+const pandemicBox = {
+  type: 'box', xMin: yi(2020) - 0.5, xMax: yi(2024) + 0.5,
+  backgroundColor: 'rgba(255,168,0,0.06)', borderColor: 'rgba(255,168,0,0.2)', borderWidth: 1,
+  label: { display: true, content: 'COVID relief / State aid', position: { x: 'center', y: 'start' },
+    backgroundColor: 'rgba(255,168,0,0.75)', color: '#fff',
+    font: { size: 10, family: "'Raleway', sans-serif", weight: '700' },
+    padding: { x: 6, y: 3 }, borderRadius: 2 }
+};
+const isMobile = window.innerWidth <= 768;
+const yTitleFont = { size: isMobile ? 10 : 12, family: "'Lato', sans-serif" };
+const yTitleColor = 'rgba(12,34,64,0.55)';
+const xTickFont = { size: isMobile ? 9 : 11 };
+const commonScalesMobile = {
+  x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: isMobile ? 7 : 12, font: xTickFont } }
+};
+// ===== CHART CONFIGS =====
+const chartConfigs = {
+  chart1: {
+    dataKey: 'finAssetsToLiab', type: 'line', color: coral, fill: coralPale,
+    fmt: v => 'Ratio: ' + v.toFixed(2),
+    yTitle: 'Financial Assets ÷ Liabilities',
+    annotations: { gasb75: gasb75Line },
+    yOpts: { min: 0, max: 0.8, ticks: { callback: v => v.toFixed(1), stepSize: 0.1 } }
+  },
+  chart2: {
+    dataKey: 'assetsToLiab', type: 'line', color: coral, fill: coralPale,
+    fmt: v => 'Ratio: ' + v.toFixed(2),
+    yTitle: 'Total Assets ÷ Liabilities',
+    annotations: {
+      gasb75: gasb75Line,
+      breakeven: { type: 'label', xValue: yi(2009), yValue: 1.06, content: 'Break-even line',
+        color: 'rgba(12,34,64,0.4)', font: { size: 10, family: "'Lato', sans-serif", style: 'italic' },
+        backgroundColor: 'transparent' }
+    },
+    yOpts: { min: 0, max: 1.5, ticks: { callback: v => v.toFixed(1), stepSize: 0.2 } },
+    extraDatasets: [{ data: Array(20).fill(1.0), borderColor: 'rgba(12,34,64,0.3)', borderWidth: 1.5, borderDash: [6,4], pointRadius: 0, fill: false }]
+  },
+  chart3: {
+    dataKey: 'govTransfers', type: 'line', color: navy, fill: skyPale,
+    fmt: v => v.toFixed(1) + '% of revenue',
+    yTitle: '% of Total Revenue',
+    annotations: { pandemic: pandemicBox },
+    yOpts: { min: 0, max: 70, ticks: { callback: v => v + '%' } }
+  },
+  chart4: {
+    dataKey: 'interestToRev', type: 'line', color: navy, fill: skyPale,
+    fmt: v => v.toFixed(1) + '% of revenue',
+    yTitle: '% of Total Revenue',
+    annotations: {},
+    yOpts: { min: 0, max: 6, ticks: { callback: v => v + '%' } }
+  },
+  chart5: {
+    dataKey: 'netBookToTCA', type: 'line', color: gold, fill: goldPale,
+    fmt: v => v.toFixed(1) + '% remaining value',
+    yTitle: '% of Original Value Remaining',
+    annotations: {},
+    yOpts: { min: 40, max: 70, ticks: { callback: v => v + '%' } }
+  },
+  chart6: {
+    dataKey: 'netDebtToRev', type: 'line', color: coral, fill: coralPale,
+    fmt: v => v.toFixed(1) + 'x annual revenue',
+    yTitle: 'Multiple of Annual Revenue',
+    annotations: { gasb75: gasb75Line },
+    yOpts: { min: 0, max: 3.0, ticks: { stepSize: 0.5, callback: v => v.toFixed(1) + 'x' } }
+  },
+  chart7: {
+    dataKey: 'netFinPosition', type: 'line', color: coral, fill: coralPale,
+    fmt: v => '$' + fmtNum(v) + 'M',
+    yTitle: 'Millions ($)',
+    annotations: { gasb75: gasb75Line },
+    yOpts: { max: 0, min: -1800, ticks: { callback: v => '$' + fmtNum(v) + 'M' } }
+  }
+};
+// ===== BUILD ALL CHARTS =====
+const charts = {};
+Object.keys(chartConfigs).forEach(canvasId => {
+  const cfg = chartConfigs[canvasId];
+  const ctx = document.getElementById(canvasId).getContext('2d');
+  const datasets = [{
+    label: 'Buffalo',
+    data: data[cfg.dataKey],
+    borderColor: cfg.color,
+    backgroundColor: cfg.fill,
+    borderWidth: 2.5,
+    pointRadius: 0,
+    pointHoverRadius: 5,
+    pointHoverBackgroundColor: cfg.color,
+    fill: true,
+    tension: 0.3,
+    spanGaps: true
+  }];
+  if (cfg.extraDatasets) datasets.push(...cfg.extraDatasets);
+  charts[canvasId] = new Chart(ctx, {
+    type: cfg.type,
+    data: { labels: years, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          ...tooltipConfig,
+          callbacks: {
+            label: item => {
+              if (item.dataset.borderDash && item.dataset.borderDash[0] === 6 && item.dataset.borderDash[1] === 4 && !item.dataset.label) return null;
+              if (item.parsed.y == null || item.raw == null) return null;
+              return 'Buffalo: ' + cfg.fmt(item.parsed.y);
+            }
+          }
+        },
+        annotation: { annotations: cfg.annotations }
+      },
+      scales: {
+        ...commonScalesMobile,
+        y: { grid: { color: 'rgba(0,0,0,0.05)' }, title: { display: true, text: cfg.yTitle, font: yTitleFont, color: yTitleColor }, ...cfg.yOpts }
+      }
+    }
+  });
+});
+// ===== ACTIVE NAV HIGHLIGHTING =====
+(function(){
+  const tocLinks = document.querySelectorAll('.toc-links a[href^="#"]');
+  const sections = [];
+  tocLinks.forEach(link => {
+    const id = link.getAttribute('href').replace('#', '');
+    const el = document.getElementById(id);
+    if (el) sections.push({ id, el, link });
+  });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const match = sections.find(s => s.el === entry.target);
+      if (match) match.visible = entry.isIntersecting;
+    });
+    const active = sections.find(s => s.visible);
+    tocLinks.forEach(l => l.classList.remove('active'));
+    if (active) active.link.classList.add('active');
+  }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+  sections.forEach(s => observer.observe(s.el));
+})();
+// ===== NAV SCROLL FADE =====
+(function(){
+  const toc = document.querySelector('.toc');
+  const inner = document.querySelector('.toc-inner');
+  function checkScroll() {
+    const atEnd = inner.scrollLeft + inner.clientWidth >= inner.scrollWidth - 4;
+    toc.classList.toggle('scrolled-end', atEnd);
+  }
+  inner.addEventListener('scroll', checkScroll);
+  window.addEventListener('resize', checkScroll);
+  checkScroll();
+})();
+// ===== CHART FADE-IN ON SCROLL =====
+(function(){
+  const chartSections = document.querySelectorAll('.chart-section');
+  chartSections.forEach(s => {
+    const parentDetails = s.closest('details');
+    if (!parentDetails || parentDetails.open) s.classList.add('will-animate');
+  });
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('animated'); fadeObserver.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  chartSections.forEach(s => { if (s.classList.contains('will-animate')) fadeObserver.observe(s); });
+  document.querySelectorAll('.category-details').forEach(det => {
+    det.addEventListener('toggle', () => {
+      if (det.open) {
+        const cs = det.querySelectorAll('.chart-section');
+        cs.forEach((s, i) => {
+          if (!s.classList.contains('animated')) {
+            s.classList.add('will-animate');
+            setTimeout(() => { s.classList.add('animated'); }, i * 120);
+          }
+        });
+      }
+    });
+  });
+})();
+// ===== ANIMATED STAT COUNTERS =====
+(function(){
+  const statNumbers = document.querySelectorAll('.stat-number');
+  const duration = 1200;
+  function parseStatValue(el) {
+    const text = el.textContent.trim();
+    if (text.includes('$') && text.includes('B')) {
+      const neg = text.includes('−') || text.includes('-');
+      const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+      return { value: neg ? -num : num, prefix: neg ? '−$' : '$', suffix: 'B', decimals: 1 };
+    }
+    if (text.includes('%')) return { value: parseFloat(text), prefix: '', suffix: '%', decimals: 0 };
+    if (text.includes('$')) return { value: parseFloat(text.replace('$', '')), prefix: '$', suffix: '', decimals: 2 };
+    return null;
+  }
+  function animateCounter(el, config) {
+    const start = performance.now();
+    const { value, prefix, suffix, decimals } = config;
+    const absVal = Math.abs(value);
+    const countDownFrom = el.dataset.countDown ? parseFloat(el.dataset.countDown) : null;
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      let current = countDownFrom !== null ? countDownFrom - (countDownFrom - absVal) * eased : absVal * eased;
+      el.textContent = prefix + current.toFixed(decimals) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const statObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const config = parseStatValue(entry.target);
+        if (config) animateCounter(entry.target, config);
+        statObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  statNumbers.forEach(el => statObserver.observe(el));
+})();
+// ===== SHARE BUTTONS =====
+(function(){
+  const url = window.location.href;
+  const li = document.getElementById('linkedinBtn');
+  const fb = document.getElementById('fbBtn');
+  if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+  if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+})();
+function copyPageLink(btn) {
+  navigator.clipboard.writeText(window.location.href).then(function(){
+    btn.classList.add('copied');
+    btn.innerHTML = '&#10003; Copied!';
+    setTimeout(function(){ btn.classList.remove('copied'); btn.innerHTML = '&#128279; Copy Link'; }, 2000);
+  });
+}
+function openShareEmail() {
+  var subj = encodeURIComponent("Buffalo’s finances in 7 charts");
+  var body = encodeURIComponent("Strong Towns Buffalo pulled 20 years of data from the city’s official financial reports and turned them into seven interactive charts.\n\n" + window.location.href + "\n\nThe big picture: counting money-like assets, Buffalo is about $1.56 billion in the red, half the city’s infrastructure value is gone, and it leans on Albany and Washington for more than half its budget. The page includes three questions worth sending to your Council member.");
+  window.location.href = 'mailto:?subject=' + subj + '&body=' + body;
+  return false;
+}
+// ===== RESIZE CHARTS WHEN COLLAPSED SECTIONS OPEN =====
+(function(){
+  document.querySelectorAll('#fd details').forEach(function(det) {
+    det.addEventListener('toggle', function() {
+      if (det.open) {
+        det.querySelectorAll('canvas').forEach(function(canvas) {
+          var chartInstance = charts[canvas.id];
+          if (chartInstance) setTimeout(function(){ chartInstance.resize(); }, 50);
+        });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

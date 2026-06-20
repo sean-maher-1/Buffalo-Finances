@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Buffalo, NY · Does It Own More Than It Owes? · #DoTheMath</title>
+<meta name="description" content="A plain-English look at the City of Buffalo's finances: net financial position, the Strong Towns Finance Decoder, and the repair bill the books leave out.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0c2240;--cream:#f5eed8;--offwhite:#faf7ef;--gold:#FFA800;--coral:#fd6262;--coral-deep:#d23b3b;--teal:#1a7a5a;--text-mid:#4a4a4a;--sky:#c5dffc;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Lato',sans-serif;background:var(--offwhite);color:#1a1a1a;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .hero{background:var(--navy);color:var(--cream);padding:88px 24px 64px;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(197,223,252,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(197,223,252,.045) 1px,transparent 1px);background-size:46px 46px}
+  .hero::after{content:'';position:absolute;bottom:-140px;right:-80px;width:420px;height:420px;border-radius:50%;background:var(--coral);opacity:.12}
+  .wrap{max-width:860px;margin:0 auto;position:relative;z-index:1}
+  .badge{display:inline-block;font-family:'Raleway',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:6px 16px;border-radius:2px;margin-bottom:22px}
+  h1{font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.05;letter-spacing:-0.02em;margin-bottom:16px}
+  h1 span{color:var(--gold)}
+  .sub{font-size:1.12rem;color:var(--sky);max-width:640px}
+  main{max-width:860px;margin:0 auto;padding:48px 24px 16px}
+  .lead{font-size:1.1rem;color:var(--text-mid);margin-bottom:30px;max-width:680px}
+  .lead strong{color:var(--navy)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+  a.card{display:flex;flex-direction:column;background:#fff;border:1px solid #ece4cf;border-radius:14px;padding:26px 24px;text-decoration:none;color:inherit;box-shadow:0 4px 18px rgba(12,34,64,.07);transition:transform .15s,box-shadow .15s,border-color .15s;border-top:4px solid var(--navy)}
+  a.card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(12,34,64,.14);border-color:var(--gold)}
+  a.card.c1{border-top-color:var(--coral)} a.card.c2{border-top-color:var(--gold)} a.card.c3{border-top-color:var(--teal)}
+  .tag{font-family:'Raleway',sans-serif;font-weight:800;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mid);margin-bottom:10px}
+  .card h2{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.18rem;color:var(--navy);line-height:1.2;margin-bottom:8px}
+  .card p{font-size:.92rem;color:var(--text-mid);margin-bottom:16px;flex:1}
+  .go{font-family:'Raleway',sans-serif;font-weight:800;font-size:.82rem;color:var(--navy)}
+  .go .arrow{color:var(--gold)}
+  footer{max-width:860px;margin:0 auto;padding:28px 24px 60px;font-size:.82rem;color:#857f72;line-height:1.55}
+  footer a{color:#9a7400;font-weight:700;text-decoration:none}
+  /* ===== SITE NAV ===== */
+  .sitenav{position:sticky;top:0;z-index:300;background:var(--navy);border-bottom:2px solid var(--gold)}
+  .sitenav-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:9px 22px}
+  .sitenav-brand{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);text-decoration:none;white-space:nowrap}
+  .sitenav-brand svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .sitenav-brand:hover{color:#fff}
+  .sitenav-links{margin-left:auto;display:flex;gap:3px;flex-wrap:wrap;justify-content:flex-end}
+  .sitenav-links a{font-family:'Raleway',sans-serif;font-weight:700;font-size:.72rem;color:var(--sky);text-decoration:none;padding:6px 12px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
+  .sitenav-links a:hover{background:rgba(197,223,252,.16);color:#fff}
+  .sitenav-links a.active{background:var(--gold);color:var(--navy)}
+  @media (max-width:560px){
+    .sitenav-inner{padding:8px 14px;gap:8px}
+    .sitenav-brand .brandtxt{display:none}
+    .sitenav-links a{font-size:.66rem;padding:5px 9px}
+  }
+</style>
+</head>
+<body>
+<nav class="sitenav">
+  <div class="sitenav-inner">
+    <a class="sitenav-brand" href="index.html" aria-label="Home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/></svg>
+      <span class="brandtxt">Buffalo · #DoTheMath</span>
+    </a>
+    <div class="sitenav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="does-it-own-more-than-it-owes.html">Explainer</a>
+      <a href="finance-decoder.html">Decoder</a>
+      <a href="net-position-toggle.html">Card</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">#DoTheMath · City of Buffalo, NY</span>
+    <h1>Does Buffalo own more than it <span>owes</span>?</h1>
+    <p class="sub">A plain-English look at the city's finances, built entirely from its own audited annual reports (2006&ndash;2025). Read it whichever way you prefer.</p>
+  </div>
+</header>
+<main>
+  <p class="lead">Buffalo's official books are already in the red. And once you strip out the roads, pipes, and buildings the city can't sell, it <strong>owes about $1.56&nbsp;billion more than it owns</strong> in money-like assets &mdash; a gap driven mostly by unfunded retiree healthcare, pensions, and debt. Here's the story, three ways:</p>
+  <div class="cards">
+    <a class="card c1" href="does-it-own-more-than-it-owes.html">
+      <div class="tag">The explainer</div>
+      <h2>Does Buffalo own more than it owes?</h2>
+      <p>The full kitchen-table walkthrough: how the &minus;$1.56B is built, what's in it, and the repair bill the books leave out.</p>
+      <span class="go">Read it <span class="arrow">&#10132;</span></span>
+    </a>
+    <a class="card c2" href="finance-decoder.html">
+      <div class="tag">The deep dive</div>
+      <h2>Buffalo's Fiscal Health: Decoded</h2>
+      <p>Seven indicators over twenty years, charted with the Strong Towns Finance Decoder method. The 2018 cliff, and the one line that's a genuine win.</p>
+      <span class="go">Explore the charts <span class="arrow">&#10132;</span></span>
+    </a>
+    <a class="card c3" href="net-position-toggle.html">
+      <div class="tag">The 30-second version</div>
+      <h2>One number, with a toggle</h2>
+      <p>Just the headline: how much more Buffalo owes than it owns, and what happens when you add the repair bill the books leave out.</p>
+      <span class="go">See the card <span class="arrow">&#10132;</span></span>
+    </a>
+  </div>
+</main>
+<footer>
+  <p>An independent #DoTheMath project for educational purposes. Not affiliated with or endorsed by the City of Buffalo. Figures come from the City of Buffalo's Annual Comprehensive Financial Reports (2006&ndash;2025); method follows the <a href="https://www.strongtowns.org/decoder" target="_blank">Strong Towns Finance Decoder</a>. See the full <a href="data-sources.html">data &amp; sources</a>.</p>
+</footer>
+</body>
+</html>
