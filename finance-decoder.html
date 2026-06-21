@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://buffalofinances.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://buffalofinances.org/og-image.png">
+<meta property="og:url" content="https://buffalofinances.org/finance-decoder.html">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light only">
 <title>Buffalo Finance Decoder · #DoTheMath</title>
 <meta name="description" content="Seven financial indicators from twenty years of Buffalo's audited annual reports reveal the city's structural fiscal challenges. A #DoTheMath analysis using the Strong Towns Finance Decoder.">
@@ -131,6 +137,10 @@
   #fd .stat-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 10px; }
   #fd .stat-context { font-size: 0.84rem; color: var(--text-mid); line-height: 1.45; }
   #fd .summary-footnote { font-size: 0.92rem; color: var(--text-mid); font-style: italic; }
+  #fd .outside-review { background: var(--sky-pale); border-left: 4px solid var(--navy); border-radius: 0 8px 8px 0; padding: 18px 22px; margin-top: 18px; }
+  #fd .outside-review .or-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; }
+  #fd .outside-review p { font-size: 0.95rem; color: var(--text-mid); margin: 0; line-height: 1.55; }
+  #fd .outside-review strong { color: var(--navy); }
   /* ===== CATEGORY GROUP ===== */
   #fd .category-group { border-bottom: 1px solid #e0dac8; }
   #fd .category-details { max-width: 860px; margin: 0 auto; }
@@ -172,6 +182,11 @@
   #fd .big-takeaway h2 span { color: var(--gold) !important; }
   #fd .big-takeaway p { font-size: 1.05rem; color: var(--sky) !important; max-width: 760px; margin-bottom: 16px; line-height: 1.6; }
   #fd .ask-list { max-width: 760px; margin: 0 0 1.5rem 1.5em; padding: 0; }
+  #fd .next-step { background: rgba(255,168,0,0.10); border: 1px solid rgba(255,168,0,0.35); border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 4px 0 28px; max-width: 760px; }
+  #fd .next-step .ns-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  #fd .next-step p { color: var(--cream) !important; font-size: 1rem; line-height: 1.55; margin-bottom: 12px; max-width: none; }
+  #fd .next-step p:last-child { margin-bottom: 0; }
+  #fd .next-step strong { color: #fff; }
   #fd .ask-item { color: var(--sky); font-size: 0.95rem; line-height: 1.7; margin: 0 0 0.4em 0; padding: 0 0 0 1em; text-indent: -1em; }
   #fd .ask-item::before { content: '\2022\00a0'; color: var(--gold); }
   #fd .big-takeaway .cta-row { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
@@ -320,6 +335,7 @@
       <a class="pg" href="index.html">Home</a>
       <a class="pg" href="does-it-own-more-than-it-owes.html">Explainer</a>
       <a class="pg" href="net-position-toggle.html">Card</a>
+      <a class="pg" href="take-action.html">Take Action</a>
       <a class="pg ext" href="https://www.strongtownsbuffalo.com" target="_blank">Strong Towns Buffalo</a>
       <div class="toc-divider"></div>
       <a href="#dothemath">#DoTheMath</a>
@@ -409,9 +425,16 @@
       </div>
     </div>
     <p class="summary-footnote">The charts below break it down, grouped by those three questions.</p>
+    <div class="outside-review">
+      <div class="or-label">This isn't just our read</div>
+      <p>Two independent authorities reach the same conclusion. In <a class="il" href="https://www.osc.ny.gov/press/releases/2026/05/dinapoli-releases-budget-review-city-buffalo" target="_blank">May 2026</a> the New York State Comptroller projected a <strong>$103 million</strong> gap in Buffalo's 2026-27 budget and warned the city has long leaned on non-recurring revenue, including <strong>$331 million</strong> of federal stimulus since 2020-21, without replacing it. In <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank">September 2025</a> S&amp;P held Buffalo's outlook at <strong>Negative</strong>. And Buffalo remains one of the few New York cities to have operated under a state control board (the BFSA, since 2003).</p>
+    </div>
   </div>
 </section>
 <!-- ===== SUSTAINABILITY ===== -->
+<noscript>
+  <div style="max-width:860px;margin:0 auto;padding:16px 24px;background:#fff4dc;border:1px solid #FFA800;border-radius:8px;color:#1a1a1a;font-size:0.95rem;line-height:1.55;">The seven interactive charts below need JavaScript to draw. Every number behind them is published in plain tables on the <a href="data-sources.html" style="color:#0c2240;font-weight:700;">data &amp; sources</a> page.</div>
+</noscript>
 <section class="category-group" id="sustainability">
   <details class="category-details" open>
     <summary class="category-summary">
@@ -430,7 +453,7 @@
             </div>
           </div>
           <div class="chart-canvas-wrap">
-            <canvas id="chart7"></canvas>
+            <canvas id="chart7" role="img" aria-label="Line chart: Buffalo's net financial position, 2006 to 2025. Negative every year; about negative $319 million in 2006, falling off a cliff to about negative $1.65 billion in 2018 when retiree-health (GASB 75) hit the books, and roughly negative $1.56 billion in 2025."></canvas>
             <div class="chart-hint">Hover chart for details</div>
           </div>
           <div class="chart-body">
@@ -456,7 +479,7 @@
             </div>
           </div>
           <div class="chart-canvas-wrap">
-            <canvas id="chart6"></canvas>
+            <canvas id="chart6" role="img" aria-label="Line chart: net debt as a multiple of annual revenue, 2006 to 2025. About 0.6 times in 2006, peaking near 2.9 times in 2018, easing to about 1.9 times by 2025."></canvas>
             <div class="chart-hint">Hover chart for details</div>
           </div>
           <div class="chart-body">
@@ -480,7 +503,7 @@
             </div>
           </div>
           <div class="chart-canvas-wrap">
-            <canvas id="chart1"></canvas>
+            <canvas id="chart1" role="img" aria-label="Line chart: financial assets divided by liabilities, 2006 to 2025. About 0.62 in 2006, bottoming near 0.27 in 2018, about 0.41 in 2025."></canvas>
             <div class="chart-hint">Hover chart for details</div>
           </div>
           <div class="chart-body">
@@ -504,7 +527,7 @@
             </div>
           </div>
           <div class="chart-canvas-wrap">
-            <canvas id="chart2"></canvas>
+            <canvas id="chart2" role="img" aria-label="Line chart: total assets divided by liabilities, 2006 to 2025. Above 1.0 until 2016, dropping to about 0.61 in 2018, about 0.73 in 2025."></canvas>
             <div class="chart-hint">Hover chart for details</div>
           </div>
           <div class="chart-body">
@@ -541,7 +564,7 @@
             </div>
           </div>
           <div class="chart-canvas-wrap">
-            <canvas id="chart5"></canvas>
+            <canvas id="chart5" role="img" aria-label="Line chart: infrastructure value remaining (net book value divided by original cost), 2006 to 2025. About 64 percent in 2006 declining to about 50 percent in 2025."></canvas>
             <div class="chart-hint">Hover chart for details</div>
           </div>
           <div class="chart-body">
@@ -565,12 +588,12 @@
             </div>
           </div>
           <div class="chart-canvas-wrap">
-            <canvas id="chart4"></canvas>
+            <canvas id="chart4" role="img" aria-label="Line chart: interest as a percent of revenue, 2006 to 2025. About 6.9 percent in 2006 falling to about 1.25 percent in 2025; most of the decline is in the city's tax-supported governmental interest."></canvas>
             <div class="chart-hint">Hover chart for details</div>
           </div>
           <div class="chart-body">
             <div class="chart-what">
-              Of every dollar Buffalo collects, how many cents go to interest alone, before a penny of principal is paid down? In 2006, more than <strong>5 cents of every dollar</strong>. By 2025, just <strong>0.6 cents</strong>. This is one of Buffalo's clearest wins: disciplined debt management under the BFSA and rapid repayment of bonded debt dramatically reduced the city's interest burden.
+              Of every dollar Buffalo collects, how many cents go to interest, before a penny of principal is paid down? In 2006, nearly <strong>7 cents of every dollar</strong>. By 2025, about <strong>1.2 cents</strong>. Most of that drop is a real win: the city's tax-supported (governmental) interest collapsed from roughly 5 cents to under 1 cent per dollar under the BFSA's disciplined debt repayment. What's left is mostly the self-supporting water system covering its own bonds.
             </div>
             <div class="chart-takeaway">
               <div class="takeaway-label">Look closer</div>
@@ -601,7 +624,7 @@
             </div>
           </div>
           <div class="chart-canvas-wrap">
-            <canvas id="chart3"></canvas>
+            <canvas id="chart3" role="img" aria-label="Line chart: state and federal aid and grants as a percent of revenue, 2006 to 2025. About 35 percent in 2006 rising to about 42 percent in 2025."></canvas>
             <div class="chart-hint">Hover chart for details</div>
           </div>
           <div class="chart-body">
@@ -610,7 +633,7 @@
             </div>
             <div class="chart-takeaway">
               <div class="takeaway-label">The 2026 fiscal cliff</div>
-              A city that generates more of its revenue locally has more control over its own future. Buffalo has leaned on outside money for two decades, so its budget is unusually exposed to decisions made elsewhere. The <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank">$37 million in federal pandemic relief</a> that plugged budget gaps in FY 2025 has run its course, and future state and federal aid is subject to decisions Buffalo does not control. The more the city can close the gap with money it can count on every year, the stronger its position.
+              A city that generates more of its revenue locally has more control over its own future. Buffalo has leaned on outside money for two decades, so its budget is unusually exposed to decisions made elsewhere. Buffalo used roughly <a class="il" href="https://www.osc.ny.gov/files/local-government/audits/2026/pdf/buffalo-city-b26-1-5.pdf" target="_blank">$331 million in federal stimulus since 2020-21</a> to fund day-to-day operations, and that money is now gone: the State Comptroller projects a <strong>$103 million gap</strong> in the 2026-27 budget, to be closed with a proposed $46 million property-tax increase and one-time revenues that may not materialize. The more the city can close the gap with money it can count on every year, the stronger its position.
             </div>
           </div>
         </div>
@@ -622,16 +645,22 @@
 <section class="big-takeaway" id="action">
   <div class="big-takeaway-inner">
     <h2>Buffalo's recovery is real.<br><span>Its balance sheet isn't fixed.</span></h2>
-    <p>There are real signs of progress in Buffalo: new investment, rising property values, and growing revenue. But the numbers above show a city still carrying about $1.2 billion in unfunded retiree healthcare, infrastructure that has lost half its recorded useful life, and a persistent reliance (more than 40% of its budget) on state and federal aid it does not control. With federal pandemic relief having run its course and S&amp;P flagging a <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank">Negative</a> outlook, the question is whether Buffalo can build a budget on money it can count on every year.</p>
+    <p>There are real signs of progress in Buffalo: new investment, rising property values, and growing revenue. But the numbers above show a city still carrying about $1.2 billion in unfunded retiree healthcare, infrastructure that has lost half its recorded useful life, and a persistent reliance (more than 40% of its budget) on state and federal aid it does not control. With the pandemic stimulus now spent, the State Comptroller projecting a <a class="il" href="https://www.osc.ny.gov/press/releases/2026/05/dinapoli-releases-budget-review-city-buffalo" target="_blank">$103 million gap</a> for 2026-27, and S&amp;P holding a <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank">Negative</a> outlook, the question is whether Buffalo can build a budget on money it can count on every year.</p>
+    <div class="next-step">
+      <div class="ns-label">The next smallest step</div>
+      <p>Fixing this doesn't start with the $1.2 billion. It starts with <strong>one number the city doesn't publish</strong>: what it would cost to bring the roads, pipes, and buildings Buffalo already owns back to good condition. The audit records the wear, about $958 million worn out, but never totals the repair bill. A city can't prioritize, budget for, or fix what it refuses to measure, and measuring it costs almost nothing.</p>
+      <p>That makes it the rare ask small enough to win: <strong>that Buffalo publish a "cost of good repair" figure every year</strong>, the same way it already reports its debt. It takes one Common Council member to request it.</p>
+    </div>
     <p>Every Buffalonian deserves the context to hold their leaders accountable. <strong>Send these charts to your <a class="il" href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank">Common Council member</a></strong> and ask:</p>
     <div class="ask-list">
-      <div class="ask-item">How will the city balance the budget now that the $37 million in federal pandemic relief has run out?</div>
+      <div class="ask-item">How will the city close the projected $103 million gap in the 2026-27 budget without leaning on one-time revenues again?</div>
       <div class="ask-item">What is the plan to address the $1.2 billion retiree-healthcare obligation?</div>
       <div class="ask-item">How much of next year's budget depends on money that might not be there the year after (recurring local revenue vs. one-time or outside sources)?</div>
     </div>
-    <p>Tell them you want a budget built on Strong Towns <a class="il" href="https://www.strongtowns.org/journal/2021-5-12-6-principles-for-building-a-strong-town" target="_blank">principles</a>: maintain what we have, grow in ways that pay for themselves, and stop budgeting for today at tomorrow's expense.</p>
+    <p>Tell them you want a budget built on Strong Towns <a class="il" href="https://www.strongtowns.org/journal/2021-5-12-6-principles-for-building-a-strong-town" target="_blank">principles</a>: maintain what we have, grow in ways that pay for themselves, and stop budgeting for today at tomorrow's expense. And it begins with measuring what we owe on what we already own.</p>
     <div class="cta-row">
-      <a href="https://www.strongtownsbuffalo.com/contact" class="btn-gold" target="_blank">Get Involved with Strong Towns Buffalo</a>
+      <a href="take-action.html" class="btn-gold">Write Your Council Member &#10132;</a>
+      <a href="https://www.strongtownsbuffalo.com/contact" class="btn-outline" target="_blank">Get Involved with Strong Towns Buffalo</a>
       <a href="https://www.strongtowns.org/membership" class="btn-outline" target="_blank">Join the Strong Towns Movement</a>
     </div>
     <div class="share-row">
@@ -675,7 +704,7 @@ const data = {
   finAssetsToLiab: [0.617,0.689,0.702,0.703,0.692,0.651,0.628,0.620,0.564,0.537,0.556,0.463,0.271,0.272,0.332,0.411,0.461,0.443,0.446,0.407],
   assetsToLiab:    [1.237,1.285,1.301,1.255,1.223,1.138,1.101,1.084,1.039,1.022,0.924,0.898,0.606,0.655,0.582,0.633,0.736,0.706,0.756,0.734],
   govTransfers:    [34.87,35.01,34.58,36.53,39.69,36.31,36.06,38.64,40.76,39.22,38.63,38.40,37.82,35.25,31.68,35.38,37.28,42.23,44.67,42.44],
-  interestToRev:   [5.31,4.26,3.58,3.39,3.25,3.05,2.66,2.69,1.96,1.55,1.75,1.46,1.36,1.14,0.94,1.13,0.56,0.55,0.48,0.61],
+  interestToRev:   [6.87,5.56,4.87,4.68,4.51,4.54,3.98,3.93,3.19,2.64,2.80,2.53,2.39,2.03,1.85,1.90,1.25,1.18,1.17,1.25],
   netBookToTCA:    [64.18,63.57,62.62,61.60,60.39,58.74,58.02,56.78,55.86,55.28,54.48,53.59,51.83,51.16,50.11,49.02,48.61,48.09,49.29,50.41],
   netDebtToRev:    [0.642,0.494,0.500,0.542,0.604,0.775,0.878,0.797,0.984,0.981,1.149,1.343,2.873,2.633,2.810,2.391,2.182,2.035,1.917,1.874],
   netFinPosition:  [-319.18,-280.98,-274.21,-303.99,-337.55,-417.82,-473.80,-491.50,-571.21,-605.01,-668.15,-780.99,-1652.60,-1571.38,-1603.89,-1558.12,-1500.03,-1531.64,-1556.23,-1563.47]
@@ -759,7 +788,7 @@ const chartConfigs = {
     fmt: v => v.toFixed(1) + '% of revenue',
     yTitle: '% of Total Revenue',
     annotations: {},
-    yOpts: { min: 0, max: 6, ticks: { callback: v => v + '%' } }
+    yOpts: { min: 0, max: 8, ticks: { callback: v => v + '%' } }
   },
   chart5: {
     dataKey: 'netBookToTCA', type: 'line', color: gold, fill: goldPale,

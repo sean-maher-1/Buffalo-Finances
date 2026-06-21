@@ -21,7 +21,7 @@ Net Position). Method follows the Strong Towns Finance Decoder.
 - **FY2006–FY2007** balance-sheet and capital-note figures were read by OCR from the scanned (no-text) FY2007
   report; they reconcile with the statistical Net-Assets-by-Component series.
 
-## Raw inputs (Total Primary Government, $ millions)
+## Raw inputs: balance sheet (Total Primary Government, $ millions)
 | Year | Cash&other | Capital(net) | Total assets | Def.out | Total liab | Def.in | Net position | Accum.deprec. |
 |---|---|---|---|---|---|---|---|---|
 | 2006 | 514.5 | 517.0 | 1031.5 | 0.0 | 833.6 | 0.0 | 197.8 | 288.5 |
@@ -49,6 +49,32 @@ Net position is the audited bottom line; net financial position (below) subtract
 Capital(net) = total assets − cash&other. Reference net-assets levels for the excluded early years
 ($M): FY2003 115.2, FY2004 166.3 (orig) / 139.4 (restated), FY2005 167.9.
 
+## Raw inputs: revenue & interest detail (TPG, $ millions)
+Income-statement (full-year) figures. Government transfers = op grants + cap grants + state aid + unrestricted grants (intergovernmental / county sales tax shown but EXCLUDED, treated as local). Interest = governmental + enterprise. Both divided by Total revenue (first column). Enterprise interest FY2006-08 & FY2020 approximate.
+
+| Year | Total rev | Op.grants | Cap.grants | State aid | Unrestr. | Intergov(excl) | Gov't int. | Enterprise int. |
+|---|---|---|---|---|---|---|---|---|
+| 2006 | 497.1 | 8.1 | 25.2 | 139.6 | 0.5 | 63.7 | 26.4 | 7.8 |
+| 2007 | 569.2 | 45.1 | 20.8 | 133.0 | 0.4 | 111.7 | 24.3 | 7.4 |
+| 2008 | 548.4 | 12.3 | 18.6 | 158.4 | 0.4 | 101.2 | 19.7 | 7.0 |
+| 2009 | 560.9 | 8.3 | 22.6 | 173.6 | 0.4 | 104.6 | 19.0 | 7.2 |
+| 2010 | 559.2 | 13.1 | 34.1 | 174.5 | 0.4 | 92.7 | 18.2 | 7.0 |
+| 2011 | 539.0 | 12.9 | 17.8 | 164.8 | 0.2 | 95.3 | 16.5 | 8.0 |
+| 2012 | 539.5 | 10.6 | 19.1 | 164.6 | 0.3 | 94.0 | 14.3 | 7.2 |
+| 2013 | 616.5 | 23.1 | 16.6 | 198.3 | 0.2 | 93.0 | 16.6 | 7.6 |
+| 2014 | 580.2 | 38.3 | 18.6 | 179.4 | 0.3 | 95.4 | 11.4 | 7.1 |
+| 2015 | 616.4 | 40.8 | 33.0 | 167.7 | 0.3 | 98.1 | 9.6 | 6.7 |
+| 2016 | 581.5 | 32.2 | 23.8 | 168.3 | 0.3 | 97.5 | 10.2 | 6.1 |
+| 2017 | 581.6 | 32.3 | 26.1 | 164.7 | 0.3 | 96.0 | 8.5 | 6.2 |
+| 2018 | 575.2 | 33.7 | 22.3 | 161.5 | 0.0 | 106.6 | 7.8 | 6.0 |
+| 2019 | 596.9 | 23.5 | 18.1 | 168.8 | 0.0 | 108.2 | 6.8 | 5.3 |
+| 2020 | 570.9 | 28.0 | 20.3 | 132.6 | 0.0 | 107.9 | 5.3 | 5.2 |
+| 2021 | 651.7 | 35.2 | 23.3 | 172.1 | 0.0 | 155.6 | 7.3 | 5.1 |
+| 2022 | 687.4 | 50.6 | 44.8 | 160.9 | 0.0 | 148.1 | 3.8 | 4.7 |
+| 2023 | 752.7 | 114.6 | 41.7 | 161.6 | 0.0 | 124.7 | 4.2 | 4.7 |
+| 2024 | 811.6 | 117.1 | 84.4 | 161.0 | 0.0 | 124.3 | 3.9 | 5.6 |
+| 2025 | 834.5 | 133.1 | 54.7 | 166.3 | 0.0 | 127.8 | 5.1 | 5.4 |
+
 ## Computed indicators (Strong Towns Finance Decoder), FY2006 → FY2025
 - **Net financial position ($M)** = net position − net capital assets:
   -319.2, -281.0, -274.2, -304.0, -337.6, -417.8, -473.8, -491.5, -571.2, -605.0, -668.2, -781.0, -1652.6, -1571.4, -1603.9, -1558.1, -1500.0, -1531.6, -1556.2, -1563.5
@@ -60,8 +86,8 @@ Capital(net) = total assets − cash&other. Reference net-assets levels for the 
   1.237, 1.285, 1.301, 1.255, 1.223, 1.138, 1.101, 1.084, 1.039, 1.022, 0.924, 0.898, 0.606, 0.655, 0.582, 0.633, 0.736, 0.706, 0.756, 0.734
 - **Net book value ÷ cost (% infrastructure remaining)** = capital net ÷ (capital net + accumulated depreciation):
   64.2, 63.6, 62.6, 61.6, 60.4, 58.7, 58.0, 56.8, 55.9, 55.3, 54.5, 53.6, 51.8, 51.2, 50.1, 49.0, 48.6, 48.1, 49.3, 50.4
-- **Interest ÷ revenue (%)** (governmental interest & fiscal charges):
-  5.31, 4.26, 3.58, 3.39, 3.25, 3.05, 2.66, 2.69, 1.96, 1.55, 1.75, 1.46, 1.36, 1.14, 0.94, 1.13, 0.56, 0.55, 0.48, 0.61
+- **Interest ÷ revenue (%)** (all interest: governmental + enterprise/water, Total Primary Government):
+  6.87, 5.56, 4.87, 4.68, 4.51, 4.54, 3.98, 3.93, 3.19, 2.64, 2.80, 2.53, 2.39, 2.03, 1.85, 1.90, 1.25, 1.18, 1.17, 1.25
 - **Government transfers ÷ revenue (%)** = (operating grants + capital grants + state aid + unrestricted grants) ÷ total revenue; excludes the ACFR "intergovernmental" line (Buffalo's county sales-tax share), treated as local:
   34.9, 35.0, 34.6, 36.5, 39.7, 36.3, 36.1, 38.6, 40.8, 39.2, 38.6, 38.4, 37.8, 35.2, 31.7, 35.4, 37.3, 42.2, 44.7, 42.4
 
@@ -92,7 +118,7 @@ Capital(net) = total assets − cash&other. Reference net-assets levels for the 
    ~48%→58%, but that counts Buffalo's county sales-tax share (~$115M in FY2025) as a transfer. The site treats
    shared sales tax as local revenue and counts only aid + grants: ~35% in 2006, ~42% in 2025.
 5. **Series is FY2006–FY2025** (GASB 34 began FY2003; 2002 has no government-wide data).
-6. Confirmed accurate: OPEB ≈ $1.24B; infrastructure ~64%→50% remaining; interest burden fell sharply (~5.3%→0.6%).
+6. Confirmed accurate: OPEB ≈ $1.24B; infrastructure ~64%→50% remaining. Interest burden fell sharply: all-in (governmental + enterprise/water) ~6.9%→~1.25%; the governmental/tax-supported piece collapsed ~5.3%→0.6%, the remainder is the self-supporting water system.
 
 ## Method & notes
 - **Net financial position** = money-like assets (cash, investments, receivables, plus deferred outflows)
@@ -100,8 +126,8 @@ Capital(net) = total assets − cash&other. Reference net-assets levels for the 
   capital assets.
 - **Total revenue** is computed as total program revenues + governmental general revenues, excluding
   interfund transfers (within ~0.1% of the MD&A "Total revenues" line each year).
-- **Interest** uses governmental "interest and fiscal charges" from the Statement of Activities; business-type
-  (water/parking) interest is embedded in those functions and not separately broken out (consistent with the draft).
+- **Interest** is all interest expense (Total Primary Government): governmental "interest and fiscal charges" plus
+  enterprise-fund interest (water system + parking) from the proprietary-fund statements. Enterprise interest for FY2006–08 (scanned) and FY2020 (no standalone report) is approximate; verified for FY2009–19 and FY2021–25.
 - **Government transfers** = operating grants + capital grants + state aid + unrestricted grants (state and
   federal aid and grants). Excludes the ACFR "intergovernmental" general-revenue line (~$115M in 2025), Buffalo's share of Erie County sales tax, treated here as local revenue.
 - **The repair-bill estimate** restates accumulated depreciation ($957.7M in FY2025) to today's construction
