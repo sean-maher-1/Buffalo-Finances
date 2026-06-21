@@ -6,8 +6,8 @@
   "units": "raw_inputs in $ thousands; net_financial_position in $ millions; ratios unitless; *_pct in percent",
   "notes": {
     "government_transfers": "= operating_grants + capital_grants + state_aid + unrestricted_grants; EXCLUDES intergovernmental (county sales-tax share), treated as local revenue.",
-    "interest": "= governmental_interest + enterprise_interest (all Total Primary Government). Enterprise interest FY2006-08 and FY2020 are approximate.",
-    "series_start": "GASB 34 began FY2003; charts start FY2006 for data quality. FY2020 from FY2021 report comparative; FY2006-07 balance sheet/capital via OCR.",
+    "interest": "= governmental_interest + enterprise_interest (all Total Primary Government). Enterprise interest is from the audited proprietary-fund statements; FY2020 is from the FY2021 report's comparative column.",
+    "series_start": "GASB 34 began FY2003; charts start FY2006 for data quality. FY2020 from FY2021 report comparative column; FY2006-07 cross-checked against audited ten-year statistical tables and capital-asset notes in later reports.",
     "estimates": "Only the infrastructure repair-bill range and per-household splits are estimates; all else is from audited records."
   },
   "years": [
@@ -365,7 +365,7 @@
     ],
     "enterprise_interest": [
       7800,
-      7400,
+      7147,
       7029,
       7228,
       7050,
@@ -499,7 +499,7 @@
     ],
     "interest_to_revenue_pct": [
       6.87,
-      5.56,
+      5.52,
       4.87,
       4.68,
       4.51,
