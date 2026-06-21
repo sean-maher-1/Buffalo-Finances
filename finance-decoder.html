@@ -208,6 +208,7 @@
   #fd .toc-links { display: flex; gap: 4px; flex-shrink: 0; }
   #fd .toc-links a { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.68rem; color: var(--text-mid); text-decoration: none; padding: 5px 10px; border-radius: 3px; white-space: nowrap; transition: background 0.15s, color 0.15s; }
   #fd .toc-links a.pg { color: var(--navy); }
+  #fd .toc-links a.ext { color: var(--gold-dim); }
   .toc-links a:hover, #fd .toc-links a.active { background: var(--sky-pale); color: var(--navy); }
   #fd .toc-links a.active { background: var(--navy); color: white; }
   #fd .toc::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 48px; background: linear-gradient(to right, rgba(255,255,255,0), white 80%); pointer-events: none; z-index: 2; }
@@ -319,6 +320,7 @@
       <a class="pg" href="index.html">Home</a>
       <a class="pg" href="does-it-own-more-than-it-owes.html">Explainer</a>
       <a class="pg" href="net-position-toggle.html">Card</a>
+      <a class="pg ext" href="https://www.strongtownsbuffalo.com" target="_blank">Strong Towns Buffalo</a>
       <div class="toc-divider"></div>
       <a href="#dothemath">#DoTheMath</a>
       <a href="#context">Context</a>
@@ -401,9 +403,9 @@
         <div class="stat-context">Half of Buffalo's infrastructure value has been consumed by wear and tear, down from about 64% in 2006.</div>
       </div>
       <div class="stat-card stat-amber">
-        <div class="stat-number">58%</div>
-        <div class="stat-label">Revenue from outside aid</div>
-        <div class="stat-context">Well over half of Buffalo's revenue comes from state and federal sources, and it has rarely dipped below half in twenty years.</div>
+        <div class="stat-number">42%</div>
+        <div class="stat-label">Revenue from state &amp; federal aid</div>
+        <div class="stat-context">More than 40% of Buffalo's revenue comes from state and federal aid and grants, up from about a third in 2006 and climbing as pandemic money flowed in.</div>
       </div>
     </div>
     <p class="summary-footnote">The charts below break it down, grouped by those three questions.</p>
@@ -604,7 +606,7 @@
           </div>
           <div class="chart-body">
             <div class="chart-what">
-              What share of Buffalo's revenue comes from Albany or Washington (grants, state aid like AIM, and shared sales tax) instead of local property and user charges? The answer: roughly <strong>half or more, every single year</strong>: about <strong>48% in 2006, rising past 58% by 2025</strong>. The bump in 2021&ndash;2024 reflects pandemic-era federal relief stacked on top of an already-high baseline.
+              What share of Buffalo's revenue comes from state and federal aid and grants, rather than local taxes and fees? Between about a third and 45% over the period: roughly <strong>35% in 2006 and 42% by 2025</strong>. The jump in 2023&ndash;2024 is pandemic-era federal relief landing on top of an already-high baseline of state aid (Buffalo's AIM payment alone is about $166 million). This counts grants and state aid; Buffalo's share of county sales tax is treated as local revenue.
             </div>
             <div class="chart-takeaway">
               <div class="takeaway-label">The 2026 fiscal cliff</div>
@@ -620,7 +622,7 @@
 <section class="big-takeaway" id="action">
   <div class="big-takeaway-inner">
     <h2>Buffalo's recovery is real.<br><span>Its balance sheet isn't fixed.</span></h2>
-    <p>There are real signs of progress in Buffalo: new investment, rising property values, and growing revenue. But the numbers above show a city still carrying about $1.2 billion in unfunded retiree healthcare, infrastructure that has lost half its recorded useful life, and a persistent reliance (around half its budget) on revenue sources it does not control. With federal pandemic relief having run its course and S&amp;P flagging a <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank">Negative</a> outlook, the question is whether Buffalo can build a budget on money it can count on every year.</p>
+    <p>There are real signs of progress in Buffalo: new investment, rising property values, and growing revenue. But the numbers above show a city still carrying about $1.2 billion in unfunded retiree healthcare, infrastructure that has lost half its recorded useful life, and a persistent reliance (more than 40% of its budget) on state and federal aid it does not control. With federal pandemic relief having run its course and S&amp;P flagging a <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank">Negative</a> outlook, the question is whether Buffalo can build a budget on money it can count on every year.</p>
     <p>Every Buffalonian deserves the context to hold their leaders accountable. <strong>Send these charts to your <a class="il" href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank">Common Council member</a></strong> and ask:</p>
     <div class="ask-list">
       <div class="ask-item">How will the city balance the budget now that the $37 million in federal pandemic relief has run out?</div>
@@ -672,7 +674,7 @@ const years = [2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,
 const data = {
   finAssetsToLiab: [0.617,0.689,0.702,0.703,0.692,0.651,0.628,0.620,0.564,0.537,0.556,0.463,0.271,0.272,0.332,0.411,0.461,0.443,0.446,0.407],
   assetsToLiab:    [1.237,1.285,1.301,1.255,1.223,1.138,1.101,1.084,1.039,1.022,0.924,0.898,0.606,0.655,0.582,0.633,0.736,0.706,0.756,0.734],
-  govTransfers:    [47.69,54.63,53.04,55.17,56.28,54.00,53.48,53.72,57.21,55.15,55.39,54.90,56.36,53.37,50.58,59.25,58.83,58.80,60.06,57.76],
+  govTransfers:    [34.87,35.01,34.58,36.53,39.69,36.31,36.06,38.64,40.76,39.22,38.63,38.40,37.82,35.25,31.68,35.38,37.28,42.23,44.67,42.44],
   interestToRev:   [5.31,4.26,3.58,3.39,3.25,3.05,2.66,2.69,1.96,1.55,1.75,1.46,1.36,1.14,0.94,1.13,0.56,0.55,0.48,0.61],
   netBookToTCA:    [64.18,63.57,62.62,61.60,60.39,58.74,58.02,56.78,55.86,55.28,54.48,53.59,51.83,51.16,50.11,49.02,48.61,48.09,49.29,50.41],
   netDebtToRev:    [0.642,0.494,0.500,0.542,0.604,0.775,0.878,0.797,0.984,0.981,1.149,1.343,2.873,2.633,2.810,2.391,2.182,2.035,1.917,1.874],
@@ -750,7 +752,7 @@ const chartConfigs = {
     fmt: v => v.toFixed(1) + '% of revenue',
     yTitle: '% of Total Revenue',
     annotations: { pandemic: pandemicBox },
-    yOpts: { min: 0, max: 70, ticks: { callback: v => v + '%' } }
+    yOpts: { min: 0, max: 50, ticks: { callback: v => v + '%' } }
   },
   chart4: {
     dataKey: 'interestToRev', type: 'line', color: navy, fill: skyPale,
@@ -944,7 +946,7 @@ function copyPageLink(btn) {
 }
 function openShareEmail() {
   var subj = encodeURIComponent("Buffalo’s finances in 7 charts");
-  var body = encodeURIComponent("Strong Towns Buffalo pulled 20 years of data from the city’s official financial reports and turned them into seven interactive charts.\n\n" + window.location.href + "\n\nThe big picture: counting money-like assets, Buffalo is about $1.56 billion in the red, half the city’s infrastructure value is gone, and it leans on Albany and Washington for more than half its budget. The page includes three questions worth sending to your Council member.");
+  var body = encodeURIComponent("Strong Towns Buffalo pulled 20 years of data from the city’s official financial reports and turned them into seven interactive charts.\n\n" + window.location.href + "\n\nThe big picture: counting money-like assets, Buffalo is about $1.56 billion in the red, half the city’s infrastructure value is gone, and it leans on Albany and Washington for more than 40% of its budget. The page includes three questions worth sending to your Council member.");
   window.location.href = 'mailto:?subject=' + subj + '&body=' + body;
   return false;
 }

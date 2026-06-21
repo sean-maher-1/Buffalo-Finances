@@ -21,6 +21,7 @@
   .sitenav-links a{font-family:'Raleway',sans-serif;font-weight:700;font-size:.72rem;color:var(--sky);text-decoration:none;padding:6px 12px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
   .sitenav-links a:hover{background:rgba(197,223,252,.16);color:#fff}
   .sitenav-links a.active{background:var(--gold);color:var(--navy)}
+  .sitenav-links a.ext{color:var(--gold)}
   .hd{background:var(--navy);color:var(--cream);padding:64px 24px 52px;position:relative;overflow:hidden}
   .hd::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(197,223,252,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(197,223,252,.045) 1px,transparent 1px);background-size:46px 46px}
   .hd-in{max-width:880px;margin:0 auto;position:relative;z-index:1}
@@ -73,6 +74,7 @@
       <a href="does-it-own-more-than-it-owes.html">Explainer</a>
       <a href="finance-decoder.html">Decoder</a>
       <a href="net-position-toggle.html">Card</a>
+      <a class="ext" href="https://www.strongtownsbuffalo.com" target="_blank">Strong Towns Buffalo</a>
     </div>
   </div>
 </nav>
@@ -132,7 +134,7 @@
       <div class="r"><div class="n">Total assets &divide; liabilities</div><div class="v">1.237, 1.285, 1.301, 1.255, 1.223, 1.138, 1.101, 1.084, 1.039, 1.022, 0.924, 0.898, 0.606, 0.655, 0.582, 0.633, 0.736, 0.706, 0.756, 0.734</div></div>
       <div class="r"><div class="n">Net book value &divide; cost (% infrastructure remaining)</div><div class="v">64.2, 63.6, 62.6, 61.6, 60.4, 58.7, 58.0, 56.8, 55.9, 55.3, 54.5, 53.6, 51.8, 51.2, 50.1, 49.0, 48.6, 48.1, 49.3, 50.4</div></div>
       <div class="r"><div class="n">Interest &divide; revenue (%)</div><div class="v">5.31, 4.26, 3.58, 3.39, 3.25, 3.05, 2.66, 2.69, 1.96, 1.55, 1.75, 1.46, 1.36, 1.14, 0.94, 1.13, 0.56, 0.55, 0.48, 0.61</div></div>
-      <div class="r"><div class="n">Government transfers &divide; revenue (%)</div><div class="v">47.7, 54.6, 53.0, 55.2, 56.3, 54.0, 53.5, 53.7, 57.2, 55.2, 55.4, 54.9, 56.4, 53.4, 50.6, 59.3, 58.8, 58.8, 60.1, 57.8</div></div>
+      <div class="r"><div class="n">Government transfers &divide; revenue (%)</div><div class="v">34.9, 35.0, 34.6, 36.5, 39.7, 36.3, 36.1, 38.6, 40.8, 39.2, 38.6, 38.4, 37.8, 35.2, 31.7, 35.4, 37.3, 42.2, 44.7, 42.4</div></div>
     </div>
   </section>
   <section>
@@ -140,7 +142,7 @@
     <ul class="notes">
       <li><strong>Net financial position</strong> is the city's money-like assets (cash, investments, money owed to it, plus deferred outflows) minus everything it owes (total liabilities plus deferred inflows). It equals the audited net position minus net capital assets.</li>
       <li><strong>The cliff is FY2018.</strong> GASB 68 (pensions, FY2015) was modest for Buffalo because New York's state-administered pension systems are relatively well funded, and net position stayed positive through 2016. GASB 75 (retiree healthcare/OPEB, FY2018) is the step-down: total net position fell from &minus;$73M (FY2017) to &minus;$951M (FY2018) as the full OPEB liability hit the books. Net financial position bottomed near &minus;$1.65B in 2018 and has hovered around &minus;$1.5B to &minus;$1.6B since.</li>
-      <li><strong>Government transfers</strong> counts all revenue from other governments: operating grants, capital grants, state aid (Buffalo's AIM payment is ~$166M), intergovernmental revenue (including shared sales tax), and unrestricted grants. By this measure Buffalo has drawn roughly half its revenue from Albany and Washington every year of the series.</li>
+      <li><strong>Government transfers</strong> counts state and federal aid and grants: operating grants, capital grants, state aid (Buffalo's AIM payment is ~$166M), and unrestricted grants. Buffalo's share of Erie County sales tax (the ACFR's "intergovernmental" general revenue, ~$115M in 2025) is treated as local revenue and excluded, so this measures dependence on aid that could be cut. On that basis the share runs from about 35% in 2006 to roughly 42% in 2025.</li>
       <li><strong>Interest</strong> uses governmental interest and fiscal charges from the Statement of Activities; business-type (water/parking) interest is embedded in those functions and not broken out separately.</li>
       <li><strong>Total revenue</strong> is computed as total program revenues plus governmental general revenues, excluding interfund transfers (within ~0.1% of the MD&amp;A "Total revenues" line each year).</li>
       <li><strong>The repair-bill estimate</strong> restates the audit's accumulated depreciation ($957.7M in 2025) to today's construction prices (&times;1.75 to &times;2.25), giving a deliberately rough $1.7B&ndash;$2.2B range.</li>

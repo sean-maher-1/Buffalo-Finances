@@ -62,16 +62,16 @@ Capital(net) = total assets − cash&other. Reference net-assets levels for the 
   64.2, 63.6, 62.6, 61.6, 60.4, 58.7, 58.0, 56.8, 55.9, 55.3, 54.5, 53.6, 51.8, 51.2, 50.1, 49.0, 48.6, 48.1, 49.3, 50.4
 - **Interest ÷ revenue (%)** (governmental interest & fiscal charges):
   5.31, 4.26, 3.58, 3.39, 3.25, 3.05, 2.66, 2.69, 1.96, 1.55, 1.75, 1.46, 1.36, 1.14, 0.94, 1.13, 0.56, 0.55, 0.48, 0.61
-- **Government transfers ÷ revenue (%)** = (operating grants + capital grants + state aid + intergovernmental + unrestricted grants) ÷ total revenue:
-  47.7, 54.6, 53.0, 55.2, 56.3, 54.0, 53.5, 53.7, 57.2, 55.2, 55.4, 54.9, 56.4, 53.4, 50.6, 59.3, 58.8, 58.8, 60.1, 57.8
+- **Government transfers ÷ revenue (%)** = (operating grants + capital grants + state aid + unrestricted grants) ÷ total revenue; excludes the ACFR "intergovernmental" line (Buffalo's county sales-tax share), treated as local:
+  34.9, 35.0, 34.6, 36.5, 39.7, 36.3, 36.1, 38.6, 40.8, 39.2, 38.6, 38.4, 37.8, 35.2, 31.7, 35.4, 37.3, 42.2, 44.7, 42.4
 
 ## Headline figures (FY2025)
 - **Net financial position: −$1.56B** (≈ −$13,400 per household; ~117,000 households, U.S. Census ACS).
 - **Unfunded retiree healthcare (OPEB): $1.24B** ($1,237.5M) — the single largest driver of the gap.
 - Other drivers: **net pension liability ~$266M**, **bonds payable ~$326M**, judgments/compensated absences ~$55M.
 - **Infrastructure value remaining: 50%** (net book value ÷ original cost), down from ~64% in 2006.
-- **Government transfers: ~58% of revenue** — Buffalo has drawn roughly half its revenue from state/federal
-  sources every year of the series.
+- **Government transfers (aid & grants): ~42% of revenue** — state aid + grants, excluding Buffalo's county
+  sales-tax share; ~35% in 2006 rising to ~42% in 2025.
 - Accumulated depreciation $957.7M → deferred repair-bill estimate (×1.75–2.25) ≈ **$1.7B–$2.2B**
   (≈ $14,000–$18,000/household). Combined (on-books position + off-books repair bill) ≈ **−$3.3B to −$3.7B**.
 
@@ -87,10 +87,10 @@ Capital(net) = total assets − cash&other. Reference net-assets levels for the 
    Towns method (used for Joliet/Evanston) includes them, i.e. net position − net capital assets = −$1.56B.
 2. **The OPEB cliff is FY2018, not FY2017.** FY2016 net position was slightly positive (+$15M).
 3. **Net financial position is roughly flat (~−$1.5–1.6B) since 2018**, not a monotonic worsening to −$1.8B.
-4. **Government transfers are ~48%→58% of revenue, not 7%→22%.** The draft counted only program-revenue grants;
-   the correct measure includes state aid (AIM ≈ $166M in FY2025) and intergovernmental (shared sales tax),
-   which dominate Buffalo's external dependence. Buffalo has been ~50%+ reliant on Albany/Washington for two
-   decades. (If a narrower "grants only" definition is preferred, the FY2025 value is ~22%.)
+4. **Government transfers measured as ~35%→42% of revenue (state/federal aid + grants).** The draft counted only
+   program-revenue grants (~7%→22%), which drops AIM. A broad "all intergovernmental revenue" measure would be
+   ~48%→58%, but that counts Buffalo's county sales-tax share (~$115M in FY2025) as a transfer. The site treats
+   shared sales tax as local revenue and counts only aid + grants: ~35% in 2006, ~42% in 2025.
 5. **Series is FY2006–FY2025** (GASB 34 began FY2003; 2002 has no government-wide data).
 6. Confirmed accurate: OPEB ≈ $1.24B; infrastructure ~64%→50% remaining; interest burden fell sharply (~5.3%→0.6%).
 
@@ -102,8 +102,8 @@ Capital(net) = total assets − cash&other. Reference net-assets levels for the 
   interfund transfers (within ~0.1% of the MD&A "Total revenues" line each year).
 - **Interest** uses governmental "interest and fiscal charges" from the Statement of Activities; business-type
   (water/parking) interest is embedded in those functions and not separately broken out (consistent with the draft).
-- **Government transfers** = operating grants + capital grants + state aid + intergovernmental + unrestricted
-  grants (all revenue from other governments).
+- **Government transfers** = operating grants + capital grants + state aid + unrestricted grants (state and
+  federal aid and grants). Excludes the ACFR "intergovernmental" general-revenue line (~$115M in 2025), Buffalo's share of Erie County sales tax, treated here as local revenue.
 - **The repair-bill estimate** restates accumulated depreciation ($957.7M in FY2025) to today's construction
   prices (×1.75–2.25); a deliberately rough range.
 - **Per-household figures** use ~117,000 Buffalo households (U.S. Census, ACS).
