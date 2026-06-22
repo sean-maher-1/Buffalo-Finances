@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="Does Buffalo own more than it owes?">
-<meta property="og:description" content="Buffalo owes about $1.56 billion more than it owns. Seven indicators from twenty years of the city's own audited reports, plus one concrete first step.">
+<meta property="og:description" content="Buffalo owes about $1.56 billion more than it owns. Flip the switch to add the repair bill the books leave out, then see the one concrete first step.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://buffalofinances.org/">
 <meta property="og:image" content="https://buffalofinances.org/og-image.png">
@@ -14,42 +14,76 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light only">
 <title>Buffalo, NY · Does It Own More Than It Owes? · #DoTheMath</title>
-<meta name="description" content="A plain-English look at the City of Buffalo's finances: net financial position, the Strong Towns Finance Decoder, and the repair bill the books leave out.">
+<meta name="description" content="A plain-English look at the City of Buffalo's finances: net financial position, the repair bill the books leave out, and one concrete first step.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{--navy:#0c2240;--cream:#f5eed8;--offwhite:#faf7ef;--gold:#FFA800;--coral:#fd6262;--coral-deep:#d23b3b;--teal:#1a7a5a;--text-mid:#4a4a4a;--sky:#c5dffc;}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Lato',sans-serif;background:var(--offwhite);color:#1a1a1a;line-height:1.6;-webkit-font-smoothing:antialiased}
-  .hero{background:var(--navy);color:var(--cream);padding:88px 24px 64px;position:relative;overflow:hidden}
+  .hero{background:var(--navy);color:var(--cream);padding:64px 24px 56px;position:relative;overflow:hidden}
   .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(197,223,252,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(197,223,252,.045) 1px,transparent 1px);background-size:46px 46px}
-  .hero::after{content:'';position:absolute;bottom:-140px;right:-80px;width:420px;height:420px;border-radius:50%;background:var(--coral);opacity:.12}
-  .wrap{max-width:860px;margin:0 auto;position:relative;z-index:1}
-  .badge{display:inline-block;font-family:'Raleway',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:6px 16px;border-radius:2px;margin-bottom:22px}
-  h1{font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.05;letter-spacing:-0.02em;margin-bottom:16px}
+  .hero::after{content:'';position:absolute;bottom:-160px;right:-90px;width:440px;height:440px;border-radius:50%;background:var(--coral);opacity:.12}
+  .wrap{max-width:680px;margin:0 auto;position:relative;z-index:1}
+  .badge{display:inline-block;font-family:'Raleway',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:6px 16px;border-radius:2px;margin-bottom:20px}
+  h1{font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(2rem,5.6vw,3.1rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:14px}
   h1 span{color:var(--gold)}
-  .sub{font-size:1.12rem;color:var(--sky);max-width:640px}
-  main{max-width:860px;margin:0 auto;padding:48px 24px 16px}
-  .lead{font-size:1.1rem;color:var(--text-mid);margin-bottom:30px;max-width:680px}
-  .lead strong{color:var(--navy)}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-  a.card{display:flex;flex-direction:column;background:#fff;border:1px solid #ece4cf;border-radius:14px;padding:26px 24px;text-decoration:none;color:inherit;box-shadow:0 4px 18px rgba(12,34,64,.07);transition:transform .15s,box-shadow .15s,border-color .15s;border-top:4px solid var(--navy)}
-  a.card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(12,34,64,.14);border-color:var(--gold)}
-  a.card.c1{border-top-color:var(--coral)} a.card.c2{border-top-color:var(--gold)} a.card.c3{border-top-color:var(--teal)}
-  .tag{font-family:'Raleway',sans-serif;font-weight:800;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mid);margin-bottom:10px}
-  .card h2{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.18rem;color:var(--navy);line-height:1.2;margin-bottom:8px}
-  .card p{font-size:.92rem;color:var(--text-mid);margin-bottom:16px;flex:1}
-  .go{font-family:'Raleway',sans-serif;font-weight:800;font-size:.82rem;color:var(--navy)}
-  .go .arrow{color:var(--gold)}
-  footer{max-width:860px;margin:0 auto;padding:28px 24px 60px;font-size:.82rem;color:#857f72;line-height:1.55}
-  footer a{color:#9a7400;font-weight:700;text-decoration:none}
-  .getinvolved{margin-top:36px;background:var(--cream);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:22px 24px}
+  .sub{font-size:1.08rem;color:var(--sky);max-width:560px}
+  /* ===== ANSWER CARD (the interactive number) ===== */
+  .answer-card{background:#fff;border:1px solid #ece4cf;border-radius:16px;box-shadow:0 14px 44px rgba(12,34,64,.30);padding:28px 26px 22px;margin-top:30px;text-align:center}
+  .num{font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(2.9rem,13vw,4.7rem);line-height:.96;letter-spacing:-0.02em;margin:2px 0 6px;color:var(--coral-deep);transition:color .35s ease,transform .35s ease}
+  .num.flip{transform:scale(.94)}
+  .cap{font-family:'Raleway',sans-serif;font-weight:700;font-size:.98rem;color:var(--coral-deep);min-height:1.3em;transition:color .35s ease;max-width:430px;margin:0 auto}
+  .toggle-row{display:flex;align-items:center;gap:14px;justify-content:center;margin:24px auto 0;padding:15px 18px;background:var(--offwhite);border:1px solid #ece4cf;border-radius:12px;max-width:460px;cursor:pointer;user-select:none}
+  .toggle-row:hover{border-color:#e0d6ba}
+  .switch{position:relative;flex-shrink:0;width:52px;height:30px}
+  .switch input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+  .track{position:absolute;inset:0;background:#cfc8b6;border-radius:999px;transition:background .25s ease}
+  .thumb{position:absolute;top:3px;left:3px;width:24px;height:24px;background:#fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .25s ease}
+  .switch input:checked + .track{background:var(--coral)}
+  .switch input:checked + .track .thumb{transform:translateX(22px)}
+  .switch input:focus-visible + .track{outline:2px solid var(--navy);outline-offset:2px}
+  .tlabel{text-align:left;font-size:.94rem;color:var(--navy);font-weight:700}
+  .reveal{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .reveal.open{max-height:780px}
+  @media (max-width:560px){.reveal.open{max-height:1500px}}
+  .reveal-inner{padding:22px 4px 2px;text-align:left;border-top:1px solid #f0ead8;margin-top:22px}
+  .reveal-inner p{font-size:.96rem;color:var(--text-mid);margin-bottom:14px}
+  .reveal-inner p strong{color:var(--navy)}
+  .ledger{background:var(--offwhite);border:1px solid #ece4cf;border-radius:10px;padding:6px 16px}
+  .ledger .r{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px solid #ece4cf}
+  .ledger .r:last-child{border-bottom:none}
+  .ledger .l{font-size:.94rem;color:var(--text-mid)}
+  .ledger .v{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.2rem;color:var(--navy);white-space:nowrap}
+  .ledger .v.bad{color:var(--coral-deep)}
+  .ledger .r.total .l{font-weight:700;color:var(--navy);font-family:'Raleway',sans-serif}
+  .ledger .r.total{background:#fff;margin:0 -16px;padding:12px 16px;border-radius:0 0 10px 10px}
+  .range{font-size:.8rem;color:var(--text-mid);font-style:italic;text-align:center;margin-top:10px}
+  /* ===== MAIN ===== */
+  main{max-width:680px;margin:0 auto;padding:40px 24px 16px}
+  .takeaway{font-size:1.06rem;color:var(--text-mid);margin-bottom:26px}
+  .takeaway strong{color:var(--navy)}
+  .deeper{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+  .deeper a{flex:1;min-width:220px;display:block;background:#fff;border:1px solid #ece4cf;border-left:4px solid var(--navy);border-radius:10px;padding:16px 18px;text-decoration:none;color:inherit;box-shadow:0 3px 14px rgba(12,34,64,.06);transition:transform .15s,box-shadow .15s,border-color .15s}
+  .deeper a:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(12,34,64,.13);border-left-color:var(--gold)}
+  .deeper .dt{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.02rem;color:var(--navy);margin-bottom:3px}
+  .deeper .dd{font-size:.88rem;color:var(--text-mid)}
+  .deeper .arrow{color:var(--gold)}
+  .cta-primary{text-align:center;margin:4px 0 8px}
+  .btn-primary{display:inline-block;font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.01em;background:var(--gold);color:var(--navy);text-decoration:none;padding:16px 30px;border-radius:8px;box-shadow:0 4px 16px rgba(255,168,0,.32);transition:transform .12s,box-shadow .15s}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,168,0,.42)}
+  .cta-note{font-size:.86rem;color:#857f72;margin-top:10px}
+  .getinvolved{margin-top:34px;background:var(--cream);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:22px 24px}
   .getinvolved p{font-size:1rem;color:var(--text-mid);margin:0;line-height:1.6}
   .getinvolved strong{color:var(--navy)}
   .getinvolved a{color:#9a7400;font-weight:700;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:2px}
+  footer{max-width:680px;margin:0 auto;padding:28px 24px 60px;font-size:.82rem;color:#857f72;line-height:1.55}
+  footer a{color:#9a7400;font-weight:700;text-decoration:none}
   /* ===== SITE NAV ===== */
   .sitenav{position:sticky;top:0;z-index:300;background:var(--navy);border-bottom:2px solid var(--gold)}
-  .sitenav-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:9px 22px}
+  .sitenav-inner{max-width:680px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:9px 22px}
   .sitenav-brand{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);text-decoration:none;white-space:nowrap}
   .sitenav-brand svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
   .sitenav-brand:hover{color:#fff}
@@ -74,9 +108,8 @@
     </a>
     <div class="sitenav-links">
       <a href="index.html" class="active">Home</a>
-      <a href="does-it-own-more-than-it-owes.html">Explainer</a>
+      <a href="does-it-own-more-than-it-owes.html">The Story</a>
       <a href="finance-decoder.html">Decoder</a>
-      <a href="net-position-toggle.html">Snapshot</a>
       <a href="take-action.html">Take Action</a>
       <a class="ext" href="https://www.strongtownsbuffalo.com" target="_blank">Strong Towns Buffalo</a>
     </div>
@@ -86,38 +119,69 @@
   <div class="wrap">
     <span class="badge">#DoTheMath · City of Buffalo, NY</span>
     <h1>Does Buffalo own more than it <span>owes</span>?</h1>
-    <p class="sub">A plain-English look at the city's finances, built entirely from its own audited annual reports (2006&ndash;2025).</p>
+    <p class="sub">Short answer, straight from the city's own audited books: no. Flip the switch to see the whole picture.</p>
+    <div class="answer-card">
+      <div class="num" id="num">&minus;$1.56B</div>
+      <div class="cap" id="cap">Buffalo owes that much more than it owns</div>
+      <label class="toggle-row" for="t">
+        <span class="switch"><input type="checkbox" id="t" aria-describedby="cap"><span class="track"><span class="thumb"></span></span></span>
+        <span class="tlabel">Now add the infrastructure repair bill the books leave out</span>
+      </label>
+      <div class="reveal" id="reveal">
+        <div class="reveal-inner">
+          <p>Buffalo's audited bottom line is <strong>already negative</strong>, about &minus;$590&nbsp;million. And that is after counting roughly $974&nbsp;million of roads, pipes, and buildings the city can't sell to pay a pension or a bond. Strip those out and the money-test goes deeper red: <strong>&minus;$1.56&nbsp;billion</strong>, driven mostly by unfunded retiree healthcare (OPEB ~$1.2B), pensions, and debt. That's roughly <strong>&minus;$13,400 per household</strong>.</p>
+          <p>And there's still one big thing the books leave out: what it would cost to fix worn-out roads, pipes, and buildings. Buffalo's audit shows about <strong>$958M</strong> of its infrastructure already used up; restated to today's construction prices, replacing it runs an estimated <strong>$1.7B&ndash;$2.2B</strong> more.</p>
+          <div class="ledger">
+            <div class="r"><span class="l">On the books (net financial position)</span><span class="v bad">&minus;$1.56B</span></div>
+            <div class="r"><span class="l">Estimated repair bill (not on the books)</span><span class="v bad">&minus;$1.9B</span></div>
+            <div class="r total"><span class="l">Closer to the real position</span><span class="v bad">&asymp; &minus;$3.5B</span></div>
+          </div>
+          <div class="range">The repair bill is a deliberately rough estimate; the combined figure lands somewhere around &minus;$3.2B to &minus;$3.7B, roughly &minus;$30,000 per household.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 <main>
-  <p class="lead">Buffalo's official books are already in the red. And once you strip out the roads, pipes, and buildings the city can't sell, it <strong>owes about $1.56&nbsp;billion more than it owns</strong> in money-like assets, a gap driven mostly by unfunded retiree healthcare, pensions, and debt. Here's the story, three ways:</p>
-  <div class="cards">
-    <a class="card c1" href="does-it-own-more-than-it-owes.html">
-      <div class="tag">The explainer</div>
-      <h2>Does Buffalo own more than it owes?</h2>
-      <p>The full kitchen-table walkthrough: how the &minus;$1.56B is built, what's in it, and the repair bill the books leave out.</p>
-      <span class="go">Read it <span class="arrow">&#10132;</span></span>
+  <p class="takeaway">That gap is built entirely from the city's own audited reports, and it isn't a sign Buffalo is failing, it's a sign of promises (mostly retiree healthcare) coming due. <strong>The point isn't austerity.</strong> It's so Buffalo can afford the parks, libraries, clean water, and services that make it worth living in, and keep affording them.</p>
+  <div class="deeper">
+    <a href="does-it-own-more-than-it-owes.html">
+      <div class="dt">Read the full story <span class="arrow">&#10132;</span></div>
+      <div class="dd">The kitchen-table walkthrough: how the &minus;$1.56B is built and what's in it.</div>
     </a>
-    <a class="card c2" href="finance-decoder.html">
-      <div class="tag">The deep dive</div>
-      <h2>Buffalo's Fiscal Health: Decoded</h2>
-      <p>Seven indicators over twenty years, charted with the Strong Towns Finance Decoder method. The 2018 cliff, and the one line that's a genuine win.</p>
-      <span class="go">Explore the charts <span class="arrow">&#10132;</span></span>
-    </a>
-    <a class="card c3" href="net-position-toggle.html">
-      <div class="tag">The 30-second version</div>
-      <h2>One number, with a toggle</h2>
-      <p>Just the headline: how much more Buffalo owes than it owns, and what happens when you add the repair bill the books leave out.</p>
-      <span class="go">See the card <span class="arrow">&#10132;</span></span>
+    <a href="finance-decoder.html">
+      <div class="dt">See 20 years of charts <span class="arrow">&#10132;</span></div>
+      <div class="dd">Seven indicators from the city's audits, including the one line that's a genuine win.</div>
     </a>
   </div>
+  <div class="cta-primary">
+    <a class="btn-primary" href="take-action.html">Ask the city to publish one number &#8594;</a>
+    <p class="cta-note">A ready-to-send note to your Common Council member. Takes about five minutes.</p>
+  </div>
   <div class="getinvolved">
-    <p>Buffalo's recovery is real, but its balance sheet isn't fixed. The same <strong>Strong Towns principles</strong> that explain how the city got here also point the way out: maintain what we already have, grow incrementally on land the city already serves, and make sure new development pays for its own upkeep. The aim isn't austerity; it's a Buffalo that can <strong>afford great things</strong>, good parks, open libraries, clean water, reliable services, and keep affording them. <a href="https://www.strongtownsbuffalo.com" target="_blank">Get involved with Strong Towns Buffalo &#8594;</a></p>
-    <p style="margin-top:14px">And the smallest first step is the most winnable: ask the city to publish <strong>one number it currently doesn't</strong>, what it would cost to bring the roads and pipes Buffalo already owns back to good repair. You can't fix what you won't measure. <a href="take-action.html">Send that ask &#8594;</a></p>
+    <p>Buffalo's recovery is real, but its balance sheet isn't fixed. The same <strong>Strong Towns principles</strong> that explain how the city got here also point the way out: maintain what we already have, grow incrementally on land the city already serves, and make sure new development pays for its own upkeep. <a href="https://www.strongtownsbuffalo.com" target="_blank">Get involved with Strong Towns Buffalo &#8594;</a></p>
   </div>
 </main>
 <footer>
   <p>An independent #DoTheMath project for educational purposes. Not affiliated with or endorsed by the City of Buffalo. Figures come from the City of Buffalo's Annual Comprehensive Financial Reports (2006&ndash;2025); method follows the <a href="https://www.strongtowns.org/decoder" target="_blank">Strong Towns Finance Decoder</a>. See the full <a href="data-sources.html">data &amp; sources</a>.</p>
 </footer>
+<script>
+(function(){
+  var t=document.getElementById('t'),num=document.getElementById('num'),
+      cap=document.getElementById('cap'),reveal=document.getElementById('reveal');
+  var ON={n:'≈ −$3.5B',c:'with the repair bill the books leave out added in'},
+      OFF={n:'−$1.56B',c:"Buffalo owes that much more than it owns"};
+  t.addEventListener('change',function(){
+    var on=t.checked;
+    num.classList.add('flip');
+    setTimeout(function(){
+      num.textContent=on?ON.n:OFF.n;
+      cap.textContent=on?ON.c:OFF.c;
+      num.classList.remove('flip');
+    },150);
+    reveal.classList.toggle('open',on);
+  });
+})();
+</script>
 </body>
 </html>
