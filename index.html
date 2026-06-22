@@ -72,8 +72,13 @@
   .deeper .dd{font-size:.88rem;color:var(--text-mid)}
   .deeper .arrow{color:var(--gold)}
   .cta-primary{text-align:center;margin:4px 0 8px}
-  .btn-primary{display:inline-block;font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.01em;background:var(--gold);color:var(--navy);text-decoration:none;padding:16px 30px;border-radius:8px;box-shadow:0 4px 16px rgba(255,168,0,.32);transition:transform .12s,box-shadow .15s}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,168,0,.42)}
+  .btn-primary{position:relative;overflow:hidden;display:inline-block;font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.01em;background:var(--gold);color:var(--navy);text-decoration:none;padding:16px 30px;border-radius:8px;box-shadow:0 4px 16px rgba(255,168,0,.32);animation:ctaPulse 2.6s ease-in-out infinite;transition:transform .12s}
+  .btn-primary::after{content:"";position:absolute;top:0;bottom:0;left:-85%;width:55%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.75) 50%,transparent 100%);transform:skewX(-18deg);pointer-events:none;animation:ctaSweep 3.8s ease-in-out infinite}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-primary:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+  @keyframes ctaPulse{0%,100%{box-shadow:0 4px 14px rgba(255,168,0,.30)}50%{box-shadow:0 6px 20px rgba(255,168,0,.48),0 0 24px 4px rgba(255,168,0,.55)}}
+  @keyframes ctaSweep{0%{left:-85%}55%{left:135%}100%{left:135%}}
+  @media (prefers-reduced-motion:reduce){.btn-primary{animation:none}.btn-primary::after{display:none}}
   .cta-note{font-size:.86rem;color:#857f72;margin-top:10px}
   .getinvolved{margin-top:34px;background:var(--cream);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:22px 24px}
   .getinvolved p{font-size:1rem;color:var(--text-mid);margin:0;line-height:1.6}
