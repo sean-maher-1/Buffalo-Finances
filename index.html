@@ -139,7 +139,7 @@
     <p class="sub">Most of what Buffalo owes isn't debt, and that's the encouraging part. Here's the short, plain version, straight from the city's own books.</p>
     <div class="answer-card">
       <div class="num" id="num">&minus;$1.56B</div>
-      <div class="cap" id="cap">owed beyond what the city has in the bank, and most of it is unfunded promises, not debt</div>
+      <div class="cap" id="cap">owed beyond what the city has in the bank, and most of it is unfunded retiree benefits, not debt</div>
       <label class="toggle-row" for="t">
         <span class="switch"><input type="checkbox" id="t" aria-describedby="cap"><span class="track"><span class="thumb"></span></span></span>
         <span class="tlabel">Add the repairs the books leave out</span>
@@ -187,7 +187,7 @@
   <div class="deeper">
     <a href="does-it-own-more-than-it-owes.html">
       <div class="dt">The whole story <span class="arrow">&#10132;</span></div>
-      <div class="dd">A plain, kitchen-table walkthrough, and why the gap is mostly promises, not debt.</div>
+      <div class="dd">A plain, kitchen-table walkthrough, and why the gap is mostly retiree benefits, not debt.</div>
     </a>
     <a href="finance-decoder.html">
       <div class="dt">20 years of charts <span class="arrow">&#10132;</span></div>
@@ -206,7 +206,7 @@
   var t=document.getElementById('t'),num=document.getElementById('num'),
       cap=document.getElementById('cap'),reveal=document.getElementById('reveal');
   var ON={n:'≈ −$3.5B',c:'with the road-and-pipe repairs added in'},
-      OFF={n:'−$1.56B',c:"owed beyond what the city has in the bank, and most of it is unfunded promises, not debt"};
+      OFF={n:'−$1.56B',c:"owed beyond what the city has in the bank, and most of it is unfunded retiree benefits, not debt"};
   t.addEventListener('change',function(){
     var on=t.checked;
     num.classList.add('flip');
