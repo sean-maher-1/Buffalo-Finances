@@ -136,10 +136,10 @@
   <div class="wrap">
     <span class="badge">#DoTheMath · City of Buffalo, NY</span>
     <h1>What does Buffalo really <span>owe</span>?</h1>
-    <p class="sub">Most of what Buffalo owes isn't debt, and that's the encouraging part. Here's the short, plain version, straight from the city's own books.</p>
+    <p class="sub">Roughly $1.56 billion, most of it retiree health care the city promised its workers but never set aside, and that's before the roads and pipes it keeps putting off fixing. Getting ahead of it starts with one number the city has never added up.</p>
     <div class="answer-card">
       <div class="num" id="num">&minus;$1.56B</div>
-      <div class="cap" id="cap">owed beyond what the city has in the bank, and most of it is unfunded retiree benefits, not debt</div>
+      <div class="cap" id="cap">owed beyond what the city has in the bank, mostly unfunded retiree benefits</div>
       <label class="toggle-row" for="t">
         <span class="switch"><input type="checkbox" id="t" aria-describedby="cap"><span class="track"><span class="thumb"></span></span></span>
         <span class="tlabel">Add the repairs the books leave out</span>
@@ -160,15 +160,15 @@
   </div>
 </header>
 <main>
-  <p class="takeaway">Good news first: <strong>borrowing isn't really the problem.</strong> Buffalo's debt is small and well-managed. The big number is mostly one promise the city hasn't funded yet: retiree health care. So the real questions are simpler:</p>
+  <p class="takeaway">It's a serious number, but <strong>we know exactly what it is</strong>, and where it came from. That makes it something the city can work on deliberately, starting with a few plain questions:</p>
   <div class="questions">
     <div class="q">
-      <div class="qq">1. Is it funding its promises?</div>
-      <div class="qa">Not yet. Retiree health care (~$1.2B) is the biggest thing it owes, and it's mostly unfunded.</div>
+      <div class="qq">1. Are its long-term obligations funded?</div>
+      <div class="qa">Not fully. Its largest obligation, about $1.2 billion in retiree health care, has mostly been funded year to year rather than set aside in advance.</div>
     </div>
     <div class="q">
-      <div class="qq">2. Is it caring for what it owns?</div>
-      <div class="qa">Unclear, because the city has never added up what good repair would cost.</div>
+      <div class="qq">2. Is it maintaining what it owns?</div>
+      <div class="qa">Hard to say. The city doesn't yet add up what it would cost to keep its roads, pipes, and buildings in good repair.</div>
     </div>
     <div class="q">
       <div class="qq">3. How much should the city borrow?</div>
@@ -176,9 +176,11 @@
     </div>
   </div>
   <div class="objective">
-    <div class="ol">The easy first step</div>
-    <h2>Ask the city for one number</h2>
-    <p>What would it cost to bring everything Buffalo owns back to good repair? The city tracks the wear but never adds up the bill. That one number tells everyone, residents and officials alike, whether the city is investing too little, too much, or in the right places. It takes one Council member to ask.</p>
+    <div class="ol">The objective</div>
+    <h2>Get Buffalo to publish its repair bill</h2>
+    <p>One figure, updated every year: <strong>what it would cost to bring Buffalo's roads, pipes, and buildings back to good repair.</strong> The city measures the wear but has never added up the bill, so right now no one actually knows it.</p>
+    <p>That number is the honest baseline for every budget and repair decision. It shows whether the city is keeping up or falling behind, and where the money should go first, and you can't manage what you don't measure.</p>
+    <p>The data already sits in the city's own audit, so producing it costs almost nothing, and it takes a single Council member to request it.</p>
     <div class="cta-wrap">
       <a class="btn-primary" href="take-action.html">Ask the city to publish one number &#8594;</a>
       <p class="cta-note">A ready-to-send note to your Council member. About five minutes.</p>
@@ -187,7 +189,7 @@
   <div class="deeper">
     <a href="does-it-own-more-than-it-owes.html">
       <div class="dt">The whole story <span class="arrow">&#10132;</span></div>
-      <div class="dd">A plain, kitchen-table walkthrough, and why the gap is mostly retiree benefits, not debt.</div>
+      <div class="dd">A plain, kitchen-table walkthrough of what the gap is made of, and what to do about it.</div>
     </a>
     <a href="finance-decoder.html">
       <div class="dt">20 years of charts <span class="arrow">&#10132;</span></div>
@@ -206,7 +208,7 @@
   var t=document.getElementById('t'),num=document.getElementById('num'),
       cap=document.getElementById('cap'),reveal=document.getElementById('reveal');
   var ON={n:'≈ −$3.5B',c:'with the road-and-pipe repairs added in'},
-      OFF={n:'−$1.56B',c:"owed beyond what the city has in the bank, and most of it is unfunded retiree benefits, not debt"};
+      OFF={n:'−$1.56B',c:"owed beyond what the city has in the bank, mostly unfunded retiree benefits"};
   t.addEventListener('change',function(){
     var on=t.checked;
     num.classList.add('flip');
