@@ -27,4 +27,10 @@ At the user's direction, v2 **does not opine on whether Buffalo should borrow mo
 - **Old Snapshot URL** (`net-position-toggle.html`) redirects to the homepage and now carries the new share title.
 
 ## Unchanged from v1
-All underlying data (FY2006–2025 ACFR figures, the 7 Decoder indicators, CSV/JSON/provenance) is identical to v1 — every change has been framing and tone, not numbers. Two font families, the redirect, and the glowing call-to-action carry over. Nav is four items: Home · The Story · Decoder · Take Action.
+All underlying data (FY2006–2025 ACFR figures, the 7 Decoder indicators, CSV/JSON/provenance) is identical to v1 — every change has been framing and tone, not numbers. Two font families, the redirect, and the glowing call-to-action carry over. Nav labels/paths were later updated (see below).
+
+## Path names + nav relabel (June 2026, user's call)
+- **Nav menu** is now newcomer-friendlier: **Start Here · The Story · By the Numbers · Take Action** (was Home · The Story · Decoder · Take Action). Same order; only "Home"→"Start Here" and "Decoder"→"By the Numbers" changed. The decoder page keeps its Strong Towns "Finance Decoder" branding in its own title/H1.
+- **Filenames** (descriptive/SEO direction): the explainer/story page was renamed `does-it-own-more-than-it-owes.html` → **`finances-explained.html`** (the old name was from the pre-pivot thesis). `finance-decoder.html` kept as-is. `index.html`, `take-action.html`, `data-sources.html` unchanged.
+- The **old story path** (`does-it-own-more-than-it-owes.html`) is now a redirect stub → `finances-explained.html` (carries the story's OG meta + `noindex` + canonical), so any already-shared links keep working.
+- All six internal links to the old story path were rewritten; its own `og:url` updated. `outputs/sweep2-v2.py` updated (PAGES, REDIRECTS now a {file:target} map, redirect check generalized beyond index.html). Full sweep: ALL PASS.
