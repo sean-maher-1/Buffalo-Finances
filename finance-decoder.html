@@ -71,6 +71,12 @@
     border-radius: 50%;
   }
   #fd .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+  #fd .deep-note { background: var(--sky-pale); border-top: 3px solid var(--gold); padding: 18px 24px; }
+  #fd .deep-note-inner { max-width: 860px; margin: 0 auto; display: flex; gap: 14px; align-items: flex-start; }
+  #fd .dn-tag { flex-shrink: 0; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 5px 11px; border-radius: 999px; margin-top: 3px; white-space: nowrap; }
+  #fd .deep-note p { margin: 0; font-size: 0.98rem; color: var(--text-mid); line-height: 1.6; }
+  #fd .deep-note a { color: var(--navy); font-weight: 700; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 2px; }
+  @media (max-width: 560px) { #fd .deep-note-inner { flex-direction: column; gap: 8px; } }
   #fd .hero-badge {
     display: inline-block;
     font-family: 'Raleway', sans-serif;
@@ -185,6 +191,10 @@
   #fd .big-takeaway h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1.15; margin-bottom: 24px; color: var(--cream); }
   #fd .big-takeaway h2 span { color: var(--gold) !important; }
   #fd .big-takeaway p { font-size: 1.05rem; color: var(--sky) !important; max-width: 760px; margin-bottom: 16px; line-height: 1.6; }
+  #fd .big-takeaway .context-expand { margin: 0 0 20px; }
+  #fd .big-takeaway .context-expand summary { color: var(--gold); font-size: 0.9rem; }
+  #fd .big-takeaway .context-expand summary::before { background: var(--gold); color: var(--navy); }
+  #fd .big-takeaway .context-expand p { color: var(--sky) !important; max-width: 760px; margin-bottom: 0; }
   #fd .ask-list { max-width: 760px; margin: 0 0 1.5rem 1.5em; padding: 0; }
   #fd .next-step { background: rgba(255,168,0,0.10); border: 1px solid rgba(255,168,0,0.35); border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 4px 0 28px; max-width: 760px; }
   #fd .next-step .ns-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
@@ -337,7 +347,7 @@
     <div class="toc-divider"></div>
     <div class="toc-links">
       <a class="pg" href="index.html">Start Here</a>
-      <a class="pg" href="finances-explained.html">The Story</a>
+      <a class="pg" href="finances-explained.html">Explained</a>
       <a class="pg" href="take-action.html">Take Action</a>
       <a class="pg ext" href="https://www.strongtownsbuffalo.com" target="_blank">Strong Towns Buffalo</a>
       <div class="toc-divider"></div>
@@ -360,6 +370,13 @@
     <p class="source">Data: 2006&ndash;2025 via <a href="https://www.buffalocomptrollerny.gov/150/Annual-Comprehensive-Financial-Reports-A" target="_blank">Buffalo Annual Comprehensive Financial Reports</a></p>
   </div>
 </header>
+<!-- ORIENTATION -->
+<div class="deep-note">
+  <div class="deep-note-inner">
+    <span class="dn-tag">The deep dive</span>
+    <p>This is the full picture: twenty years of Buffalo's own audited charts, here so you can check the numbers yourself. It's a lot, and that's the point. If you're just getting oriented, start with the <a href="index.html">30-second version</a> or <a href="finances-explained.html">the plain-English story</a>, then come back whenever you want the receipts.</p>
+  </div>
+</div>
 <!-- #DoTheMath INTRO -->
 <section class="principle-intro" id="dothemath">
   <div class="principle-intro-inner">
@@ -382,7 +399,8 @@
         <div class="q-text">"How dependent is the city of Buffalo on external funding?"</div>
       </div>
     </div>
-    <p style="margin-top:24px;"><a class="il" href="https://www.strongtowns.org/accounting" target="_blank"><strong>Transparent local accounting</strong></a> would let Buffalo invest in transit, housing, and parks on a predictable schedule. Instead, for decades the city has balanced its books with money that was never going to last. Economists call this <em><a class="il" href="https://www.behavioraleconomics.com/resources/mini-encyclopedia-of-be/time-temporal-discounting/" target="_blank">temporal discounting</a></em>: treating tomorrow's obligations as less real than today's. State aid bumps, reserve drawdowns, and federal pandemic relief (ARPA) have each taken a turn plugging the gap. It is a pattern almost as old as the post-World War II suburban expansion that hollowed out Buffalo's tax base, and the warning signs keep coming: most recently, S&amp;P revised Buffalo's outlook to Negative in 2021 and again in <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank"><strong>September 2025</strong></a>.</p>
+    <p style="margin-top:24px;"><a class="il" href="https://www.strongtowns.org/accounting" target="_blank"><strong>Transparent local accounting</strong></a> would let Buffalo invest in transit, housing, and parks on a predictable schedule. Instead, for decades the city has balanced its books with money that was never going to last. Economists call this <em><a class="il" href="https://www.behavioraleconomics.com/resources/mini-encyclopedia-of-be/time-temporal-discounting/" target="_blank">temporal discounting</a></em>: treating tomorrow's obligations as less real than today's.</p>
+    <p>State aid bumps, reserve drawdowns, and federal pandemic relief (ARPA) have each taken a turn plugging the gap. In 2026, with the stimulus spent, the city sold four downtown parking ramps to a newly created <a class="il" href="https://www.wkbw.com/news/local-news/buffalo/buffalo-sells-4-parking-ramps-to-buffalo-parking-authority-for-62-million" target="_blank">Buffalo Parking Authority</a>, which borrowed about $62 million to buy them, cash the city can raise only once. It is a pattern almost as old as the post-World War II suburban expansion that hollowed out Buffalo's tax base, and the warning signs keep coming: most recently, S&amp;P revised Buffalo's outlook to Negative in 2021 and again in <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank"><strong>September 2025</strong></a>.</p>
   </div>
 </section>
 <!-- HOW DID WE GET HERE -->
@@ -430,7 +448,7 @@
     <p class="summary-footnote">The charts below break it down, grouped by those three questions.</p>
     <div class="outside-review">
       <div class="or-label">We're not the only ones doing this math</div>
-      <p>We're not the only ones doing this math. In <a class="il" href="https://www.osc.ny.gov/press/releases/2026/05/dinapoli-releases-budget-review-city-buffalo" target="_blank">May 2026</a> the New York State Comptroller flagged a structural gap in Buffalo's 2026-27 budget and noted the city had long leaned on non-recurring revenue, including <strong>$331 million</strong> of federal stimulus since 2020-21. The city took that seriously: its adopted 2026-27 budget closes the gap largely through a <strong>19% property-tax levy increase</strong> (trimmed from a proposed 25.8%) and added state aid, a hard step toward what the administration calls &ldquo;returning to fiscal stability.&rdquo; S&amp;P, which rates Buffalo investment-grade, held its outlook at <strong>Negative</strong> in <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank">September 2025</a>. The long-term obligations on this page are why steps this hard keep being necessary, and why getting ahead of them matters.</p>
+      <p>We're not the only ones doing this math. In <a class="il" href="https://www.osc.ny.gov/press/releases/2026/05/dinapoli-releases-budget-review-city-buffalo" target="_blank">May 2026</a> the New York State Comptroller flagged a structural gap in Buffalo's 2026-27 budget and noted the city had long leaned on non-recurring revenue, including <strong>$331 million</strong> of federal stimulus since 2020-21. The city took that seriously: its adopted 2026-27 budget closes the gap largely through a <strong>19% property-tax levy increase</strong> (trimmed from a proposed 25.8%) and added state aid, a hard step toward what the administration calls &ldquo;returning to fiscal stability.&rdquo; Earlier, in <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank">September 2025</a>, months before this budget, S&amp;P had cut its outlook on Buffalo's investment-grade bonds to <strong>Negative</strong> (from Stable), citing the reserve drawdown and continued reliance on one-time revenue. The long-term obligations on this page are why steps this hard keep being necessary, and why getting ahead of them matters.</p>
     </div>
   </div>
 </section>
@@ -648,7 +666,11 @@
 <section class="big-takeaway" id="action">
   <div class="big-takeaway-inner">
     <h2>Buffalo's recovery is real.<br><span>Its balance sheet isn't fixed.</span></h2>
-    <p>There are real signs of progress in Buffalo: new investment, rising property values, and growing revenue. The numbers above also show a city still carrying about $1.2 billion in unfunded retiree healthcare, infrastructure that has lost half its recorded useful life, and a reliance (more than 40% of its budget) on state and federal aid it does not control. With the pandemic stimulus now spent, the city's 2026-27 budget closed a roughly $100 million structural gap, largely through a <a class="il" href="https://www.osc.ny.gov/press/releases/2026/05/dinapoli-releases-budget-review-city-buffalo" target="_blank">19% property-tax increase</a> (a significant jump, trimmed from a proposed 25.8%) and added state aid. Read in good faith, that is an opportunity as much as a burden: it is revenue the city actually controls, and spent on funding promises and maintaining what Buffalo owns, it is how the city starts paying for its future instead of patching its present. The question this page raises is how to make hard budgets like it rarer: building budgets on revenue Buffalo can count on every year, and getting ahead of the long-term obligations instead of meeting them in a crunch. The reason to do any of this isn't austerity; it's so Buffalo can afford the parks, libraries, clean water, and services that make it worth living in, and keep affording them.</p>
+    <p>Buffalo shows real progress, new investment, rising property values, and growing revenue. But the charts above also show a city carrying about <strong>$1.2 billion</strong> in unfunded retiree healthcare, half its infrastructure value used up, and more than 40% of its budget riding on aid it doesn't control.</p>
+    <details class="context-expand">
+      <summary>How this year's budget fits in</summary>
+      <p>With pandemic stimulus now spent, the city's 2026-27 budget closed a roughly $100 million structural gap, largely through a <a class="il" href="https://www.osc.ny.gov/press/releases/2026/05/dinapoli-releases-budget-review-city-buffalo" target="_blank">19% property-tax increase</a> (trimmed from a proposed 25.8%) and added state aid. Read in good faith, that's an opportunity as much as a burden: it's revenue the city controls, and spent on funding promises and maintaining what Buffalo owns, it's how the city pays for its future instead of patching its present. The goal isn't austerity; it's building budgets on revenue Buffalo can count on and getting ahead of the long-term obligations, so the city keeps affording the parks, libraries, clean water, and services that make it worth living in.</p>
+    </details>
     <div class="next-step">
       <div class="ns-label">The next smallest step</div>
       <p>Fixing this doesn't start with the $1.2 billion. It starts with <strong>one number the city doesn't yet publish</strong>: what it would cost to bring the roads, pipes, and buildings Buffalo already owns back to good condition. The audit records the wear, about $958 million used up, but doesn't yet total the repair bill. A published figure is what lets a city prioritize, budget for, and tackle its repairs, and a rough first estimate is cheap to produce from what the audit already records.</p>

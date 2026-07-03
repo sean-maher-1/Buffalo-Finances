@@ -33,6 +33,8 @@
   .sitenav-links a:hover{background:rgba(197,223,252,.16);color:#fff}
   .sitenav-links a.active{background:var(--gold);color:var(--navy)}
   .sitenav-links a.ext{color:var(--gold)}
+  .sitenav-links a.deep{color:#8aa6c8;font-weight:600}
+  .sitenav-links a.deep:hover{background:rgba(197,223,252,.14);color:#fff}
   .hero{background:var(--navy);color:var(--cream);padding:72px 24px 56px;position:relative;overflow:hidden}
   .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(197,223,252,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(197,223,252,.045) 1px,transparent 1px);background-size:46px 46px}
   .hero .wrap{max-width:760px;margin:0 auto;position:relative;z-index:1}
@@ -69,7 +71,8 @@
   .btn.copied{background:var(--teal);color:#fff}
   .note{font-size:.84rem;color:#857f72;margin-top:10px;font-style:italic}
   .dgrid{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
-  .dgrid span{font-family:'Raleway',sans-serif;font-weight:700;font-size:.78rem;color:var(--navy);background:#fff;border:1px solid #e4dcc4;border-radius:999px;padding:6px 14px}
+  .dgrid a{font-family:'Raleway',sans-serif;font-weight:700;font-size:.78rem;color:var(--navy);background:#fff;border:1px solid #e4dcc4;border-radius:999px;padding:6px 14px;text-decoration:none;transition:border-color .15s,background .15s}
+  .dgrid a:hover{border-color:var(--gold);background:#fffbf0}
   .stay{background:var(--navy);color:var(--cream);border-radius:12px;padding:26px}
   .stay h2{color:var(--cream)}
   .stay p{color:var(--sky)}
@@ -94,9 +97,9 @@
     </a>
     <div class="sitenav-links">
       <a href="index.html">Start Here</a>
-      <a href="finances-explained.html">The Story</a>
-      <a href="finance-decoder.html">By the Numbers</a>
+      <a href="finances-explained.html">Explained</a>
       <a href="take-action.html" class="active">Take Action</a>
+      <a class="deep" href="finance-decoder.html">Deep Dive</a>
       <a class="ext" href="https://www.strongtownsbuffalo.com" target="_blank">Strong Towns Buffalo</a>
     </div>
   </div>
@@ -105,7 +108,7 @@
   <div class="wrap">
     <span class="badge">Take Action</span>
     <h1>Ask Buffalo to publish <span>one number</span>.</h1>
-    <p class="sub">You don't need to solve the $1.56 billion gap to help. The smallest, most winnable step is to get the city to put a number on something it doesn't currently track, and that starts with a single message to your Common Council member.</p>
+    <p class="sub">You don't need to be a budget expert to make a difference. The single most useful thing you can do takes about five minutes: send your Common Council member a short note asking for one number the city doesn't yet publish.</p>
   </div>
 </header>
 <main>
@@ -113,7 +116,7 @@
     <div class="askbox">
       <div class="lbl">The one ask</div>
       <p>That the City of Buffalo <strong>publish a "cost of good repair" figure every year</strong>: what it would cost to bring the roads, water mains, and buildings it already owns back to good condition.</p>
-      <p>The city already records the wear: about <strong>$958 million</strong> of its infrastructure is logged as used up in the 2025 audit. It just never totals the repair bill. You can't prioritize, budget for, or fix what you don't measure, and a rough first estimate is cheap to produce. It takes one Council member to request it.</p>
+      <p>The city keeps track of how old its roads and pipes are getting, but it has never published what fixing them would cost. And you can't plan for, or budget for, a cost that's never been totaled. The good news: a rough first estimate is cheap and quick to produce, and it takes just one Council member to ask for it.</p>
       <p>This isn't about cutting Buffalo down to size. It's about being able to <strong>afford the things that make it worth living in</strong>, good parks, open libraries, clean water, reliable services, and keep affording them.</p>
     </div>
   </section>
@@ -124,7 +127,7 @@
       <div class="step">
         <h3>Find your Council member</h3>
         <p>Buffalo has nine Common Council districts. Look up yours with the city's <a href="https://www.buffalony.gov/1519/Who-Is-My-Council-Member" target="_blank">Who Is My Council Member</a> tool, then grab their email from the <a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank">Common Council Members</a> page.</p>
-        <div class="dgrid"><span>Delaware</span><span>Ellicott</span><span>Fillmore</span><span>Lovejoy</span><span>Masten</span><span>Niagara</span><span>North</span><span>South</span><span>University</span></div>
+        <div class="dgrid"><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Delaware</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Ellicott</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Fillmore</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Lovejoy</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Masten</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Niagara</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">North</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">South</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">University</a></div>
       </div>
       <div class="step">
         <h3>Make the letter yours</h3>
@@ -139,7 +142,7 @@
 
   <section>
     <h2>Your letter</h2>
-    <p>Built from Buffalo's own audited reports. Edit freely.</p>
+    <p>Here's a ready-to-send draft, built from the city's own reports. Make it your own.</p>
     <div class="letter-wrap">
       <div class="letter-head">&#9993;&#xFE0E; Letter to my Common Council member</div>
       <textarea id="letter" spellcheck="true" aria-label="Editable letter to your Common Council member"></textarea>
@@ -180,18 +183,17 @@
 var LETTER = [
 "Dear Council Member,",
 "",
-"I'm a Buffalo resident writing about the city's long-term finances. Reading the city's own audited reports, one thing stands out: the roughly $1.56 billion gap between what Buffalo owes and what it owns is mostly not debt. About $1.2 billion of it is retiree health care the city promised but never set money aside to fund, and on top of that sits a large, unmeasured bill for repairing roads and pipes that are about half used up. To the city's credit, it is taking real steps: the 2026-27 budget raised the property-tax levy about 19% to begin funding these obligations with revenue it controls.",
+"I'm a Buffalo resident, and I care about where the city is headed. Looking through Buffalo's own financial reports, one thing stood out: a lot of what the city owes is promises it hasn't set money aside for, mainly health care for retired city workers, plus a large, still-unmeasured bill to repair the roads and pipes we already own, from the potholes we all dodge to the water mains underground.",
 "",
-"I'm not asking for a grand plan. I'm asking for one small, concrete step: that the city publish, every year, a single \"cost of good repair\" number, what it would cost to bring the infrastructure we already own back to good condition. The city already records the wear (about $958 million of accumulated depreciation in the 2025 audit); it simply never totals the repair bill. We can't prioritize, budget for, or fix what we haven't yet measured, and a first estimate is cheap to produce from figures the city already publishes.",
+"I'm not writing to ask for a grand plan, or to point fingers. I'm asking for one small, concrete step: that the city publish, once a year, a single number, roughly what it would cost to bring the roads, pipes, and buildings we already own back to good shape.",
 "",
-"I'm raising this because I want Buffalo to thrive, not shrink: a city that can afford good parks, open libraries, clean water, and reliable services, and keep affording them year after year. Seeing the full picture is how we protect what makes Buffalo worth living in.",
+"Here's why it matters: you can't plan around, or budget for, a repair cost the city has never published. A rough first estimate is cheap and quick to produce, and having it each year would let the city tackle the most urgent repairs first and show residents real progress. Few cities our size do this yet, so Buffalo would be ahead of the curve. The city has taken real steps on its finances lately, and this is a natural, low-cost next one.",
 "",
-"Three questions I'd appreciate answers to:",
-"  - As the city weighs how much to borrow for capital projects, what repair-and-replacement backlog are those decisions being measured against?",
-"  - What is the plan to address the roughly $1.2 billion retiree-healthcare obligation?",
-"  - Will the city commit to publishing an annual \"state of good repair\" figure for its infrastructure?",
+"I want Buffalo to thrive, not shrink: a city that can afford good parks, open libraries, clean water, and reliable services, and keep affording them. Seeing the full picture is how we protect what makes Buffalo worth living in.",
 "",
-"Thank you for your service and for your attention to Buffalo's long-term fiscal health.",
+"Would you support asking the city to start publishing this number every year? I'd be grateful to know where you stand.",
+"",
+"Thank you for your service to our city.",
 "",
 "Sincerely,",
 "[Your name]",

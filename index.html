@@ -65,6 +65,10 @@
   main{max-width:660px;margin:0 auto;padding:38px 24px 16px}
   .takeaway{font-size:1.08rem;color:var(--text-mid);margin-bottom:24px}
   .takeaway strong{color:var(--navy)}
+  .context{background:#fff;border:1px solid #ece4cf;border-left:4px solid var(--coral);border-radius:0 12px 12px 0;padding:15px 22px;margin:0 0 26px;box-shadow:0 3px 14px rgba(12,34,64,.06)}
+  .context .cx-k{display:block;font-family:'Raleway',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-deep);margin-bottom:7px}
+  .context p{font-size:1.02rem;color:var(--text-mid);margin:0}
+  .context p strong{color:var(--navy)}
   .lead-q{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.1rem;color:var(--navy);margin:24px 0 14px}
   .questions{display:grid;gap:12px;margin:0 0 30px}
   .q{background:#fff;border:1px solid #ece4cf;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px}
@@ -77,6 +81,11 @@
   .objective .ol{font-family:'Raleway',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;position:relative}
   .objective h2{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.5rem;line-height:1.15;color:var(--cream);margin-bottom:12px;position:relative}
   .objective p{color:var(--sky);font-size:1.01rem;margin-bottom:20px;position:relative}
+  .objective .obj-lead{margin-bottom:8px}
+  .objective .obj-list{list-style:none;margin:0 0 18px;padding:0;position:relative}
+  .objective .obj-list li{color:var(--cream);font-size:1rem;line-height:1.5;padding-left:20px;margin-bottom:7px;position:relative}
+  .objective .obj-list li:last-child{margin-bottom:0}
+  .objective .obj-list li::before{content:'';position:absolute;left:2px;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
   .objective .cta-wrap{text-align:center;position:relative}
   .btn-primary{position:relative;overflow:hidden;display:inline-block;font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.01em;background:var(--gold);color:var(--navy);text-decoration:none;padding:16px 30px;border-radius:8px;box-shadow:0 4px 16px rgba(255,168,0,.32);animation:ctaPulse 2.6s ease-in-out infinite;transition:transform .12s}
   .btn-primary::after{content:"";position:absolute;top:0;bottom:0;left:-85%;width:55%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.75) 50%,transparent 100%);transform:skewX(-18deg);pointer-events:none;animation:ctaSweep 3.8s ease-in-out infinite}
@@ -100,15 +109,17 @@
   footer a{color:#9a7400;font-weight:700;text-decoration:none}
   /* ===== SITE NAV ===== */
   .sitenav{position:sticky;top:0;z-index:300;background:var(--navy);border-bottom:2px solid var(--gold)}
-  .sitenav-inner{max-width:660px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:9px 22px}
+  .sitenav-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:9px 18px}
   .sitenav-brand{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);text-decoration:none;white-space:nowrap}
   .sitenav-brand svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
   .sitenav-brand:hover{color:#fff}
-  .sitenav-links{margin-left:auto;display:flex;gap:3px;flex-wrap:wrap;justify-content:flex-end}
-  .sitenav-links a{font-family:'Raleway',sans-serif;font-weight:700;font-size:.72rem;color:var(--sky);text-decoration:none;padding:6px 12px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
+  .sitenav-links{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end}
+  .sitenav-links a{font-family:'Raleway',sans-serif;font-weight:700;font-size:.72rem;color:var(--sky);text-decoration:none;padding:6px 10px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
   .sitenav-links a:hover{background:rgba(197,223,252,.16);color:#fff}
   .sitenav-links a.active{background:var(--gold);color:var(--navy)}
   .sitenav-links a.ext{color:var(--gold)}
+  .sitenav-links a.deep{color:#8aa6c8;font-weight:600}
+  .sitenav-links a.deep:hover{background:rgba(197,223,252,.14);color:#fff}
   @media (max-width:560px){
     .sitenav-inner{padding:8px 14px;gap:8px}
     .sitenav-brand .brandtxt{display:none}
@@ -125,9 +136,9 @@
     </a>
     <div class="sitenav-links">
       <a href="index.html" class="active">Start Here</a>
-      <a href="finances-explained.html">The Story</a>
-      <a href="finance-decoder.html">By the Numbers</a>
+      <a href="finances-explained.html">Explained</a>
       <a href="take-action.html">Take Action</a>
+      <a class="deep" href="finance-decoder.html">Deep Dive</a>
       <a class="ext" href="https://www.strongtownsbuffalo.com" target="_blank">Strong Towns Buffalo</a>
     </div>
   </div>
@@ -136,7 +147,7 @@
   <div class="wrap">
     <span class="badge">#DoTheMath · City of Buffalo, NY</span>
     <h1>What does Buffalo really <span>owe</span>?</h1>
-    <p class="sub">Mostly retiree health care it promised but hasn't funded, plus a growing backlog of repairs to roads and pipes. The audit already records how much of it is used up, but not what fixing it would cost.</p>
+    <p class="sub">Buffalo's finances are more understandable, and more fixable, than they look. Here's the honest picture in plain English, and the small first step anyone can push for.</p>
     <div class="answer-card">
       <div class="num" id="num">&minus;$1.56B</div>
       <div class="cap" id="cap">owed beyond what the city has in the bank, mostly unfunded retiree benefits</div>
@@ -160,29 +171,39 @@
   </div>
 </header>
 <main>
+  <div class="context">
+    <span class="cx-k">Why this matters now</span>
+    <p>Buffalo's 2026-27 budget closed a roughly <strong>$100&nbsp;million</strong> gap with a sizable property-tax increase, about <strong>19%</strong>, plus added state aid. That's the near-term pressure. The bigger, longer-term costs on this page are ones the city can still plan for and get ahead of, starting with one number.</p>
+  </div>
   <div class="objective">
     <div class="ol">The objective</div>
     <h2>One number worth publishing: the repair bill</h2>
-    <p>Every year, the city could publish a single <strong>&ldquo;cost of good repair&rdquo; figure</strong>: what it would take to bring the roads, pipes, and buildings Buffalo already owns back to good condition. The audit shows they're about half worn out; the city has just never added up the price of fixing them.</p>
-    <p><strong>Why it matters:</strong> that one figure is the foundation for sound maintenance planning. With it, the city can budget for upkeep, tackle the most urgent repairs first, and show residents real progress year to year. Few cities Buffalo's size have built that baseline yet, so producing one would put Buffalo ahead, not behind.</p>
-    <p>And it's a winnable first step. A rough number can come straight from figures already in the city's audit; fuller, inspection-based versions are routine elsewhere, from federal agencies to New York City. It takes one Council member to ask for it.</p>
+    <p>Every year, the city could publish a single <strong>&ldquo;cost of good repair&rdquo; figure</strong>: what it would take to bring the roads, pipes, and buildings Buffalo already owns back to good condition, the potholes on your street included. On paper, about half their value is already used up. But that's an accounting estimate based on age, not a check of their real condition, and the audit doesn't total what fixing them would cost.</p>
+    <p class="obj-lead"><strong>Why it matters.</strong> That one figure is the foundation for sound maintenance planning. With it, the city can:</p>
+    <ul class="obj-list">
+      <li>budget for upkeep,</li>
+      <li>tackle the most urgent repairs first, and</li>
+      <li>show residents real progress, year to year.</li>
+    </ul>
+    <p>Few cities Buffalo's size have built that baseline yet, so producing one would put Buffalo ahead, not behind.</p>
+    <p><strong>And it's a winnable first step.</strong> A rough number can come straight from figures already in the city's audit; fuller, inspection-based versions are routine elsewhere, from federal agencies to New York City. It takes one Council member to ask for it.</p>
     <div class="cta-wrap">
       <a class="btn-primary" href="take-action.html">Ask the city to publish one number &#8594;</a>
-      <p class="cta-note">A ready-to-send note to your Council member. About five minutes.</p>
+      <p class="cta-note">Send your Council member a ready-made note in about five minutes.</p>
     </div>
   </div>
   <p class="takeaway" style="margin-top:36px">The repair bill is one piece of a bigger picture. A few plain questions frame the rest:</p>
   <div class="questions">
     <div class="q">
-      <div class="qq">1. Are its long-term obligations funded?</div>
+      <div class="qq">1. Are Buffalo's long-term obligations funded?</div>
       <div class="qa">Not fully. Its largest obligation, about $1.2 billion in retiree health care, has mostly been funded year to year rather than set aside in advance.</div>
     </div>
     <div class="q">
-      <div class="qq">2. Is it maintaining what it owns?</div>
-      <div class="qa">Hard to say. The city doesn't yet add up what it would cost to keep its roads, pipes, and buildings in good repair.</div>
+      <div class="qq">2. Is Buffalo maintaining what it owns?</div>
+      <div class="qa">Hard to say. The city doesn't publish a figure for what it would cost to keep its roads, pipes, and buildings in good repair.</div>
     </div>
     <div class="q">
-      <div class="qq">3. How much should the city borrow?</div>
+      <div class="qq">3. How much should Buffalo borrow?</div>
       <div class="qa">A genuinely hard call that reasonable people weigh differently. It depends on what the money builds and whether the city keeps it up, which is why the repair number helps.</div>
     </div>
   </div>
