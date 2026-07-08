@@ -34,3 +34,26 @@ All underlying data (FY2006–2025 ACFR figures, the 7 Decoder indicators, CSV/J
 - **Filenames** (descriptive/SEO direction): the explainer/story page was renamed `does-it-own-more-than-it-owes.html` → **`finances-explained.html`** (the old name was from the pre-pivot thesis). `finance-decoder.html` kept as-is. `index.html`, `take-action.html`, `data-sources.html` unchanged.
 - The **old story path** (`does-it-own-more-than-it-owes.html`) is now a redirect stub → `finances-explained.html` (carries the story's OG meta + `noindex` + canonical), so any already-shared links keep working.
 - All six internal links to the old story path were rewritten; its own `og:url` updated. `outputs/sweep2-v2.py` updated (PAGES, REDIRECTS now a {file:target} map, redirect check generalized beyond index.html). Full sweep: ALL PASS.
+
+## Explainer restructure (July 7, 2026)
+`finances-explained.html` reorganized to address length and visual monotony:
+- The argument is now explicitly **five numbered parts** ("Part 1 of 5" chips on each section) with a "story in five steps" jump-nav strip beneath the 30-second card.
+- **Objections consolidated:** the borrowing debate, "grow our way out," and the FAQ now live in one collapsed "Questions & objections" section after the asks. Removed the duplicate borrowing FAQ item and the duplicate GASB retelling in Part 3.
+- **New chart:** a liability-comparison bar (retiree health vs. debt vs. pensions) replaces the plain table in Part 2; the exact figures with explanations remain in the section's prose and captions.
+- Big numbers (−$1.56B, $1.7–2.2B, ≈$3.5B) **count up on scroll** (respects prefers-reduced-motion).
+- "Anyone can start this conversation" folded into Part 5; prose tightened throughout.
+- Main-path reading load: ~2,700 words → ~1,345 (2,483 total including collapsed answers). No figures changed.
+
+## Start Here restructure (July 7, 2026)
+`index.html` reworked from "pitch page" to "orient & route" funnel; also removed the explainer's mid-page CTA banner:
+- **Five-step story strip** added after the context box — the same five numbers as the explainer's chapters, each linking straight to its part (`#part1`–`#part5`).
+- **Objective card halved:** the paving program, federal/NYC precedent, and "why it matters" list were duplicating Explained Part 3/5; now two tight paragraphs plus "Read the full case →".
+- **"Two questions" reframed as the site's three-part test** (fund the promises / maintain what we own / borrow & build wisely), each card now clickable into the explainer.
+- Answer-card captions now carry the per-household hook ($13,400 / $30,000); hero number counts up on load; reveal text deduplicated; "The whole story" routing card swapped for "Check every number" (data & sources); favicon aligned to 🏠. ~630 visible words (was ~694).
+
+## Take Action rework (July 7, 2026)
+`take-action.html` turned from instructions into a working tool:
+- **District picker:** the nine district chips now select the member — showing name + email (confirmed list, July 2026), addressing the letter's greeting, and pre-filling the mailto recipient. A "verify on the city's site" link hedges against turnover; note says emails checked July 2026.
+- **Short/full letter toggle:** new ~150-word short version is the default (busy offices skim); the original full letter is one tab away. Edits to each version are kept when switching.
+- **Print prints only the letter** (print stylesheet + hidden print target), not the whole page.
+- Removed the duplicate "Stay in it" heading; added an after-you-send note (replies take a week or two; report responses to Strong Towns Buffalo).

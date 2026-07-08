@@ -11,9 +11,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light only">
 <title>Buffalo Finance Decoder · #DoTheMath</title>
-<meta name="description" content="Seven financial indicators from twenty years of Buffalo's audited annual reports reveal the city's structural fiscal challenges. A #DoTheMath analysis using the Strong Towns Finance Decoder.">
+<meta name="description" content="Seven indicators from twenty years of Buffalo's audited annual reports, the deep-dive data behind the #DoTheMath project. Built with the Strong Towns Finance Decoder.">
 <meta property="og:title" content="Buffalo's Fiscal Health: Decoded">
-<meta property="og:description" content="Seven indicators from twenty years of audited data. Buffalo's recovery is real, but its balance sheet is carrying $1.2 billion in unfunded retiree healthcare and half its infrastructure value is gone.">
+<meta property="og:description" content="Seven indicators from twenty years of Buffalo's audited reports. The recovery is real, but the balance sheet carries $1.2 billion in unfunded retiree health care, and about half the city's infrastructure value is used up on the books.">
 <meta property="og:type" content="article">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -425,12 +425,12 @@
     <p>Four numbers every Buffalo resident should know, pulled directly from the city's <a class="il" href="https://www.buffalocomptrollerny.gov/150/Annual-Comprehensive-Financial-Reports-A" target="_blank"><strong>2025 Annual Comprehensive Financial Report (ACFR)</strong></a>.</p>
     <div class="stat-grid">
       <div class="stat-card stat-red">
-        <div class="stat-number">&minus;$1.6B</div>
+        <div class="stat-number" role="img" aria-label="negative 1.6 billion dollars">&minus;$1.6B</div>
         <div class="stat-label">Net financial position</div>
         <div class="stat-context">Counting only money-like assets, Buffalo owes about $1.56 billion more than it holds, driven largely by unfunded long-term obligations.</div>
       </div>
       <div class="stat-card stat-red">
-        <div class="stat-number">$1.2B</div>
+        <div class="stat-number" role="img" aria-label="1.2 billion dollars">$1.2B</div>
         <div class="stat-label">Unfunded retiree healthcare</div>
         <div class="stat-context">Buffalo's unfunded retiree-healthcare obligation (OPEB) is the single biggest driver of the city's negative net position.</div>
       </div>
@@ -674,6 +674,7 @@
     <div class="next-step">
       <div class="ns-label">The next smallest step</div>
       <p>Fixing this doesn't start with the $1.2 billion. It starts with <strong>one number the city doesn't yet publish</strong>: what it would cost to bring the roads, pipes, and buildings Buffalo already owns back to good condition. The audit records the wear, about $958 million used up, but doesn't yet total the repair bill. A published figure is what lets a city prioritize, budget for, and tackle its repairs, and a rough first estimate is cheap to produce from what the audit already records.</p>
+      <p>And Buffalo is already moving this way: its 2026 shift to <a class="il" href="https://www.buffalony.gov/m/newsflash/home/detail/1617" target="_blank">data-driven, needs-based paving</a> brings objective condition data to the city's streets, exactly the right instinct. The step left is to total it into a dollar figure and widen it from roads to pipes and buildings.</p>
       <p>That makes it the rare ask small enough to win: <strong>that Buffalo publish a "cost of good repair" figure every year</strong>, the same way it already reports its debt. It takes one Common Council member to request it.</p>
     </div>
     <p>Every Buffalonian deserves the context to take part in these decisions. <strong>Send these charts to your <a class="il" href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank">Common Council member</a></strong> and ask:</p>
@@ -1000,7 +1001,7 @@ function copyPageLink(btn) {
 }
 function openShareEmail() {
   var subj = encodeURIComponent("Buffalo’s finances in 7 charts");
-  var body = encodeURIComponent("Strong Towns Buffalo pulled 20 years of data from the city’s official financial reports and turned them into seven interactive charts.\n\n" + window.location.href + "\n\nThe big picture: counting money-like assets, Buffalo is about $1.56 billion in the red, half the city’s infrastructure value is gone, and it leans on Albany and Washington for more than 40% of its budget. The page includes three questions worth sending to your Council member.");
+  var body = encodeURIComponent("Strong Towns Buffalo pulled 20 years of data from the city’s official financial reports and turned them into seven interactive charts.\n\n" + window.location.href + "\n\nThe big picture: counting money-like assets, Buffalo is about $1.56 billion in the red, half the city’s infrastructure value used up on the books, and it leans on Albany and Washington for more than 40% of its budget. The page includes three questions worth sending to your Council member.");
   window.location.href = 'mailto:?subject=' + subj + '&body=' + body;
   return false;
 }

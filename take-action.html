@@ -86,6 +86,24 @@
   footer .w{max-width:760px;margin:0 auto}
   footer a{color:var(--gold);font-weight:700;text-decoration:none}
   @media (max-width:560px){.sitenav-inner{padding:8px 14px;gap:8px}.sitenav-brand .brandtxt{display:none}.sitenav-links a{font-size:.66rem;padding:5px 9px}}
+  .dgrid button{font-family:'Raleway',sans-serif;font-weight:700;font-size:.78rem;color:var(--navy);background:#fff;border:1px solid #e4dcc4;border-radius:999px;padding:6px 14px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+  .dgrid button:hover{border-color:var(--gold);background:#fffbf0}
+  .dgrid button.sel{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .picked{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:12px;background:#eaf5f0;border:1px solid #cde5da;border-radius:8px;padding:10px 14px;font-size:.92rem;color:var(--text)}
+  .picked strong{color:var(--teal)}
+  .picked .pk-check{color:var(--teal);font-weight:900}
+  .picked a{color:var(--navy);font-weight:700;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:2px;font-size:.84rem}
+  .letter-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .vtabs{display:flex;gap:6px;margin-left:auto}
+  .vtabs button{font-family:'Raleway',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.03em;border:1px solid #e4dcc4;background:#fff;color:var(--text-mid);border-radius:999px;padding:5px 12px;cursor:pointer;text-transform:none}
+  .vtabs button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+  #printLetter{display:none}
+  @media print{
+    .sitenav,.hero,main section,footer{display:none!important}
+    body{background:#fff}
+    main{padding:0}
+    #printLetter{display:block!important;white-space:pre-wrap;font-family:Georgia,'Times New Roman',serif;font-size:12pt;line-height:1.65;color:#000}
+  }
 </style>
 </head>
 <body>
@@ -125,9 +143,15 @@
     <h2>Three steps, about five minutes</h2>
     <div class="steps">
       <div class="step">
-        <h3>Find your Council member</h3>
-        <p>Buffalo has nine Common Council districts. Look up yours with the city's <a href="https://www.buffalony.gov/1519/Who-Is-My-Council-Member" target="_blank">Who Is My Council Member</a> tool, then grab their email from the <a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank">Common Council Members</a> page.</p>
-        <div class="dgrid"><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Delaware</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Ellicott</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Fillmore</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Lovejoy</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Masten</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">Niagara</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">North</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">South</a><a href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">University</a></div>
+        <h3>Pick your district</h3>
+        <p>Buffalo has nine Common Council districts. Tap yours and the letter below gets addressed to your member automatically. Not sure which is yours? Check the city's <a href="https://www.buffalony.gov/1519/Who-Is-My-Council-Member" target="_blank">Who Is My Council Member</a> tool.</p>
+        <div class="dgrid" id="dgrid"><button type="button" data-k="delaware">Delaware</button><button type="button" data-k="ellicott">Ellicott</button><button type="button" data-k="fillmore">Fillmore</button><button type="button" data-k="lovejoy">Lovejoy</button><button type="button" data-k="masten">Masten</button><button type="button" data-k="niagara">Niagara</button><button type="button" data-k="north">North</button><button type="button" data-k="south">South</button><button type="button" data-k="university">University</button></div>
+        <div class="picked" id="picked" hidden>
+          <span class="pk-check">&#10003;</span>
+          <span>Your Council member: <strong id="pkName"></strong> &middot; <span id="pkEmail"></span></span>
+          <a id="pkVerify" href="https://www.buffalony.gov/387/Common-Council-Members" target="_blank" rel="noopener">verify on the city's site &#8599;</a>
+        </div>
+        <p class="note" style="margin-top:10px">Member emails checked July 2026. If one bounces, the verify link has the latest.</p>
       </div>
       <div class="step">
         <h3>Make the letter yours</h3>
@@ -135,16 +159,21 @@
       </div>
       <div class="step">
         <h3>Send it</h3>
-        <p>Use <strong>Copy</strong> or <strong>Open in email</strong> below, paste in your Council member's address, and send. Then forward it to a neighbor.</p>
+        <p>Use <strong>Copy</strong> or <strong>Open in email</strong> below. If you picked your district, your Council member's address is already filled in. Then forward it to a neighbor.</p>
       </div>
     </div>
   </section>
 
   <section>
     <h2>Your letter</h2>
-    <p>Here's a ready-to-send draft, built from the city's own reports. Make it your own.</p>
+    <p>Two ready-to-send drafts, built from the city's own reports: a <strong>short note</strong> (often all a busy office reads) and a <strong>full version</strong> with the reasoning spelled out. Make either your own.</p>
     <div class="letter-wrap">
-      <div class="letter-head">&#9993;&#xFE0E; Letter to my Common Council member</div>
+      <div class="letter-head"><span>&#9993;&#xFE0E; Letter to my Common Council member</span>
+        <div class="vtabs" role="tablist" aria-label="Letter length">
+          <button type="button" id="tabShort" class="on" aria-pressed="true">Short</button>
+          <button type="button" id="tabFull" aria-pressed="false">Full</button>
+        </div>
+      </div>
       <textarea id="letter" spellcheck="true" aria-label="Editable letter to your Common Council member"></textarea>
       <div class="letter-actions">
         <button class="btn btn-gold" id="copyBtn" type="button">&#128203; Copy letter</button>
@@ -152,11 +181,12 @@
         <button class="btn btn-line" id="printBtn" type="button">&#128424;&#xFE0E; Print</button>
       </div>
     </div>
-    <p class="note">The email button opens your mail app with the letter filled in; add your Council member as the recipient before sending.</p>
+    <p class="note">The email button opens your mail app with the letter filled in&mdash;and, if you picked a district, already addressed to your Council member.</p>
+    <p class="note">After you send: replies can take a week or two. If you hear back, tell <a href="https://www.strongtownsbuffalo.com" target="_blank">Strong Towns Buffalo</a>&mdash;tracking which members are on board is how one letter becomes a majority.</p>
+    <div id="printLetter" aria-hidden="true"></div>
   </section>
 
   <section>
-    <h2>Stay in it</h2>
     <div class="stay">
       <h2>This works when it's not just one voice.</h2>
       <p>Strong Towns Buffalo is a volunteer group of neighbors making this case across the city. Join them, bring a friend, and share these numbers.</p>
@@ -180,12 +210,25 @@
   </div>
 </footer>
 <script>
-var LETTER = [
+var MEMBERS={
+  delaware:{n:'Joel P. Feroleto',l:'Feroleto',e:'jferoleto@city-buffalo.com'},
+  ellicott:{n:'Leah M. Halton-Pope',l:'Halton-Pope',e:'lhaltonpope@buffalony.gov'},
+  fillmore:{n:'Mitch Nowakowski',l:'Nowakowski',e:'mnowakowski@city-buffalo.com'},
+  lovejoy:{n:'Bryan J. Bollman',l:'Bollman',e:'bbollman@city-buffalo.com'},
+  masten:{n:'Zeneta B. Everhart',l:'Everhart',e:'zeverhart@buffalony.gov'},
+  niagara:{n:'David A. Rivera',l:'Rivera',e:'darivera@city-buffalo.com'},
+  north:{n:'Joseph Golombek, Jr.',l:'Golombek',e:'jgolombek@city-buffalo.com'},
+  south:{n:'Christopher P. Scanlon',l:'Scanlon',e:'cscanlon@city-buffalo.com'},
+  university:{n:'Rasheed N.C. Wyatt',l:'Wyatt',e:'rwyatt@city-buffalo.com'}
+};
+var FULL = [
 "Dear Council Member,",
 "",
 "I'm a Buffalo resident, and I care about where the city is headed. Looking through Buffalo's own financial reports, one thing stood out: a lot of what the city owes is promises it hasn't set money aside for, mainly health care for retired city workers, plus a large, still-unmeasured bill to repair the roads and pipes we already own, from the potholes we all dodge to the water mains underground.",
 "",
 "I'm not writing to ask for a grand plan, or to point fingers. I'm asking for one small, concrete step: that the city publish, once a year, a single number, roughly what it would cost to bring the roads, pipes, and buildings we already own back to good shape.",
+"",
+"The city has already made a promising start: its move this year to data-driven, needs-based paving, using road scans to rank repairs, is exactly the right instinct. I'm asking it to build on that, to extend the same objective approach from roads to the water mains and buildings, and to publish a single yearly figure for what fixing all of it would cost.",
 "",
 "Here's why it matters: you can't plan around, or budget for, a repair cost the city has never published. A rough first estimate is cheap and quick to produce, and having it each year would let the city tackle the most urgent repairs first and show residents real progress. Few cities our size do this yet, so Buffalo would be ahead of the curve. The city has taken real steps on its finances lately, and this is a natural, low-cost next one.",
 "",
@@ -199,21 +242,69 @@ var LETTER = [
 "[Your name]",
 "[Your street / neighborhood]"
 ].join("\n");
-document.getElementById('letter').value = LETTER;
+var SHORT = [
+"Dear Council Member,",
+"",
+"I'm a Buffalo resident in your district, with one small ask. The city's own audited reports show that much of what Buffalo owes is promises it hasn't set money aside for, plus a repair backlog for the roads, pipes, and buildings we already own that no report totals.",
+"",
+"My ask: that the city publish, once a year, one number, roughly what it would cost to bring our infrastructure back to good repair. You can't budget for a cost that's never been totaled, and a first rough estimate can come straight from figures already in the audit. The city's new data-driven paving program is exactly the right start; this would extend it from a ranked list to a published dollar figure.",
+"",
+"Would you support asking for this number every year? I'd be grateful to know where you stand.",
+"",
+"Thank you for your service to our city.",
+"",
+"Sincerely,",
+"[Your name]",
+"[Your street / neighborhood]"
+].join("\n");
+var bufs={short:SHORT,full:FULL}, cur='short', member=null;
+var ta=document.getElementById('letter');
+ta.value=bufs[cur];
 var SUBJECT = "Buffalo's long-term finances, and one small first step";
-function body(){ return document.getElementById('letter').value; }
+function body(){ return ta.value; }
 function refreshEmail(){
-  document.getElementById('emailBtn').href = 'mailto:?subject=' + encodeURIComponent(SUBJECT) + '&body=' + encodeURIComponent(body());
+  var to=member?encodeURIComponent(member.e):'';
+  document.getElementById('emailBtn').href='mailto:'+to+'?subject='+encodeURIComponent(SUBJECT)+'&body='+encodeURIComponent(body());
 }
-document.getElementById('letter').addEventListener('input', refreshEmail);
+ta.addEventListener('input',function(){ bufs[cur]=ta.value; refreshEmail(); });
 refreshEmail();
+(function(){
+  var grid=document.getElementById('dgrid');
+  grid.addEventListener('click',function(ev){
+    var b=ev.target.closest('button'); if(!b)return;
+    member=MEMBERS[b.dataset.k];
+    grid.querySelectorAll('button').forEach(function(x){x.classList.toggle('sel',x===b);});
+    document.getElementById('pkName').textContent=member.n+' ('+b.textContent+' District)';
+    document.getElementById('pkEmail').textContent=member.e;
+    document.getElementById('picked').hidden=false;
+    ['short','full'].forEach(function(k){
+      bufs[k]=bufs[k].replace(/^Dear Council Member( [^,\n]*)?,/,'Dear Council Member '+member.l+',');
+    });
+    ta.value=bufs[cur];
+    refreshEmail();
+  });
+})();
+(function(){
+  var ts=document.getElementById('tabShort'),tf=document.getElementById('tabFull');
+  function sw(k){
+    if(cur===k)return;
+    bufs[cur]=ta.value; cur=k; ta.value=bufs[cur];
+    ts.classList.toggle('on',k==='short'); tf.classList.toggle('on',k==='full');
+    ts.setAttribute('aria-pressed',k==='short'); tf.setAttribute('aria-pressed',k==='full');
+    refreshEmail();
+  }
+  ts.addEventListener('click',function(){sw('short');});
+  tf.addEventListener('click',function(){sw('full');});
+})();
 document.getElementById('copyBtn').addEventListener('click', function(){
   var b=this; navigator.clipboard.writeText(body()).then(function(){
     b.classList.add('copied'); var t=b.innerHTML; b.innerHTML='&#10003; Copied!';
     setTimeout(function(){ b.classList.remove('copied'); b.innerHTML=t; }, 1800);
   });
 });
-document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+function fillPrint(){ document.getElementById('printLetter').textContent=body(); }
+window.addEventListener('beforeprint',fillPrint);
+document.getElementById('printBtn').addEventListener('click', function(){ fillPrint(); window.print(); });
 var url = window.location.href;
 document.getElementById('shareFb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
 document.getElementById('shareLi').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);

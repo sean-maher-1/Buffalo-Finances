@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="What does Buffalo really owe?">
-<meta property="og:description" content="Buffalo owes about $1.56 billion more than it owns, and most of it isn't debt, it's promises the city hasn't funded yet. A short, friendly look, plus one small first step.">
+<meta property="og:description" content="What Buffalo owes is more understandable, and more fixable, than it looks. A short, plain-English #DoTheMath look at the city's finances, and one concrete thing you can do about it.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://buffalofinances.org/">
 <meta property="og:image" content="https://buffalofinances.org/og-image.png">
@@ -14,8 +14,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light only">
 <title>Buffalo, NY · What Does It Really Owe? · #DoTheMath</title>
-<meta name="description" content="A short, plain-English look at the City of Buffalo's finances: what it owes, why most of it isn't debt, and one small number that would help.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+<meta name="description" content="A short, plain-English look at the City of Buffalo's finances: what it owes, what it's put off maintaining, and one small number that would help.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -81,11 +81,8 @@
   .objective .ol{font-family:'Raleway',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;position:relative}
   .objective h2{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.5rem;line-height:1.15;color:var(--cream);margin-bottom:12px;position:relative}
   .objective p{color:var(--sky);font-size:1.01rem;margin-bottom:20px;position:relative}
-  .objective .obj-lead{margin-bottom:8px}
-  .objective .obj-list{list-style:none;margin:0 0 18px;padding:0;position:relative}
-  .objective .obj-list li{color:var(--cream);font-size:1rem;line-height:1.5;padding-left:20px;margin-bottom:7px;position:relative}
-  .objective .obj-list li:last-child{margin-bottom:0}
-  .objective .obj-list li::before{content:'';position:absolute;left:2px;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  .objective p a{color:var(--gold);font-weight:700;text-decoration:underline;text-decoration-color:rgba(255,168,0,.55);text-underline-offset:2px}
+  .objective p a:hover{text-decoration-color:var(--gold)}
   .objective .cta-wrap{text-align:center;position:relative}
   .btn-primary{position:relative;overflow:hidden;display:inline-block;font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.01em;background:var(--gold);color:var(--navy);text-decoration:none;padding:16px 30px;border-radius:8px;box-shadow:0 4px 16px rgba(255,168,0,.32);animation:ctaPulse 2.6s ease-in-out infinite;transition:transform .12s}
   .btn-primary::after{content:"";position:absolute;top:0;bottom:0;left:-85%;width:55%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.75) 50%,transparent 100%);transform:skewX(-18deg);pointer-events:none;animation:ctaSweep 3.8s ease-in-out infinite}
@@ -125,6 +122,21 @@
     .sitenav-brand .brandtxt{display:none}
     .sitenav-links a{font-size:.66rem;padding:5px 9px}
   }
+  /* ===== STORY STRIP ===== */
+  .storyblock{margin:0 0 30px}
+  .storyhead{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.1rem;color:var(--navy);margin-bottom:12px}
+  .storyhead .mins{font-family:'Lato',sans-serif;font-weight:400;font-size:.88rem;color:var(--text-mid)}
+  .storysteps{display:flex;gap:8px;counter-reset:step}
+  .storysteps a{counter-increment:step;flex:1;min-width:0;background:#fff;border:1px solid #ece4cf;border-radius:10px;padding:10px 6px 9px;text-align:center;text-decoration:none;transition:border-color .15s,transform .15s,box-shadow .15s}
+  .storysteps a:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 16px rgba(12,34,64,.10)}
+  .storysteps a::before{content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Raleway',sans-serif;font-weight:800;font-size:.64rem;margin-bottom:5px}
+  .storysteps a b{display:block;font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(.78rem,2vw,.94rem);color:var(--coral-deep);white-space:nowrap}
+  .storysteps a:last-child b{color:var(--teal)}
+  .storysteps a span{display:block;font-size:.68rem;line-height:1.3;color:var(--text-mid);margin-top:3px}
+  @media (max-width:640px){.storysteps{overflow-x:auto;padding:2px 2px 8px;-webkit-overflow-scrolling:touch}.storysteps a{flex:0 0 122px}}
+  a.q{display:block;color:inherit;text-decoration:none;transition:transform .15s,box-shadow .15s,border-left-color .15s}
+  a.q:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(12,34,64,.10);border-left-color:var(--navy)}
+  .q .arrow{color:var(--gold)}
 </style>
 </head>
 <body>
@@ -149,22 +161,21 @@
     <h1>What does Buffalo really <span>owe</span>?</h1>
     <p class="sub">Buffalo's finances are more understandable, and more fixable, than they look. Here's the honest picture in plain English, and the small first step anyone can push for.</p>
     <div class="answer-card">
-      <div class="num" id="num">&minus;$1.56B</div>
-      <div class="cap" id="cap">owed beyond what the city has in the bank, mostly unfunded retiree benefits</div>
+      <div class="num" id="num" role="img" aria-label="negative 1.56 billion dollars">&minus;$1.56B</div>
+      <div class="cap" id="cap">owed beyond what’s in the bank, mostly unfunded retiree benefits &mdash; about $13,400 per household</div>
       <label class="toggle-row" for="t">
         <span class="switch"><input type="checkbox" id="t" aria-describedby="cap"><span class="track"><span class="thumb"></span></span></span>
         <span class="tlabel">Add the repairs the books leave out</span>
       </label>
       <div class="reveal" id="reveal">
         <div class="reveal-inner">
-          <p>Line up the money Buffalo can actually spend against everything it owes, and it comes up about <strong>$1.56 billion</strong> short. The biggest reason, by far, is health care promised to retired workers that was never funded, roughly <strong>$1.2 billion</strong> of it. What the city borrowed is a much smaller part.</p>
-          <p>And one cost never reaches the books at all: fixing worn-out roads, pipes, and buildings. About half their value is used up; putting them right would run an estimated <strong>$1.7&ndash;$2.2 billion</strong>.</p>
+          <p>The biggest reason, by far, is health care promised to retired workers that was never funded, roughly <strong>$1.2 billion</strong>; borrowing is a much smaller part. And one cost never reaches the books at all: fixing worn-out roads, pipes, and buildings, an estimated <strong>$1.7&ndash;$2.2 billion</strong>.</p>
           <div class="ledger">
             <div class="r"><span class="l">Owed beyond what's in the bank</span><span class="v bad">&minus;$1.56B</span></div>
             <div class="r"><span class="l">Repair backlog (off the books)</span><span class="v bad">&minus;$1.9B</span></div>
             <div class="r total"><span class="l">Closer to the real picture</span><span class="v bad">&asymp; &minus;$3.5B</span></div>
           </div>
-          <div class="range">Deliberately rough numbers, about &minus;$30,000 per household in total.</div>
+          <div class="range">The repair estimate is deliberately rough; the point is its size.</div>
         </div>
       </div>
     </div>
@@ -175,42 +186,45 @@
     <span class="cx-k">Why this matters now</span>
     <p>Buffalo's 2026-27 budget closed a roughly <strong>$100&nbsp;million</strong> gap with a sizable property-tax increase, about <strong>19%</strong>, plus added state aid. That's the near-term pressure. The bigger, longer-term costs on this page are ones the city can still plan for and get ahead of, starting with one number.</p>
   </div>
+  <div class="storyblock">
+    <p class="storyhead">New here? The whole story is five numbers <span class="mins">(about a four-minute read)</span></p>
+    <div class="storysteps">
+      <a href="finances-explained.html#part1"><b>&minus;$1.56B</b><span>already on the books</span></a>
+      <a href="finances-explained.html#part2"><b>$1.24B</b><span>of it: retiree health care</span></a>
+      <a href="finances-explained.html#part3"><b>$1.7&ndash;2.2B</b><span>repairs the books skip</span></a>
+      <a href="finances-explained.html#part4"><b>&asymp;$3.5B</b><span>the full picture</span></a>
+      <a href="finances-explained.html#part5"><b>3 asks</b><span>the way out</span></a>
+    </div>
+  </div>
   <div class="objective">
     <div class="ol">The objective</div>
     <h2>One number worth publishing: the repair bill</h2>
-    <p>Every year, the city could publish a single <strong>&ldquo;cost of good repair&rdquo; figure</strong>: what it would take to bring the roads, pipes, and buildings Buffalo already owns back to good condition, the potholes on your street included. On paper, about half their value is already used up. But that's an accounting estimate based on age, not a check of their real condition, and the audit doesn't total what fixing them would cost.</p>
-    <p class="obj-lead"><strong>Why it matters.</strong> That one figure is the foundation for sound maintenance planning. With it, the city can:</p>
-    <ul class="obj-list">
-      <li>budget for upkeep,</li>
-      <li>tackle the most urgent repairs first, and</li>
-      <li>show residents real progress, year to year.</li>
-    </ul>
-    <p>Few cities Buffalo's size have built that baseline yet, so producing one would put Buffalo ahead, not behind.</p>
-    <p><strong>And it's a winnable first step.</strong> A rough number can come straight from figures already in the city's audit; fuller, inspection-based versions are routine elsewhere, from federal agencies to New York City. It takes one Council member to ask for it.</p>
+    <p>Every year, the city could publish one <strong>&ldquo;cost of good repair&rdquo; figure</strong>: what it would take to bring the roads, pipes, and buildings Buffalo already owns back to good condition. The audit says about half their value is used up; no report totals what fixing it would cost. That one figure is what lets a city budget upkeep, fix the worst first, and show progress year to year.</p>
+    <p>It's winnable, too. A rough version can be built from figures already in the audit, <a href="https://www.fhwa.dot.gov/asset/plans.cfm" target="_blank" rel="noopener">federal agencies</a> and <a href="https://a860-gpp.nyc.gov/concern/nyc_government_publications/ng451m670" target="_blank" rel="noopener">New York City</a> already publish theirs, and Buffalo's new <a href="https://www.buffalony.gov/m/newsflash/home/detail/1617" target="_blank" rel="noopener">data-driven paving program</a> is a real start. It takes one Council member to ask. <a href="finances-explained.html#part3">Read the full case &#8594;</a></p>
     <div class="cta-wrap">
       <a class="btn-primary" href="take-action.html">Ask the city to publish one number &#8594;</a>
       <p class="cta-note">Send your Council member a ready-made note in about five minutes.</p>
     </div>
   </div>
-  <p class="takeaway" style="margin-top:36px">The repair bill is one piece of a bigger picture. A few plain questions frame the rest:</p>
+  <p class="takeaway" style="margin-top:36px">The repair bill is one piece of a simple test this whole site applies:</p>
   <div class="questions">
-    <div class="q">
-      <div class="qq">1. Are Buffalo's long-term obligations funded?</div>
-      <div class="qa">Not fully. Its largest obligation, about $1.2 billion in retiree health care, has mostly been funded year to year rather than set aside in advance.</div>
-    </div>
-    <div class="q">
-      <div class="qq">2. Is Buffalo maintaining what it owns?</div>
-      <div class="qa">Hard to say. The city doesn't publish a figure for what it would cost to keep its roads, pipes, and buildings in good repair.</div>
-    </div>
-    <div class="q">
-      <div class="qq">3. How much should Buffalo borrow?</div>
-      <div class="qa">A genuinely hard call that reasonable people weigh differently. It depends on what the money builds and whether the city keeps it up, which is why the repair number helps.</div>
-    </div>
+    <a class="q" href="finances-explained.html#part2">
+      <div class="qq">1. Does Buffalo fund the promises it makes? <span class="arrow">&#10132;</span></div>
+      <div class="qa">Not yet. Its largest obligation, about <strong>$1.2 billion</strong> in retiree health care, has mostly been paid year to year rather than set aside in advance.</div>
+    </a>
+    <a class="q" href="finances-explained.html#part3">
+      <div class="qq">2. Does it maintain what it already owns? <span class="arrow">&#10132;</span></div>
+      <div class="qa">Nobody knows what good repair would cost, because no report totals it. That's the number this site asks for.</div>
+    </a>
+    <a class="q" href="finances-explained.html#questions">
+      <div class="qq">3. Should it borrow and build more? <span class="arrow">&#10132;</span></div>
+      <div class="qa">A genuinely hard call this site doesn't settle. The repair number is what turns &ldquo;more or less&rdquo; into &ldquo;the right amount, for the right things.&rdquo;</div>
+    </a>
   </div>
   <div class="deeper">
-    <a href="finances-explained.html">
-      <div class="dt">The whole story <span class="arrow">&#10132;</span></div>
-      <div class="dd">A plain, kitchen-table walkthrough of what the gap is made of, and what to do about it.</div>
+    <a href="data-sources.html">
+      <div class="dt">Check every number <span class="arrow">&#10132;</span></div>
+      <div class="dd">Where each figure on this site comes from in the city's own audited reports.</div>
     </a>
     <a href="finance-decoder.html">
       <div class="dt">20 years of charts <span class="arrow">&#10132;</span></div>
@@ -228,18 +242,33 @@
 (function(){
   var t=document.getElementById('t'),num=document.getElementById('num'),
       cap=document.getElementById('cap'),reveal=document.getElementById('reveal');
-  var ON={n:'≈ −$3.5B',c:'with the road-and-pipe repairs added in'},
-      OFF={n:'−$1.56B',c:"owed beyond what the city has in the bank, mostly unfunded retiree benefits"};
+  var ON={n:'≈ −$3.5B',a:'about negative 3.5 billion dollars',c:'with the road-and-pipe repairs added in — about $30,000 per household'},
+      OFF={n:'−$1.56B',a:'negative 1.56 billion dollars',c:"owed beyond what’s in the bank, mostly unfunded retiree benefits — about $13,400 per household"};
   t.addEventListener('change',function(){
     var on=t.checked;
     num.classList.add('flip');
     setTimeout(function(){
-      num.textContent=on?ON.n:OFF.n;
+      num.textContent=on?ON.n:OFF.n;num.setAttribute('aria-label',on?ON.a:OFF.a);
       cap.textContent=on?ON.c:OFF.c;
       num.classList.remove('flip');
     },150);
     reveal.classList.toggle('open',on);
   });
+})();
+(function(){
+  var el=document.getElementById('num');
+  if(!el)return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var D=1100,t0=null,done=false;
+  document.getElementById('t').addEventListener('change',function(){done=true;});
+  function frame(ts){
+    if(done)return;
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent='−$'+(1.56*e).toFixed(2)+'B';
+    if(p<1)requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 })();
 </script>
 </body>
