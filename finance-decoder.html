@@ -260,7 +260,7 @@
   /* ===== CHART FADE-IN ===== */
   #fd .chart-section.will-animate { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
   #fd .chart-section.animated { opacity: 1; transform: translateY(0); }
-  #fd .chart-hint { font-size: 0.72rem; color: #9ca3af; text-align: right; margin-top: 6px; font-style: italic; }
+  #fd .chart-hint { font-size: 0.72rem; color: #9ca3af; text-align: right; margin: -18px 2px 20px; font-style: italic; }
   /* ===== INNER CHART EXPAND ===== */
   #fd .more-charts-toggle { margin: 8px 24px 16px; max-width: 860px; }
   #fd .more-charts-toggle summary { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.04em; color: var(--navy); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--cream); border: 1px solid #e0dac8; border-radius: 4px; list-style: none; transition: background 0.15s; }
@@ -494,8 +494,8 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart7" role="img" aria-label="Line chart: Buffalo's net financial position, 2006 to 2025. Negative every year; about negative $319 million in 2006, falling off a cliff to about negative $1.65 billion in 2018 when retiree-health (GASB 75) hit the books, and roughly negative $1.56 billion in 2025."></canvas>
-            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-netfinpos">See the data table</a> &middot; Tap or hover for details</div>
-          </div>
+            </div>
+          <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-netfinpos">See the data table</a> &middot; Tap or hover for details</div>
           <div class="chart-body">
             <div class="chart-what">
               <strong>What this chart shows:</strong> Everything Buffalo has, minus everything it owes: pensions, bonds, retiree healthcare (OPEB), and other debts. The result is about negative $1.56 billion. In 2006, the gap was around $319 million. The cliff at <strong>2018</strong> is the GASB 75 accounting change described above, which put the full retiree-healthcare liability on the books.
@@ -520,8 +520,8 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart6" role="img" aria-label="Line chart: net debt as a multiple of annual revenue, 2006 to 2025. About 0.6 times in 2006, peaking near 2.9 times in 2018, easing to about 1.9 times by 2025."></canvas>
-            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-netdebt">See the data table</a> &middot; Tap or hover for details</div>
-          </div>
+            </div>
+          <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-netdebt">See the data table</a> &middot; Tap or hover for details</div>
           <div class="chart-body">
             <div class="chart-what">
               <strong>Think of it this way:</strong> If Buffalo devoted every dollar of revenue to paying off debt and spent nothing else, it would take about <strong>1.9 years</strong>. At the peak in 2018 it would have taken nearly <strong>2.9 years</strong>. Before the GASB changes brought the full picture onto the books, it appeared to be well under 1.0x.
@@ -544,8 +544,8 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart1" role="img" aria-label="Line chart: financial assets divided by liabilities, 2006 to 2025. About 0.62 in 2006, bottoming near 0.27 in 2018, about 0.41 in 2025."></canvas>
-            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-finassets">See the data table</a> &middot; Tap or hover for details</div>
-          </div>
+            </div>
+          <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-finassets">See the data table</a> &middot; Tap or hover for details</div>
           <div class="chart-body">
             <div class="chart-what">
               Ignore roads, bridges, and buildings. Count only what Buffalo has in cash, investments, and money owed to it, then measure that against everything the city owes. The city covers about <strong>41 cents on the dollar</strong>. Before 2018 the ratio looked much healthier, but that was before the full weight of long-term obligations hit the books.
@@ -568,8 +568,8 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart2" role="img" aria-label="Line chart: total assets divided by liabilities, 2006 to 2025. Above 1.0 until 2016, dropping to about 0.61 in 2018, about 0.73 in 2025."></canvas>
-            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-assets">See the data table</a> &middot; Tap or hover for details</div>
-          </div>
+            </div>
+          <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-assets">See the data table</a> &middot; Tap or hover for details</div>
           <div class="chart-body">
             <div class="chart-what">
               This time, count <em>everything</em>: roads, bridges, fire stations, water mains, plus cash. Divide by total obligations. Below 1.0, the city owes more than it owns. Buffalo stayed above that line through the BFSA era, slipped just under in 2016, then dropped to <strong>0.61</strong> when the full picture hit the books in <strong>2018</strong>. It has been below 1.0 ever since.
@@ -605,8 +605,8 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart5" role="img" aria-label="Line chart: infrastructure value remaining (net book value divided by original cost), 2006 to 2025. About 64 percent in 2006 declining to about 50 percent in 2025."></canvas>
-            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-nbv">See the data table</a> &middot; Tap or hover for details</div>
-          </div>
+            </div>
+          <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-nbv">See the data table</a> &middot; Tap or hover for details</div>
           <div class="chart-body">
             <div class="chart-what">
               How much useful life is left in Buffalo's roads, water mains, bridges, and buildings, measured as a share of their original recorded cost? The answer has fallen steadily from about <strong>64% to 50%</strong> over two decades. A slight uptick in 2024&ndash;25 suggests some recent capital investment, but the long-term trend is clear.
@@ -630,8 +630,8 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart4" role="img" aria-label="Line chart: interest as a percent of revenue, 2006 to 2025. About 6.9 percent in 2006 falling to about 1.25 percent in 2025; most of the decline is in the city's tax-supported governmental interest."></canvas>
-            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-interest">See the data table</a> &middot; Tap or hover for details</div>
-          </div>
+            </div>
+          <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-interest">See the data table</a> &middot; Tap or hover for details</div>
           <div class="chart-body">
             <div class="chart-what">
               Of every dollar Buffalo collects, how many cents go to interest, before a penny of principal is paid down? In 2006, nearly <strong>7 cents of every dollar</strong>. By 2025, about <strong>1.2 cents</strong>. Most of that drop is a real win: the city's tax-supported (governmental) interest collapsed from roughly 5 cents to under 1 cent per dollar under the BFSA's disciplined debt repayment. What's left is mostly the self-supporting water system covering its own bonds. It also puts today's bond fight in context: even with debt this modest and this cheap, the Mayor, Common Council, and City Comptroller Barbara Miller-Williams are in court over whether to issue $110&nbsp;million in new capital bonds, a genuinely hard call this project doesn't take sides on.
@@ -666,8 +666,8 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart3" role="img" aria-label="Line chart: state and federal aid and grants as a percent of revenue, 2006 to 2025. About 35 percent in 2006 rising to about 42 percent in 2025."></canvas>
-            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-transfers">See the data table</a> &middot; Tap or hover for details</div>
-          </div>
+            </div>
+          <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-transfers">See the data table</a> &middot; Tap or hover for details</div>
           <div class="chart-body">
             <div class="chart-what">
               What share of Buffalo's revenue comes from state and federal aid and grants, rather than local taxes and fees? Between about a third and 45% over the period: roughly <strong>35% in 2006 and 42% by 2025</strong>. The jump in 2023&ndash;2024 is pandemic-era federal relief landing on top of an already-high baseline of state aid (Buffalo's AIM payment alone is about $166 million). This counts grants and state aid; Buffalo's share of county sales tax is treated as local revenue.
