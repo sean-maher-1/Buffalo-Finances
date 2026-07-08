@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:image" content="https://buffalofinances.org/og-image.png">
+<meta property="og:image" content="https://buffalofinances.org/og-deepdive.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://buffalofinances.org/og-image.png">
+<meta name="twitter:image" content="https://buffalofinances.org/og-deepdive.png">
 <meta property="og:url" content="https://buffalofinances.org/finance-decoder.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light only">
@@ -238,6 +238,7 @@
   #fd .toc-links a { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.68rem; color: var(--text-mid); text-decoration: none; padding: 5px 10px; border-radius: 3px; white-space: nowrap; transition: background 0.15s, color 0.15s; }
   #fd .toc-links a.pg { color: var(--navy); }
   #fd .toc-links a.ext { color: var(--gold-dim); }
+  #fd .toc-links a.self { background: var(--gold); color: var(--navy); font-weight: 800; }
   .toc-links a:hover, #fd .toc-links a.active { background: var(--sky-pale); color: var(--navy); }
   #fd .toc-links a.active { background: var(--navy); color: white; }
   #fd .toc::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 48px; background: linear-gradient(to right, rgba(255,255,255,0), white 80%); pointer-events: none; z-index: 2; }
@@ -335,6 +336,20 @@
     #fd .context-expand { display: block; }
     #fd .context-expand summary { display: none; }
   }
+  #fd section[id], #fd .chart-section[id] { scroll-margin-top: 72px; }
+  #fd .chart-hint button.copy-chart { font-family: inherit; font-style: normal; font-size: 0.72rem; color: var(--navy); background: none; border: none; cursor: pointer; padding: 0; font-weight: 700; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 2px; }
+  #fd .chart-hint button.copy-chart:hover { color: #b87d00; }
+  #fd .chart-cta { margin-top: 14px; background: #fff4dc; border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; padding: 12px 16px; font-size: 0.92rem; line-height: 1.5; color: var(--text-mid); }
+  #fd .chart-cta a { color: var(--navy); font-weight: 700; text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 2px; }
+  #fd .stat-spark { margin-top: 10px; }
+  #fd .stat-spark svg { display: block; opacity: .85; }
+  #fd .stat-spark span { display: block; font-size: 0.6rem; letter-spacing: .06em; color: #9ca3af; margin-top: 2px; }
+  #fd .stat-red .stat-spark { color: #d23b3b; }
+  #fd .stat-amber .stat-spark { color: #b87d00; }
+  #fd .chart-hint a { color: var(--navy); font-weight: 700; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 2px; font-style: normal; }
+  @media (prefers-reduced-motion: reduce) {
+    #fd .chart-section.will-animate { opacity: 1; transform: none; transition: none; }
+  }
 </style>
 </head>
 <body>
@@ -349,6 +364,7 @@
       <a class="pg" href="index.html">Start Here</a>
       <a class="pg" href="finances-explained.html">Explained</a>
       <a class="pg" href="take-action.html">Take Action</a>
+      <a class="pg self" href="finance-decoder.html">Deep Dive</a>
       <a class="pg ext" href="https://www.strongtownsbuffalo.com" target="_blank">Strong Towns Buffalo</a>
       <div class="toc-divider"></div>
       <a href="#dothemath">#DoTheMath</a>
@@ -428,6 +444,7 @@
         <div class="stat-number" role="img" aria-label="negative 1.6 billion dollars">&minus;$1.6B</div>
         <div class="stat-label">Net financial position</div>
         <div class="stat-context">Counting only money-like assets, Buffalo owes about $1.56 billion more than it holds, driven largely by unfunded long-term obligations.</div>
+        <div class="stat-spark" data-series="netFinPosition"></div>
       </div>
       <div class="stat-card stat-red">
         <div class="stat-number" role="img" aria-label="1.2 billion dollars">$1.2B</div>
@@ -438,11 +455,13 @@
         <div class="stat-number" data-count-down="100">50%</div>
         <div class="stat-label">Infrastructure value remaining</div>
         <div class="stat-context">Half of Buffalo's infrastructure value has been consumed by wear and tear, down from about 64% in 2006.</div>
+        <div class="stat-spark" data-series="netBookToTCA"></div>
       </div>
       <div class="stat-card stat-amber">
         <div class="stat-number">42%</div>
         <div class="stat-label">Revenue from state &amp; federal aid</div>
         <div class="stat-context">More than 40% of Buffalo's revenue comes from state and federal aid and grants, up from about a third in 2006 and climbing as pandemic money flowed in.</div>
+        <div class="stat-spark" data-series="govTransfers"></div>
       </div>
     </div>
     <p class="summary-footnote">The charts below break it down, grouped by those three questions.</p>
@@ -465,7 +484,7 @@
     </summary>
     <div class="category-charts">
       <!-- Chart: Net Financial Position -->
-      <div class="chart-section layout-wide" id="c7">
+      <div class="chart-section layout-wide" id="chart-01"><span id="c7"></span>
         <div class="chart-inner">
           <div class="chart-header">
             <div class="chart-number">01</div>
@@ -475,7 +494,7 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart7" role="img" aria-label="Line chart: Buffalo's net financial position, 2006 to 2025. Negative every year; about negative $319 million in 2006, falling off a cliff to about negative $1.65 billion in 2018 when retiree-health (GASB 75) hit the books, and roughly negative $1.56 billion in 2025."></canvas>
-            <div class="chart-hint">Hover chart for details</div>
+            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-netfinpos">See the data table</a> &middot; Tap or hover for details</div>
           </div>
           <div class="chart-body">
             <div class="chart-what">
@@ -491,7 +510,7 @@
       <details class="more-charts-toggle">
         <summary>3 more sustainability charts <span class="toggle-arrow">&#9660;</span></summary>
       <!-- Chart: Net Debt-to-Revenue -->
-      <div class="chart-section" id="c3">
+      <div class="chart-section" id="chart-02"><span id="c3"></span>
         <div class="chart-inner">
           <div class="chart-header">
             <div class="chart-number">02</div>
@@ -501,7 +520,7 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart6" role="img" aria-label="Line chart: net debt as a multiple of annual revenue, 2006 to 2025. About 0.6 times in 2006, peaking near 2.9 times in 2018, easing to about 1.9 times by 2025."></canvas>
-            <div class="chart-hint">Hover chart for details</div>
+            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-netdebt">See the data table</a> &middot; Tap or hover for details</div>
           </div>
           <div class="chart-body">
             <div class="chart-what">
@@ -515,7 +534,7 @@
         </div>
       </div>
       <!-- Chart: Financial Assets-to-Liabilities -->
-      <div class="chart-section" id="c4">
+      <div class="chart-section" id="chart-03"><span id="c4"></span>
         <div class="chart-inner">
           <div class="chart-header">
             <div class="chart-number">03</div>
@@ -525,7 +544,7 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart1" role="img" aria-label="Line chart: financial assets divided by liabilities, 2006 to 2025. About 0.62 in 2006, bottoming near 0.27 in 2018, about 0.41 in 2025."></canvas>
-            <div class="chart-hint">Hover chart for details</div>
+            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-finassets">See the data table</a> &middot; Tap or hover for details</div>
           </div>
           <div class="chart-body">
             <div class="chart-what">
@@ -539,7 +558,7 @@
         </div>
       </div>
       <!-- Chart: Total Assets-to-Liabilities -->
-      <div class="chart-section" id="c5">
+      <div class="chart-section" id="chart-04"><span id="c5"></span>
         <div class="chart-inner">
           <div class="chart-header">
             <div class="chart-number">04</div>
@@ -549,7 +568,7 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart2" role="img" aria-label="Line chart: total assets divided by liabilities, 2006 to 2025. Above 1.0 until 2016, dropping to about 0.61 in 2018, about 0.73 in 2025."></canvas>
-            <div class="chart-hint">Hover chart for details</div>
+            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-assets">See the data table</a> &middot; Tap or hover for details</div>
           </div>
           <div class="chart-body">
             <div class="chart-what">
@@ -576,7 +595,7 @@
     </summary>
     <div class="category-charts">
       <!-- Chart: Infrastructure condition -->
-      <div class="chart-section layout-wide" id="c1">
+      <div class="chart-section layout-wide" id="chart-05"><span id="c1"></span>
         <div class="chart-inner">
           <div class="chart-header">
             <div class="chart-number">05</div>
@@ -586,7 +605,7 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart5" role="img" aria-label="Line chart: infrastructure value remaining (net book value divided by original cost), 2006 to 2025. About 64 percent in 2006 declining to about 50 percent in 2025."></canvas>
-            <div class="chart-hint">Hover chart for details</div>
+            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-nbv">See the data table</a> &middot; Tap or hover for details</div>
           </div>
           <div class="chart-body">
             <div class="chart-what">
@@ -596,11 +615,12 @@
               <div class="takeaway-label">The catch</div>
               Deferred maintenance compounds. Skip a year of repaving and the road degrades faster, costing more to fix later. Buffalo built more than it can afford to maintain, and much of that infrastructure was built in the same era, which means large portions are aging on the same schedule. Strong Towns argues that cities should <a class="il" href="https://www.strongtowns.org/journal/2024-7-22-what-strong-towns-really-says-about-infrastructure-spending" target="_blank">prioritize maintaining existing infrastructure</a> over building new, and that every new investment should be evaluated by whether it generates enough revenue to cover its long-term maintenance costs.
             </div>
+            <div class="chart-cta">This wear is the repair bill nobody totals &mdash; the one number this project asks the city to publish. <a href="finances-explained.html#part3">Read the case</a> or <a href="take-action.html">send the ask</a>.</div>
           </div>
         </div>
       </div>
       <!-- Chart: Interest burden -->
-      <div class="chart-section" id="c2">
+      <div class="chart-section" id="chart-06"><span id="c2"></span>
         <div class="chart-inner">
           <div class="chart-header">
             <div class="chart-number">06</div>
@@ -610,7 +630,7 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart4" role="img" aria-label="Line chart: interest as a percent of revenue, 2006 to 2025. About 6.9 percent in 2006 falling to about 1.25 percent in 2025; most of the decline is in the city's tax-supported governmental interest."></canvas>
-            <div class="chart-hint">Hover chart for details</div>
+            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-interest">See the data table</a> &middot; Tap or hover for details</div>
           </div>
           <div class="chart-body">
             <div class="chart-what">
@@ -636,7 +656,7 @@
     </summary>
     <div class="category-charts">
       <!-- Chart: Government transfers -->
-      <div class="chart-section" id="c6">
+      <div class="chart-section" id="chart-07"><span id="c6"></span>
         <div class="chart-inner">
           <div class="chart-header">
             <div class="chart-number">07</div>
@@ -646,7 +666,7 @@
           </div>
           <div class="chart-canvas-wrap">
             <canvas id="chart3" role="img" aria-label="Line chart: state and federal aid and grants as a percent of revenue, 2006 to 2025. About 35 percent in 2006 rising to about 42 percent in 2025."></canvas>
-            <div class="chart-hint">Hover chart for details</div>
+            <div class="chart-hint"><button class="copy-chart" type="button">&#128279; Copy link to this chart</button> &middot; <a href="data-sources.html#ind-transfers">See the data table</a> &middot; Tap or hover for details</div>
           </div>
           <div class="chart-body">
             <div class="chart-what">
@@ -919,6 +939,7 @@ Object.keys(chartConfigs).forEach(canvasId => {
 })();
 // ===== CHART FADE-IN ON SCROLL =====
 (function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const chartSections = document.querySelectorAll('.chart-section');
   chartSections.forEach(s => {
     const parentDetails = s.closest('details');
@@ -946,6 +967,7 @@ Object.keys(chartConfigs).forEach(canvasId => {
 })();
 // ===== ANIMATED STAT COUNTERS =====
 (function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const statNumbers = document.querySelectorAll('.stat-number');
   const duration = 1200;
   function parseStatValue(el) {
@@ -1016,6 +1038,61 @@ function openShareEmail() {
         });
       }
     });
+  });
+})();
+
+// ===== PER-CHART COPY LINK =====
+(function(){
+  document.querySelectorAll('#fd .copy-chart').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var sec = btn.closest('.chart-section'); if (!sec || !sec.id) return;
+      var link = location.origin + location.pathname + '#' + sec.id;
+      navigator.clipboard.writeText(link).then(function(){
+        var t = btn.innerHTML; btn.innerHTML = '&#10003; Link copied';
+        setTimeout(function(){ btn.innerHTML = t; }, 1600);
+      });
+    });
+  });
+})();
+// ===== HASH NAVIGATION: OPEN COLLAPSED SECTIONS, THEN SCROLL =====
+(function(){
+  function openTo(hash){
+    if (!hash) return;
+    var el = document.getElementById(hash.replace('#',''));
+    if (!el) return;
+    var target = el.closest('.chart-section') || el;
+    var d = target.closest('details');
+    var openedAny = false;
+    while (d) { if (!d.open) { d.open = true; openedAny = true; } d = d.parentElement && d.parentElement.closest('details'); }
+    setTimeout(function(){ target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, openedAny ? 180 : 0);
+  }
+  window.addEventListener('hashchange', function(){ openTo(location.hash); });
+  if (location.hash) setTimeout(function(){ openTo(location.hash); }, 250);
+})();
+// ===== PRINT: OPEN EVERYTHING AND FORCE-RENDER CHARTS =====
+(function(){
+  var reopened = [];
+  window.addEventListener('beforeprint', function(){
+    reopened = [];
+    document.querySelectorAll('#fd details').forEach(function(d){
+      if (!d.open) { d.open = true; reopened.push(d); }
+    });
+    Object.keys(charts).forEach(function(k){ charts[k].resize(); charts[k].update('none'); });
+  });
+  window.addEventListener('afterprint', function(){
+    reopened.forEach(function(d){ d.open = false; });
+    reopened = [];
+  });
+})();
+// ===== STAT-CARD SPARKLINES =====
+(function(){
+  document.querySelectorAll('#fd .stat-spark').forEach(function(el){
+    var s = data[el.dataset.series]; if (!s) return;
+    var w = 120, h = 28, min = Math.min.apply(null, s), max = Math.max.apply(null, s), rng = (max - min) || 1;
+    var pts = s.map(function(v, i){
+      return (i / (s.length - 1) * w).toFixed(1) + ',' + (h - 2 - ((v - min) / rng * (h - 4))).toFixed(1);
+    }).join(' ');
+    el.innerHTML = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="' + w + '" height="' + h + '" aria-hidden="true"><polyline points="' + pts + '" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>2006 &rarr; 2025</span>';
   });
 })();
 </script>

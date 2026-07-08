@@ -57,3 +57,18 @@ All underlying data (FY2006–2025 ACFR figures, the 7 Decoder indicators, CSV/J
 - **Short/full letter toggle:** new ~150-word short version is the default (busy offices skim); the original full letter is one tab away. Edits to each version are kept when switching.
 - **Print prints only the letter** (print stylesheet + hidden print target), not the whole page.
 - Removed the duplicate "Stay in it" heading; added an after-you-send note (replies take a week or two; report responses to Strong Towns Buffalo).
+
+## Deep Dive polish (July 7, 2026)
+`finance-decoder.html` — shareability and print fixes; no data or chart changes:
+- **Print bug fixed:** charts inside never-opened collapsibles printed as blank boxes. Printing now opens every section and force-renders all seven charts (and restores the collapsed state after).
+- **Per-chart permalinks:** chart sections renamed to semantic anchors (`#chart-01`–`#chart-07`, old ids kept), each chart has a "Copy link to this chart" button, anchors clear the sticky nav (scroll-margin), and hash links into collapsed sections now auto-open them.
+- **Chart 05 inline CTA:** the infrastructure-wear chart now points to the repair-bill case (Explained Part 3) and Take Action at the moment the evidence lands, instead of only at the page bottom.
+- Stat cards in "Numbers at a Glance" carry 20-year sparklines (net position, infrastructure value, aid share); hover hint now reads "Tap or hover."
+
+## Receipts, reach & maintenance pass (July 7, 2026)
+- **Receipts loop closed:** every decoder chart now links "See the data table" to an anchored row on data-sources.html (rows highlight on arrival); raw CSV/JSON download links surfaced at the top of data-sources.
+- **Decoder consistency:** nav now shows an active "Deep Dive" pill like the other pages; chart fade-ins and stat counters respect prefers-reduced-motion.
+- **Per-page OG images:** og-home / og-explained / og-deepdive (real net-position chart) / og-takeaction PNGs (1200×630), wired into each page's og:image and twitter:image. Shares no longer all look identical.
+- **Council handout:** `dothemath-buffalo-handout.pdf` — one-page printable of the five-number story, the ask, and three questions for Council members; linked from Take Action for public-comment/hand-delivery use.
+- **Link check (July 7, 2026):** news links (Audacy budget-gap, WKBW parking ramps), the city's paving announcement, Strong Towns pages, and behavioraleconomics.com all live. Comptroller ACFR page, the S&P PDF, and the NYC a860-gpp portal returned empty to automated fetches (likely bot protection / PDF) — spot-check manually on occasion.
+- **Maintenance:** scheduled a Dec 1, 2026 reminder to check for the FY2026 ACFR and update the data. Back-porting this month's improvements to the Evanston/Joliet sites remains open.

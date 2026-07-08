@@ -73,6 +73,8 @@
   footer .w{max-width:880px;margin:0 auto}
   footer a{color:var(--gold);font-weight:700;text-decoration:none}
   @media (max-width:560px){.sitenav-inner{padding:8px 14px;gap:8px} .sitenav-brand .brandtxt{display:none} .sitenav-links a{font-size:.66rem;padding:5px 9px}}
+  [id]{scroll-margin-top:64px}
+  .ind .r:target{background:#fff4dc;outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
 </style>
 </head>
 <body>
@@ -101,11 +103,12 @@
 <main>
   <section>
     <h2>Where the numbers come from</h2>
+    <p style="font-size:.95rem"><strong>Grab the raw data:</strong> <a class="il" href="buffalo-finance-data.csv" download>CSV</a> &middot; <a class="il" href="buffalo-finance-data.json" download>JSON</a> &mdash; every input and computed indicator, 2006&ndash;2025.</p>
     <p>All figures are for the City of Buffalo's <strong>total primary government</strong> (governmental plus business-type activities), in millions of dollars unless noted. They are taken from the city's own audited <strong>Annual Comprehensive Financial Reports (ACFRs), fiscal years 2006 through 2025</strong>: the Management's Discussion &amp; Analysis condensed statements (Table 1, Statement of Net Position; Table 2, Changes in Net Position), the government-wide statements, the capital-assets notes, the long-term-liability notes, and the statistical-section tables. The seven indicators follow the <a class="il" href="https://www.strongtowns.org/decoder" target="_blank">Strong Towns Finance Decoder</a> method.</p>
     <p>Buffalo adopted government-wide accrual reporting (GASB 34) in <strong>FY2003</strong>, so there is no FY2002 figure. FY2003&ndash;FY2005 carry early-implementation restatements and are left off the charts; the series begins in <strong>FY2006</strong>, where every year reconciles across the MD&amp;A, the statistical section, and adjacent reports.</p>
   </section>
   <section>
-    <h2>Raw inputs: balance sheet ($ millions)</h2>
+    <h2 id="balance-sheet">Raw inputs: balance sheet ($ millions)</h2>
     <div class="tblwrap">
       <table>
         <thead><tr>
@@ -138,7 +141,7 @@
     <p class="tnote">Net position is the audited bottom line; net financial position (below) subtracts net capital assets from it. Capital(net) = total assets &minus; cash &amp; other. Deferred outflows/inflows were not reported before FY2013 (GASB 63/65). FY2020 is taken from the FY2021 report's comparative column. The FY2006&ndash;07 figures are cross-checked against the audited ten-year statistical tables (Net Position by Component; Changes in Net Position) and capital-asset notes published in later reports, which reconcile exactly.</p>
   </section>
   <section>
-    <h2>Raw inputs: revenue &amp; interest detail ($ millions)</h2>
+    <h2 id="revenue-detail">Raw inputs: revenue &amp; interest detail ($ millions)</h2>
     <p>Income-statement (full-year) figures, with Total revenue, the denominator for both ratios, in the first column. <strong>Government transfers</strong> = operating grants + capital grants + state aid + unrestricted grants; intergovernmental revenue (Buffalo's county sales-tax share) is shown but treated as local and <em>excluded</em>. <strong>Interest</strong> = governmental + enterprise interest. Both are divided by Total revenue.</p>
     <div class="tblwrap">
       <table>
@@ -172,20 +175,20 @@
     <p class="tnote">* Intergovernmental is Buffalo's distribution of Erie County sales tax; it is excluded from government transfers (treated as local revenue). Enterprise interest is the water and parking funds' interest from the audited proprietary-fund statements; the FY2020 figure is from the FY2021 report's comparative column. All figures Total Primary Government, $ millions.</p>
   </section>
   <section>
-    <h2>The seven indicators</h2>
+    <h2 id="indicators">The seven indicators</h2>
     <p>Each value runs 2006 &rarr; 2025, left to right.</p>
     <div class="ind">
-      <div class="r"><div class="n">Net financial position ($M) <span style="font-weight:400;color:var(--text-mid)">= net position &minus; net capital assets</span></div><div class="v">-319.2, -281.0, -274.2, -304.0, -337.6, -417.8, -473.8, -491.5, -571.2, -605.0, -668.2, -781.0, -1652.6, -1571.4, -1603.9, -1558.1, -1500.0, -1531.6, -1556.2, -1563.5</div></div>
-      <div class="r"><div class="n">Net debt &divide; revenue</div><div class="v">0.64, 0.49, 0.50, 0.54, 0.60, 0.78, 0.88, 0.80, 0.98, 0.98, 1.15, 1.34, 2.87, 2.63, 2.81, 2.39, 2.18, 2.03, 1.92, 1.87</div></div>
-      <div class="r"><div class="n">Financial assets &divide; liabilities</div><div class="v">0.617, 0.689, 0.702, 0.703, 0.692, 0.651, 0.628, 0.620, 0.564, 0.537, 0.556, 0.463, 0.271, 0.272, 0.332, 0.411, 0.461, 0.443, 0.446, 0.407</div></div>
-      <div class="r"><div class="n">Total assets &divide; liabilities</div><div class="v">1.237, 1.285, 1.301, 1.255, 1.223, 1.138, 1.101, 1.084, 1.039, 1.022, 0.924, 0.898, 0.606, 0.655, 0.582, 0.633, 0.736, 0.706, 0.756, 0.734</div></div>
-      <div class="r"><div class="n">Net book value &divide; cost (% infrastructure remaining)</div><div class="v">64.2, 63.6, 62.6, 61.6, 60.4, 58.7, 58.0, 56.8, 55.9, 55.3, 54.5, 53.6, 51.8, 51.2, 50.1, 49.0, 48.6, 48.1, 49.3, 50.4</div></div>
-      <div class="r"><div class="n">Interest &divide; revenue (%)</div><div class="v">6.87, 5.52, 4.87, 4.68, 4.51, 4.54, 3.98, 3.93, 3.19, 2.64, 2.80, 2.53, 2.39, 2.03, 1.85, 1.90, 1.25, 1.18, 1.17, 1.25</div></div>
-      <div class="r"><div class="n">Government transfers &divide; revenue (%)</div><div class="v">34.9, 35.0, 34.6, 36.5, 39.7, 36.3, 36.1, 38.6, 40.8, 39.2, 38.6, 38.4, 37.8, 35.2, 31.7, 35.4, 37.3, 42.2, 44.7, 42.4</div></div>
+      <div class="r" id="ind-netfinpos"><div class="n">Net financial position ($M) <span style="font-weight:400;color:var(--text-mid)">= net position &minus; net capital assets</span></div><div class="v">-319.2, -281.0, -274.2, -304.0, -337.6, -417.8, -473.8, -491.5, -571.2, -605.0, -668.2, -781.0, -1652.6, -1571.4, -1603.9, -1558.1, -1500.0, -1531.6, -1556.2, -1563.5</div></div>
+      <div class="r" id="ind-netdebt"><div class="n">Net debt &divide; revenue</div><div class="v">0.64, 0.49, 0.50, 0.54, 0.60, 0.78, 0.88, 0.80, 0.98, 0.98, 1.15, 1.34, 2.87, 2.63, 2.81, 2.39, 2.18, 2.03, 1.92, 1.87</div></div>
+      <div class="r" id="ind-finassets"><div class="n">Financial assets &divide; liabilities</div><div class="v">0.617, 0.689, 0.702, 0.703, 0.692, 0.651, 0.628, 0.620, 0.564, 0.537, 0.556, 0.463, 0.271, 0.272, 0.332, 0.411, 0.461, 0.443, 0.446, 0.407</div></div>
+      <div class="r" id="ind-assets"><div class="n">Total assets &divide; liabilities</div><div class="v">1.237, 1.285, 1.301, 1.255, 1.223, 1.138, 1.101, 1.084, 1.039, 1.022, 0.924, 0.898, 0.606, 0.655, 0.582, 0.633, 0.736, 0.706, 0.756, 0.734</div></div>
+      <div class="r" id="ind-nbv"><div class="n">Net book value &divide; cost (% infrastructure remaining)</div><div class="v">64.2, 63.6, 62.6, 61.6, 60.4, 58.7, 58.0, 56.8, 55.9, 55.3, 54.5, 53.6, 51.8, 51.2, 50.1, 49.0, 48.6, 48.1, 49.3, 50.4</div></div>
+      <div class="r" id="ind-interest"><div class="n">Interest &divide; revenue (%)</div><div class="v">6.87, 5.52, 4.87, 4.68, 4.51, 4.54, 3.98, 3.93, 3.19, 2.64, 2.80, 2.53, 2.39, 2.03, 1.85, 1.90, 1.25, 1.18, 1.17, 1.25</div></div>
+      <div class="r" id="ind-transfers"><div class="n">Government transfers &divide; revenue (%)</div><div class="v">34.9, 35.0, 34.6, 36.5, 39.7, 36.3, 36.1, 38.6, 40.8, 39.2, 38.6, 38.4, 37.8, 35.2, 31.7, 35.4, 37.3, 42.2, 44.7, 42.4</div></div>
     </div>
   </section>
   <section>
-    <h2>Method &amp; notes</h2>
+    <h2 id="method">Method &amp; notes</h2>
     <ul class="notes">
       <li><strong>Net financial position</strong> is the city's money-like assets (cash, investments, money owed to it, plus deferred outflows) minus everything it owes (total liabilities plus deferred inflows). It equals the audited net position minus net capital assets.</li>
       <li><strong>The cliff is FY2018.</strong> GASB 68 (pensions, FY2015) was modest for Buffalo because New York's state-administered pension systems are relatively well funded, and net position stayed positive through 2016. GASB 75 (retiree healthcare/OPEB, FY2018) is the step-down: total net position fell from &minus;$73M (FY2017) to &minus;$951M (FY2018) as the full OPEB liability hit the books. Net financial position bottomed near &minus;$1.65B in 2018 and has hovered around &minus;$1.5B to &minus;$1.6B since.</li>
@@ -197,7 +200,7 @@
     </ul>
   </section>
   <section>
-    <h2>Headline figures (2025)</h2>
+    <h2 id="headline">Headline figures (2025)</h2>
     <ul class="keyfig">
       <li><b>Net financial position:</b> &minus;$1.56B (about &minus;$13,400 per household)</li>
       <li><b>Unfunded retiree healthcare (OPEB):</b> ~$1.24B, the single largest driver of the gap</li>
@@ -215,7 +218,7 @@
     <p style="margin-top:14px;"><strong>Download the full dataset:</strong> <a class="il" href="buffalo-finance-data.csv" download>CSV</a> &middot; <a class="il" href="buffalo-finance-data.json" download>JSON</a>, covering every raw input and computed indicator, 2006&ndash;2025.</p>
   </section>
   <section>
-    <h2>Plain-English glossary</h2>
+    <h2 id="glossary">Plain-English glossary</h2>
     <div class="ind">
       <div class="r"><div class="n">Net financial position</div><div class="v">The "money test": what the city owns that is money-like (cash, investments, receivables) minus everything it owes. Below zero means it owes more than it holds. Equals audited net position minus net capital assets.</div></div>
       <div class="r"><div class="n">OPEB (other post-employment benefits)</div><div class="v">Mostly retiree health care promised to city employees. Buffalo funds it pay-as-you-go, so the unfunded promise (~$1.24B) sits on the books as a long-term liability.</div></div>
