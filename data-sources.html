@@ -75,6 +75,24 @@
   @media (max-width:560px){.sitenav-inner{padding:8px 14px;gap:8px} .sitenav-brand .brandtxt{display:none} .sitenav-links a{font-size:.66rem;padding:5px 9px}}
   [id]{scroll-margin-top:64px}
   .ind .r:target{background:#fff4dc;outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+  .chips a{font-family:'Raleway',sans-serif;font-weight:700;font-size:.78rem;color:var(--navy);background:#fff;border:1px solid #e4dcc4;border-radius:999px;padding:6px 14px;text-decoration:none;transition:border-color .15s,background .15s}
+  .chips a:hover{border-color:var(--gold);background:#fffbf0}
+  .spark{display:block;width:100%;max-width:460px;height:44px;margin:7px 0 5px}
+  .kp{font-size:.85rem;color:var(--text-mid);font-variant-numeric:tabular-nums}
+  .kp b{color:var(--coral-deep)}
+  .kp .good{color:var(--teal);font-weight:700}
+  tbody tr:nth-child(even) td{background:#fbf8f0}
+  tbody tr:nth-child(even) td:first-child{background:#fbf8f0}
+  tbody tr:hover td{background:#f4eeda}
+  tr.y18 td{background:#fdeeee!important}
+  tr.y18 td:first-child{color:var(--coral-deep)!important}
+  .gloss .v{font-size:.9rem;line-height:1.55}
+  details.yrtable{margin-top:14px}
+  details.yrtable summary{font-family:'Raleway',sans-serif;font-weight:800;font-size:.85rem;color:var(--navy);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:9px;padding:8px 0}
+  details.yrtable summary::-webkit-details-marker{display:none}
+  details.yrtable summary::before{content:'+';display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:.85rem;line-height:1;flex-shrink:0}
+  details.yrtable[open] summary::before{content:'\2212'}
 </style>
 </head>
 <body>
@@ -101,14 +119,25 @@
   </div>
 </header>
 <main>
+  <nav class="chips" aria-label="On this page">
+    <a href="#balance-sheet">Balance sheet</a>
+    <a href="#revenue-detail">Revenue &amp; interest</a>
+    <a href="#indicators">The 7 indicators</a>
+    <a href="#method">Method</a>
+    <a href="#headline">Headline figures</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#downloads">Downloads</a>
+  </nav>
   <section>
     <h2>Where the numbers come from</h2>
-    <p style="font-size:.95rem"><strong>Grab the raw data:</strong> <a class="il" href="buffalo-finance-data.csv" download>CSV</a> &middot; <a class="il" href="buffalo-finance-data.json" download>JSON</a> &mdash; every input and computed indicator, 2006&ndash;2025.</p>
+    <p style="font-size:.95rem" id="downloads"><strong>Grab the raw data:</strong> <a class="il" href="buffalo-finance-data.csv" download>CSV</a> &middot; <a class="il" href="buffalo-finance-data.json" download>JSON</a> &mdash; every input and computed indicator, 2006&ndash;2025.</p>
     <p>All figures are for the City of Buffalo's <strong>total primary government</strong> (governmental plus business-type activities), in millions of dollars unless noted. They are taken from the city's own audited <strong>Annual Comprehensive Financial Reports (ACFRs), fiscal years 2006 through 2025</strong>: the Management's Discussion &amp; Analysis condensed statements (Table 1, Statement of Net Position; Table 2, Changes in Net Position), the government-wide statements, the capital-assets notes, the long-term-liability notes, and the statistical-section tables. The seven indicators follow the <a class="il" href="https://www.strongtowns.org/decoder" target="_blank">Strong Towns Finance Decoder</a> method.</p>
     <p>Buffalo adopted government-wide accrual reporting (GASB 34) in <strong>FY2003</strong>, so there is no FY2002 figure. FY2003&ndash;FY2005 carry early-implementation restatements and are left off the charts; the series begins in <strong>FY2006</strong>, where every year reconciles across the MD&amp;A, the statistical section, and adjacent reports.</p>
   </section>
   <section>
     <h2 id="balance-sheet">Raw inputs: balance sheet ($ millions)</h2>
+    <details class="yrtable">
+      <summary>Show the table (2006&ndash;2025, 8 columns)</summary>
     <div class="tblwrap">
       <table>
         <thead><tr>
@@ -127,7 +156,7 @@
           <tr><td>2015</td><td>674.0</td><td>662.1</td><td>1336.2</td><td>28.6</td><td>1307.5</td><td>0.1</td><td>57.1</td><td>535.6</td></tr>
           <tr><td>2016</td><td>687.6</td><td>683.3</td><td>1370.9</td><td>148.4</td><td>1483.4</td><td>20.8</td><td>15.2</td><td>571.0</td></tr>
           <tr><td>2017</td><td>582.9</td><td>707.7</td><td>1290.6</td><td>90.7</td><td>1437.6</td><td>16.9</td><td class="neg">-73.3</td><td>612.8</td></tr>
-          <tr><td>2018</td><td>497.5</td><td>701.9</td><td>1199.4</td><td>115.6</td><td>1979.1</td><td>286.6</td><td class="neg">-950.7</td><td>652.5</td></tr>
+          <tr class="y18"><td>2018</td><td>497.5</td><td>701.9</td><td>1199.4</td><td>115.6</td><td>1979.1</td><td>286.6</td><td class="neg">-950.7</td><td>652.5</td></tr>
           <tr><td>2019</td><td>521.2</td><td>723.2</td><td>1244.4</td><td>66.5</td><td>1899.5</td><td>259.5</td><td class="neg">-848.1</td><td>690.5</td></tr>
           <tr><td>2020</td><td>565.1</td><td>731.5</td><td>1296.6</td><td>231.7</td><td>2227.2</td><td>173.5</td><td class="neg">-872.4</td><td>728.2</td></tr>
           <tr><td>2021</td><td>704.4</td><td>743.8</td><td>1448.3</td><td>381.7</td><td>2288.5</td><td>355.8</td><td class="neg">-814.3</td><td>773.5</td></tr>
@@ -138,11 +167,14 @@
         </tbody>
       </table>
     </div>
-    <p class="tnote">Net position is the audited bottom line; net financial position (below) subtracts net capital assets from it. Capital(net) = total assets &minus; cash &amp; other. Deferred outflows/inflows were not reported before FY2013 (GASB 63/65). FY2020 is taken from the FY2021 report's comparative column. The FY2006&ndash;07 figures are cross-checked against the audited ten-year statistical tables (Net Position by Component; Changes in Net Position) and capital-asset notes published in later reports, which reconcile exactly.</p>
+    <p class="tnote">Net position is the audited bottom line; net financial position (below) subtracts net capital assets from it. Capital(net) = total assets &minus; cash &amp; other. Deferred outflows/inflows were not reported before FY2013 (GASB 63/65). FY2020 is taken from the FY2021 report's comparative column. The highlighted FY2018 row is when GASB&nbsp;75 put retiree health care on the books. The FY2006&ndash;07 figures are cross-checked against the audited ten-year statistical tables (Net Position by Component; Changes in Net Position) and capital-asset notes published in later reports, which reconcile exactly.</p>
+    </details>
   </section>
   <section>
     <h2 id="revenue-detail">Raw inputs: revenue &amp; interest detail ($ millions)</h2>
     <p>Income-statement (full-year) figures, with Total revenue, the denominator for both ratios, in the first column. <strong>Government transfers</strong> = operating grants + capital grants + state aid + unrestricted grants; intergovernmental revenue (Buffalo's county sales-tax share) is shown but treated as local and <em>excluded</em>. <strong>Interest</strong> = governmental + enterprise interest. Both are divided by Total revenue.</p>
+    <details class="yrtable">
+      <summary>Show the table (2006&ndash;2025, 9 columns)</summary>
     <div class="tblwrap">
       <table>
         <thead><tr>
@@ -161,7 +193,7 @@
           <tr><td>2015</td><td>616.4</td><td>40.8</td><td>33.0</td><td>167.7</td><td>0.3</td><td>98.1</td><td>9.6</td><td>6.7</td></tr>
           <tr><td>2016</td><td>581.5</td><td>32.2</td><td>23.8</td><td>168.3</td><td>0.3</td><td>97.5</td><td>10.2</td><td>6.1</td></tr>
           <tr><td>2017</td><td>581.6</td><td>32.3</td><td>26.1</td><td>164.7</td><td>0.3</td><td>96.0</td><td>8.5</td><td>6.2</td></tr>
-          <tr><td>2018</td><td>575.2</td><td>33.7</td><td>22.3</td><td>161.5</td><td>0.0</td><td>106.6</td><td>7.8</td><td>6.0</td></tr>
+          <tr class="y18"><td>2018</td><td>575.2</td><td>33.7</td><td>22.3</td><td>161.5</td><td>0.0</td><td>106.6</td><td>7.8</td><td>6.0</td></tr>
           <tr><td>2019</td><td>596.9</td><td>23.5</td><td>18.1</td><td>168.8</td><td>0.0</td><td>108.2</td><td>6.8</td><td>5.3</td></tr>
           <tr><td>2020</td><td>570.9</td><td>28.0</td><td>20.3</td><td>132.6</td><td>0.0</td><td>107.9</td><td>5.3</td><td>5.2</td></tr>
           <tr><td>2021</td><td>651.7</td><td>35.2</td><td>23.3</td><td>172.1</td><td>0.0</td><td>155.6</td><td>7.3</td><td>5.1</td></tr>
@@ -173,19 +205,51 @@
       </table>
     </div>
     <p class="tnote">* Intergovernmental is Buffalo's distribution of Erie County sales tax; it is excluded from government transfers (treated as local revenue). Enterprise interest is the water and parking funds' interest from the audited proprietary-fund statements; the FY2020 figure is from the FY2021 report's comparative column. All figures Total Primary Government, $ millions.</p>
+    </details>
   </section>
   <section>
     <h2 id="indicators">The seven indicators</h2>
     <p>Each value runs 2006 &rarr; 2025, left to right.</p>
     <div class="ind">
-      <div class="r" id="ind-netfinpos"><div class="n">Net financial position ($M) <span style="font-weight:400;color:var(--text-mid)">= net position &minus; net capital assets</span></div><div class="v">-319.2, -281.0, -274.2, -304.0, -337.6, -417.8, -473.8, -491.5, -571.2, -605.0, -668.2, -781.0, -1652.6, -1571.4, -1603.9, -1558.1, -1500.0, -1531.6, -1556.2, -1563.5</div></div>
-      <div class="r" id="ind-netdebt"><div class="n">Net debt &divide; revenue</div><div class="v">0.64, 0.49, 0.50, 0.54, 0.60, 0.78, 0.88, 0.80, 0.98, 0.98, 1.15, 1.34, 2.87, 2.63, 2.81, 2.39, 2.18, 2.03, 1.92, 1.87</div></div>
-      <div class="r" id="ind-finassets"><div class="n">Financial assets &divide; liabilities</div><div class="v">0.617, 0.689, 0.702, 0.703, 0.692, 0.651, 0.628, 0.620, 0.564, 0.537, 0.556, 0.463, 0.271, 0.272, 0.332, 0.411, 0.461, 0.443, 0.446, 0.407</div></div>
-      <div class="r" id="ind-assets"><div class="n">Total assets &divide; liabilities</div><div class="v">1.237, 1.285, 1.301, 1.255, 1.223, 1.138, 1.101, 1.084, 1.039, 1.022, 0.924, 0.898, 0.606, 0.655, 0.582, 0.633, 0.736, 0.706, 0.756, 0.734</div></div>
-      <div class="r" id="ind-nbv"><div class="n">Net book value &divide; cost (% infrastructure remaining)</div><div class="v">64.2, 63.6, 62.6, 61.6, 60.4, 58.7, 58.0, 56.8, 55.9, 55.3, 54.5, 53.6, 51.8, 51.2, 50.1, 49.0, 48.6, 48.1, 49.3, 50.4</div></div>
-      <div class="r" id="ind-interest"><div class="n">Interest &divide; revenue (%)</div><div class="v">6.87, 5.52, 4.87, 4.68, 4.51, 4.54, 3.98, 3.93, 3.19, 2.64, 2.80, 2.53, 2.39, 2.03, 1.85, 1.90, 1.25, 1.18, 1.17, 1.25</div></div>
-      <div class="r" id="ind-transfers"><div class="n">Government transfers &divide; revenue (%)</div><div class="v">34.9, 35.0, 34.6, 36.5, 39.7, 36.3, 36.1, 38.6, 40.8, 39.2, 38.6, 38.4, 37.8, 35.2, 31.7, 35.4, 37.3, 42.2, 44.7, 42.4</div></div>
+      <div class="r" id="ind-netfinpos"><div class="n">Net financial position ($M) <span style="font-weight:400;color:var(--text-mid)">= net position &minus; net capital assets</span></div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,4.2 26.9,3.2 50.8,3.0 74.7,3.8 98.6,4.7 122.5,7.0 146.4,8.5 170.3,9.0 194.2,11.2 218.1,12.1 241.9,13.9 265.8,17.0 289.7,41.0 313.6,38.8 337.5,39.7 361.4,38.4 385.3,36.8 409.2,37.7 433.1,38.3 457.0,38.5" fill="none" stroke="#d23b3b" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="38.5" r="2.8" fill="#d23b3b"/></svg><div class="kp">2006: &minus;$319M &middot; <b>2018: &minus;$1,653M (the cliff)</b> &middot; 2025: &minus;$1,563M</div></div>
+      <div class="r" id="ind-netdebt"><div class="n">Net debt &divide; revenue</div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,38.6 26.9,41.0 50.8,40.8 74.7,40.2 98.6,39.2 122.5,36.4 146.4,34.8 170.3,36.1 194.2,33.2 218.1,33.2 241.9,30.5 265.8,27.4 289.7,3.0 313.6,6.8 337.5,4.0 361.4,10.7 385.3,14.0 409.2,16.4 433.1,18.2 457.0,19.0" fill="none" stroke="#d23b3b" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="19.0" r="2.8" fill="#d23b3b"/></svg><div class="kp">2006: 0.64&times; revenue &middot; <b>2018 peak: 2.87&times;</b> &middot; 2025: 1.87&times;</div></div>
+      <div class="r" id="ind-finassets"><div class="n">Financial assets &divide; liabilities</div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,10.6 26.9,4.2 50.8,3.1 74.7,3.0 98.6,4.0 122.5,7.6 146.4,9.6 170.3,10.3 194.2,15.2 218.1,17.6 241.9,15.9 265.8,24.1 289.7,41.0 313.6,40.9 337.5,35.6 361.4,28.7 385.3,24.3 409.2,25.9 433.1,25.6 457.0,29.0" fill="none" stroke="#d23b3b" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="29.0" r="2.8" fill="#d23b3b"/></svg><div class="kp">2006: 62&cent; per $1 owed &middot; <b>2018 low: 27&cent;</b> &middot; 2025: 41&cent;</div></div>
+      <div class="r" id="ind-assets"><div class="n">Total assets &divide; liabilities</div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,6.4 26.9,3.8 50.8,3.0 74.7,5.4 98.6,7.1 122.5,11.6 146.4,13.6 170.3,14.5 194.2,16.8 218.1,17.7 241.9,22.9 265.8,24.3 289.7,39.7 313.6,37.1 337.5,41.0 361.4,38.3 385.3,32.9 409.2,34.4 433.1,31.8 457.0,33.0" fill="none" stroke="#d23b3b" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="33.0" r="2.8" fill="#d23b3b"/></svg><div class="kp">2006: $1.24 per $1 owed &middot; <b>2020 low: $0.58</b> &middot; 2025: $0.73</div></div>
+      <div class="r" id="ind-nbv"><div class="n">Net book value &divide; cost (% infrastructure remaining)</div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,3.0 26.9,4.4 50.8,6.8 74.7,9.1 98.6,12.0 122.5,16.0 146.4,17.6 170.3,20.5 194.2,22.6 218.1,24.0 241.9,25.9 265.8,28.0 289.7,32.3 313.6,33.7 337.5,36.3 361.4,38.9 385.3,39.8 409.2,41.0 433.1,38.2 457.0,35.6" fill="none" stroke="#d23b3b" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="35.6" r="2.8" fill="#d23b3b"/></svg><div class="kp">2006: 64.2% of value left &middot; <b>2023 low: 48.1%</b> &middot; 2025: 50.4%</div></div>
+      <div class="r" id="ind-interest"><div class="n">Interest &divide; revenue (%)</div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,3.0 26.9,12.0 50.8,16.3 74.7,17.6 98.6,18.7 122.5,18.5 146.4,22.3 170.3,22.6 194.2,27.5 218.1,31.2 241.9,30.1 265.8,31.9 289.7,32.9 313.6,35.3 337.5,36.5 361.4,36.1 385.3,40.5 409.2,40.9 433.1,41.0 457.0,40.5" fill="none" stroke="#1a7a5a" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="40.5" r="2.8" fill="#1a7a5a"/></svg><div class="kp">2006: 6.9&cent; of every revenue dollar &middot; 2025: 1.25&cent; <span class="good">(the clearest win on the page)</span></div></div>
+      <div class="r" id="ind-transfers"><div class="n">Government transfers &divide; revenue (%)</div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,31.6 26.9,31.4 50.8,32.5 74.7,27.0 98.6,17.6 122.5,27.6 146.4,28.1 170.3,20.8 194.2,14.4 218.1,19.1 241.9,20.8 265.8,21.4 289.7,23.2 313.6,30.8 337.5,41.0 361.4,30.2 385.3,24.6 409.2,10.3 433.1,3.0 457.0,9.7" fill="none" stroke="#d23b3b" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="9.7" r="2.8" fill="#d23b3b"/></svg><div class="kp">2006: 34.9% of revenue &middot; <b>2024 peak: 44.7%</b> &middot; 2025: 42.4%</div></div>
     </div>
+    <details class="yrtable">
+      <summary>Show all seven, year by year</summary>
+      <div class="tblwrap" style="margin-top:10px">
+      <table style="min-width:740px">
+      <thead><tr><th>Year</th><th>Net fin. pos. ($M)</th><th>Net debt &divide; rev</th><th>Fin. assets &divide; liab.</th><th>Assets &divide; liab.</th><th>Infra value left</th><th>Interest &divide; rev</th><th>Aid &divide; rev</th></tr></thead>
+      <tbody>
+      <tr><td>2006</td><td class="neg">-319.2</td><td>0.64</td><td>0.617</td><td>1.237</td><td>64.2%</td><td>6.87%</td><td>34.9%</td></tr>
+      <tr><td>2007</td><td class="neg">-281.0</td><td>0.49</td><td>0.689</td><td>1.285</td><td>63.6%</td><td>5.52%</td><td>35.0%</td></tr>
+      <tr><td>2008</td><td class="neg">-274.2</td><td>0.50</td><td>0.702</td><td>1.301</td><td>62.6%</td><td>4.87%</td><td>34.6%</td></tr>
+      <tr><td>2009</td><td class="neg">-304.0</td><td>0.54</td><td>0.703</td><td>1.255</td><td>61.6%</td><td>4.68%</td><td>36.5%</td></tr>
+      <tr><td>2010</td><td class="neg">-337.6</td><td>0.60</td><td>0.692</td><td>1.223</td><td>60.4%</td><td>4.51%</td><td>39.7%</td></tr>
+      <tr><td>2011</td><td class="neg">-417.8</td><td>0.78</td><td>0.651</td><td>1.138</td><td>58.7%</td><td>4.54%</td><td>36.3%</td></tr>
+      <tr><td>2012</td><td class="neg">-473.8</td><td>0.88</td><td>0.628</td><td>1.101</td><td>58.0%</td><td>3.98%</td><td>36.1%</td></tr>
+      <tr><td>2013</td><td class="neg">-491.5</td><td>0.80</td><td>0.620</td><td>1.084</td><td>56.8%</td><td>3.93%</td><td>38.6%</td></tr>
+      <tr><td>2014</td><td class="neg">-571.2</td><td>0.98</td><td>0.564</td><td>1.039</td><td>55.9%</td><td>3.19%</td><td>40.8%</td></tr>
+      <tr><td>2015</td><td class="neg">-605.0</td><td>0.98</td><td>0.537</td><td>1.022</td><td>55.3%</td><td>2.64%</td><td>39.2%</td></tr>
+      <tr><td>2016</td><td class="neg">-668.2</td><td>1.15</td><td>0.556</td><td>0.924</td><td>54.5%</td><td>2.80%</td><td>38.6%</td></tr>
+      <tr><td>2017</td><td class="neg">-781.0</td><td>1.34</td><td>0.463</td><td>0.898</td><td>53.6%</td><td>2.53%</td><td>38.4%</td></tr>
+      <tr class="y18"><td>2018</td><td class="neg">-1,652.6</td><td>2.87</td><td>0.271</td><td>0.606</td><td>51.8%</td><td>2.39%</td><td>37.8%</td></tr>
+      <tr><td>2019</td><td class="neg">-1,571.4</td><td>2.63</td><td>0.272</td><td>0.655</td><td>51.2%</td><td>2.03%</td><td>35.2%</td></tr>
+      <tr><td>2020</td><td class="neg">-1,603.9</td><td>2.81</td><td>0.332</td><td>0.582</td><td>50.1%</td><td>1.85%</td><td>31.7%</td></tr>
+      <tr><td>2021</td><td class="neg">-1,558.1</td><td>2.39</td><td>0.411</td><td>0.633</td><td>49.0%</td><td>1.90%</td><td>35.4%</td></tr>
+      <tr><td>2022</td><td class="neg">-1,500.0</td><td>2.18</td><td>0.461</td><td>0.736</td><td>48.6%</td><td>1.25%</td><td>37.3%</td></tr>
+      <tr><td>2023</td><td class="neg">-1,531.6</td><td>2.03</td><td>0.443</td><td>0.706</td><td>48.1%</td><td>1.18%</td><td>42.2%</td></tr>
+      <tr><td>2024</td><td class="neg">-1,556.2</td><td>1.92</td><td>0.446</td><td>0.756</td><td>49.3%</td><td>1.17%</td><td>44.7%</td></tr>
+      <tr><td>2025</td><td class="neg">-1,563.5</td><td>1.87</td><td>0.407</td><td>0.734</td><td>50.4%</td><td>1.25%</td><td>42.4%</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p class="tnote">The highlighted row is FY2018, when GASB&nbsp;75 put the full retiree-health promise on the books.</p>
+    </details>
   </section>
   <section>
     <h2 id="method">Method &amp; notes</h2>
@@ -219,7 +283,7 @@
   </section>
   <section>
     <h2 id="glossary">Plain-English glossary</h2>
-    <div class="ind">
+    <div class="ind gloss">
       <div class="r"><div class="n">Net financial position</div><div class="v">The "money test": what the city owns that is money-like (cash, investments, receivables) minus everything it owes. Below zero means it owes more than it holds. Equals audited net position minus net capital assets.</div></div>
       <div class="r"><div class="n">OPEB (other post-employment benefits)</div><div class="v">Mostly retiree health care promised to city employees. Buffalo funds it pay-as-you-go, so the unfunded promise (~$1.24B) sits on the books as a long-term liability.</div></div>
       <div class="r"><div class="n">Net pension liability</div><div class="v">The gap between pensions promised and assets set aside. Buffalo's is relatively small because New York runs the plans and funds them well.</div></div>

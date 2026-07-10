@@ -123,20 +123,28 @@
     .sitenav-links a{font-size:.66rem;padding:5px 9px}
   }
   /* ===== STORY STRIP ===== */
-  .storyblock{margin:0 0 30px}
-  .storyhead{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.1rem;color:var(--navy);margin-bottom:12px}
-  .storyhead .mins{font-family:'Lato',sans-serif;font-weight:400;font-size:.88rem;color:var(--text-mid)}
-  .storysteps{display:flex;gap:8px;counter-reset:step}
-  .storysteps a{counter-increment:step;flex:1;min-width:0;background:#fff;border:1px solid #ece4cf;border-radius:10px;padding:10px 6px 9px;text-align:center;text-decoration:none;transition:border-color .15s,transform .15s,box-shadow .15s}
+  .storyblock{margin:0 0 34px}
+  @media (min-width:760px){.storyblock{margin-left:-34px;margin-right:-34px}}
+  .storyhead{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.3rem;color:var(--navy);margin-bottom:4px}
+  .storysub{font-size:.95rem;color:var(--text-mid);margin-bottom:14px}
+  .storysteps{display:flex;gap:9px;counter-reset:step}
+  .storysteps a{counter-increment:step;flex:1;min-width:0;background:#fff;border:1px solid #ece4cf;border-radius:12px;padding:14px 8px 12px;text-align:center;text-decoration:none;transition:border-color .15s,transform .15s,box-shadow .15s}
   .storysteps a:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 16px rgba(12,34,64,.10)}
-  .storysteps a::before{content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Raleway',sans-serif;font-weight:800;font-size:.64rem;margin-bottom:5px}
-  .storysteps a b{display:block;font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(.78rem,2vw,.94rem);color:var(--coral-deep);white-space:nowrap}
+  .storysteps a::before{content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Raleway',sans-serif;font-weight:800;font-size:.72rem;margin-bottom:7px}
+  .storysteps a b{display:block;font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(.92rem,2.4vw,1.14rem);color:var(--coral-deep);white-space:nowrap}
   .storysteps a:last-child b{color:var(--teal)}
-  .storysteps a span{display:block;font-size:.68rem;line-height:1.3;color:var(--text-mid);margin-top:3px}
-  @media (max-width:640px){.storysteps{overflow-x:auto;padding:2px 2px 8px;-webkit-overflow-scrolling:touch}.storysteps a{flex:0 0 122px}}
+  .storysteps a span{display:block;font-size:.74rem;line-height:1.3;color:var(--text-mid);margin-top:4px}
+  @media (max-width:640px){.storysteps{overflow-x:auto;padding:2px 2px 8px;-webkit-overflow-scrolling:touch}.storysteps a{flex:0 0 138px}}
   a.q{display:block;color:inherit;text-decoration:none;transition:transform .15s,box-shadow .15s,border-left-color .15s}
   a.q:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(12,34,64,.10);border-left-color:var(--navy)}
   .q .arrow{color:var(--gold)}
+  .objective details{margin:0 0 18px;position:relative}
+  .objective details summary{font-family:'Raleway',sans-serif;font-weight:800;font-size:.82rem;color:var(--gold);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;padding:4px 0}
+  .objective details summary::-webkit-details-marker{display:none}
+  .objective details summary::before{content:'+';display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:800;font-size:.85rem;line-height:1;flex-shrink:0}
+  .objective details[open] summary::before{content:'\2212'}
+  .objective details div{padding-top:8px}
+  .objective details p{margin-bottom:0}
 </style>
 </head>
 <body>
@@ -187,7 +195,8 @@
     <p>Buffalo's 2026-27 budget closed a roughly <strong>$100&nbsp;million</strong> gap with a sizable property-tax increase, about <strong>19%</strong>, plus added state aid. That's the near-term pressure. The bigger, longer-term costs on this page are ones the city can still plan for and get ahead of, starting with one number.</p>
   </div>
   <div class="storyblock">
-    <p class="storyhead">New here? The whole story is five numbers <span class="mins">(about a four-minute read)</span></p>
+    <p class="storyhead">The whole story, in five steps</p>
+    <p class="storysub">Tap any step to jump into the plain-English explainer &mdash; about four minutes end to end.</p>
     <div class="storysteps">
       <a href="finances-explained.html#part1"><b>&minus;$1.56B</b><span>already on the books</span></a>
       <a href="finances-explained.html#part2"><b>$1.24B</b><span>of it: retiree health care</span></a>
@@ -200,24 +209,23 @@
     <div class="ol">The objective</div>
     <h2>One number worth publishing: the repair bill</h2>
     <p>Every year, the city could publish one <strong>&ldquo;cost of good repair&rdquo; figure</strong>: what it would take to bring the roads, pipes, and buildings Buffalo already owns back to good condition. The audit says about half their value is used up; no report totals what fixing it would cost. That one figure is what lets a city budget upkeep, fix the worst first, and show progress year to year.</p>
-    <p>It's winnable, too. A rough version can be built from figures already in the audit, <a href="https://www.fhwa.dot.gov/asset/plans.cfm" target="_blank" rel="noopener">federal agencies</a> and <a href="https://a860-gpp.nyc.gov/concern/nyc_government_publications/ng451m670" target="_blank" rel="noopener">New York City</a> already publish theirs, and Buffalo's new <a href="https://www.buffalony.gov/m/newsflash/home/detail/1617" target="_blank" rel="noopener">data-driven paving program</a> is a real start. It takes one Council member to ask. <a href="finances-explained.html#part3">Read the full case &#8594;</a></p>
+    <details><summary>Why it's winnable</summary>
+      <div><p>A rough version can be built from figures already in the audit, <a href="https://www.fhwa.dot.gov/asset/plans.cfm" target="_blank" rel="noopener">federal agencies</a> and <a href="https://a860-gpp.nyc.gov/concern/nyc_government_publications/ng451m670" target="_blank" rel="noopener">New York City</a> already publish theirs, and Buffalo's new <a href="https://www.buffalony.gov/m/newsflash/home/detail/1617" target="_blank" rel="noopener">data-driven paving program</a> is a real start.</p></div>
+    </details>
+    <p>It takes one Council member to ask. <a href="finances-explained.html#part3">Read the full case &#8594;</a></p>
     <div class="cta-wrap">
       <a class="btn-primary" href="take-action.html">Ask the city to publish one number &#8594;</a>
       <p class="cta-note">Send your Council member a ready-made note in about five minutes.</p>
     </div>
   </div>
-  <p class="takeaway" style="margin-top:36px">The repair bill is one piece of a simple test this whole site applies:</p>
+  <p class="takeaway" style="margin-top:36px">The repair bill is one piece of a bigger picture. Two more questions frame the rest:</p>
   <div class="questions">
     <a class="q" href="finances-explained.html#part2">
       <div class="qq">1. Does Buffalo fund the promises it makes? <span class="arrow">&#10132;</span></div>
       <div class="qa">Not yet. Its largest obligation, about <strong>$1.2 billion</strong> in retiree health care, has mostly been paid year to year rather than set aside in advance.</div>
     </a>
-    <a class="q" href="finances-explained.html#part3">
-      <div class="qq">2. Does it maintain what it already owns? <span class="arrow">&#10132;</span></div>
-      <div class="qa">Nobody knows what good repair would cost, because no report totals it. That's the number this site asks for.</div>
-    </a>
     <a class="q" href="finances-explained.html#questions">
-      <div class="qq">3. Should it borrow and build more? <span class="arrow">&#10132;</span></div>
+      <div class="qq">2. Should it borrow and build more? <span class="arrow">&#10132;</span></div>
       <div class="qa">A genuinely hard call this site doesn't settle. The repair number is what turns &ldquo;more or less&rdquo; into &ldquo;the right amount, for the right things.&rdquo;</div>
     </a>
   </div>

@@ -104,6 +104,12 @@
     main{padding:0}
     #printLetter{display:block!important;white-space:pre-wrap;font-family:Georgia,'Times New Roman',serif;font-size:12pt;line-height:1.65;color:#000}
   }
+  .askbox details{margin-top:2px}
+  .askbox details summary{font-family:'Raleway',sans-serif;font-weight:800;font-size:.82rem;color:var(--navy);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;padding:6px 0}
+  .askbox details summary::-webkit-details-marker{display:none}
+  .askbox details summary::before{content:'+';display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:.85rem;line-height:1;flex-shrink:0}
+  .askbox details[open] summary::before{content:'\2212'}
+  .askbox details div{padding-top:8px}
 </style>
 </head>
 <body>
@@ -134,8 +140,12 @@
     <div class="askbox">
       <div class="lbl">The one ask</div>
       <p>That the City of Buffalo <strong>publish a "cost of good repair" figure every year</strong>: what it would cost to bring the roads, water mains, and buildings it already owns back to good condition.</p>
+      <details><summary>Why this number, and why it's winnable</summary>
+      <div>
       <p>The city keeps track of how old its roads and pipes are getting, but it has never published what fixing them would cost. And you can't plan for, or budget for, a cost that's never been totaled. The good news: a rough first estimate is cheap and quick to produce, and it takes just one Council member to ask for it.</p>
       <p>This isn't about cutting Buffalo down to size. It's about being able to <strong>afford the things that make it worth living in</strong>, good parks, open libraries, clean water, reliable services, and keep affording them.</p>
+      </div>
+      </details>
     </div>
   </section>
 
