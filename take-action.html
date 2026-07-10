@@ -237,17 +237,17 @@ var MEMBERS={
 var FULL = [
 "Dear Council Member,",
 "",
-"I'm a Buffalo resident, and I care about where the city is headed. Looking through Buffalo's own financial reports, one thing stood out: a lot of what the city owes is promises it hasn't set money aside for, mainly health care for retired city workers, plus a large, still-unmeasured bill to repair the roads and pipes we already own, from the potholes we all dodge to the water mains underground.",
+"I'm a Buffalo resident in your district, and I'm writing with one specific, low-cost request.",
 "",
-"I'm not writing to ask for a grand plan, or to point fingers. I'm asking for one small, concrete step: that the city publish, once a year, a single number, roughly what it would cost to bring the roads, pipes, and buildings we already own back to good shape.",
+"My request: that the City of Buffalo publish, once a year, a single 'cost of good repair' figure: roughly what it would take to bring the roads, water mains, and buildings the city already owns back to good condition, from the potholes we all dodge to the pipes underground.",
 "",
-"The city has already made a promising start: its move this year to data-driven, needs-based paving, using road scans to rank repairs, is exactly the right instinct. I'm asking it to build on that, to extend the same objective approach from roads to the water mains and buildings, and to publish a single yearly figure for what fixing all of it would cost.",
+"Why it matters: Buffalo's own audited reports show that much of what the city owes is promises it hasn't set money aside for, plus repair needs that no report totals. The audit records how worn our infrastructure is, about half its value already used up, but never what fixing it would cost. Without that number, neither the city nor the Council can plan for its biggest unmeasured cost. With it published each year, the city can tackle the most urgent repairs first and show residents real progress.",
 "",
-"Here's why it matters: you can't plan around, or budget for, a repair cost the city has never published. A rough first estimate is cheap and quick to produce, and having it each year would let the city tackle the most urgent repairs first and show residents real progress. Few cities our size do this yet, so Buffalo would be ahead of the curve. The city has taken real steps on its finances lately, and this is a natural, low-cost next one.",
+"Why it's achievable: a first rough estimate can be built from figures already in the audit. Federal agencies and New York City publish versions of this number, and Buffalo's move this year to data-driven, needs-based paving is exactly the right foundation. This request simply extends that work from a ranked list of streets to one published dollar figure for everything we own.",
 "",
-"I want Buffalo to thrive, not shrink: a city that can afford good parks, open libraries, clean water, and reliable services, and keep affording them. Seeing the full picture is how we protect what makes Buffalo worth living in.",
+"I'm not writing to point fingers. The city has taken real steps on its finances lately, and this is a natural next one. I want Buffalo to thrive: a city that can afford good parks, open libraries, clean water, and reliable services, and keep affording them.",
 "",
-"Would you support asking the city to start publishing this number every year? I'd be grateful to know where you stand.",
+"Would you support requesting this number this year? I'd be grateful to know where you stand. Every figure behind this request is public and checkable at buffalofinances.org.",
 "",
 "Thank you for your service to our city.",
 "",
@@ -258,11 +258,13 @@ var FULL = [
 var SHORT = [
 "Dear Council Member,",
 "",
-"I'm a Buffalo resident in your district, with one small ask. The city's own audited reports show that much of what Buffalo owes is promises it hasn't set money aside for, plus a repair backlog for the roads, pipes, and buildings we already own that no report totals.",
+"I live in your district, and I'm writing with one specific request.",
 "",
-"My ask: that the city publish, once a year, one number, roughly what it would cost to bring our infrastructure back to good repair. You can't budget for a cost that's never been totaled, and a first rough estimate can come straight from figures already in the audit. The city's new data-driven paving program is exactly the right start; this would extend it from a ranked list to a published dollar figure.",
+"My request: that the City of Buffalo publish, once a year, a single 'cost of good repair' number: roughly what it would take to bring the roads, water mains, and buildings we already own back to good condition.",
 "",
-"Would you support asking for this number every year? I'd be grateful to know where you stand.",
+"Why: the city's audited reports record how worn our infrastructure is, but no report totals what fixing it would cost, and you can't budget for a cost that's never been totaled. A first rough estimate can be built from figures already in the audit, and the city's new data-driven paving program is exactly the right start. (Every figure: buffalofinances.org)",
+"",
+"Would you support requesting this number this year? I'd be grateful to know where you stand.",
 "",
 "Thank you for your service to our city.",
 "",
@@ -273,7 +275,7 @@ var SHORT = [
 var bufs={short:SHORT,full:FULL}, cur='short', member=null;
 var ta=document.getElementById('letter');
 ta.value=bufs[cur];
-var SUBJECT = "Buffalo's long-term finances, and one small first step";
+var SUBJECT = "Request: publish Buffalo's 'cost of good repair' number each year";
 function body(){ return ta.value; }
 function refreshEmail(){
   var to=member?encodeURIComponent(member.e):'';
