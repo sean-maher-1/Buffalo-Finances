@@ -145,6 +145,9 @@
   .objective details[open] summary::before{content:'\2212'}
   .objective details div{padding-top:8px}
   .objective details p{margin-bottom:0}
+  .storygo{margin-top:12px;text-align:center}
+  .storygo a{font-family:'Raleway',sans-serif;font-weight:800;font-size:.88rem;color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+  .storygo a:hover{color:#9a7400}
 </style>
 </head>
 <body>
@@ -170,7 +173,7 @@
     <p class="sub">Buffalo's finances are more understandable, and more fixable, than they look. Here's the honest picture in plain English, and the small first step anyone can push for.</p>
     <div class="answer-card">
       <div class="num" id="num" role="img" aria-label="negative 1.56 billion dollars">&minus;$1.56B</div>
-      <div class="cap" id="cap">owed beyond what’s in the bank, mostly unfunded retiree benefits &mdash; about $13,400 per household</div>
+      <div class="cap" id="cap">owed beyond what’s in the bank, mostly unfunded retiree benefits: about $13,400 per household</div>
       <label class="toggle-row" for="t">
         <span class="switch"><input type="checkbox" id="t" aria-describedby="cap"><span class="track"><span class="thumb"></span></span></span>
         <span class="tlabel">Add the repairs the books leave out</span>
@@ -196,7 +199,7 @@
   </div>
   <div class="storyblock">
     <p class="storyhead">The whole story, in five steps</p>
-    <p class="storysub">Tap any step to jump into the plain-English explainer &mdash; about four minutes end to end.</p>
+    <p class="storysub">Tap any step to jump into the plain-English explainer, about four minutes end to end.</p>
     <div class="storysteps">
       <a href="finances-explained.html#part1"><b>&minus;$1.56B</b><span>already on the books</span></a>
       <a href="finances-explained.html#part2"><b>$1.24B</b><span>of it: retiree health care</span></a>
@@ -204,6 +207,7 @@
       <a href="finances-explained.html#part4"><b>&asymp;$3.5B</b><span>the full picture</span></a>
       <a href="finances-explained.html#part5"><b>3 asks</b><span>the way out</span></a>
     </div>
+    <p class="storygo"><a href="finances-explained.html">Or read the whole story from the start &#8594;</a></p>
   </div>
   <div class="objective">
     <div class="ol">The objective</div>
@@ -250,8 +254,8 @@
 (function(){
   var t=document.getElementById('t'),num=document.getElementById('num'),
       cap=document.getElementById('cap'),reveal=document.getElementById('reveal');
-  var ON={n:'≈ −$3.5B',a:'about negative 3.5 billion dollars',c:'with the road-and-pipe repairs added in — about $30,000 per household'},
-      OFF={n:'−$1.56B',a:'negative 1.56 billion dollars',c:"owed beyond what’s in the bank, mostly unfunded retiree benefits — about $13,400 per household"};
+  var ON={n:'≈ −$3.5B',a:'about negative 3.5 billion dollars',c:'with the road-and-pipe repairs added in: about $30,000 per household'},
+      OFF={n:'−$1.56B',a:'negative 1.56 billion dollars',c:"owed beyond what’s in the bank, mostly unfunded retiree benefits: about $13,400 per household"};
   t.addEventListener('change',function(){
     var on=t.checked;
     num.classList.add('flip');
