@@ -204,6 +204,10 @@
   .storysteps a::before{content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Raleway',sans-serif;font-weight:800;font-size:.64rem;margin-bottom:5px}
   .storysteps a b{display:block;font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(.84rem,1.9vw,1rem);color:var(--coral-deep);white-space:nowrap}
   .storysteps a:last-child b{color:var(--teal)}
+  .storysteps a.sub b{color:var(--coral);opacity:.85}
+  .storysteps a.sub::before{background:#8d9db4}
+  .storysteps a.sum{background:#fff4dc;border-color:var(--gold)}
+  .storysteps a.sum:hover{border-color:var(--gold-dim,#b87d00)}
   .storysteps a span{display:block;font-size:.7rem;line-height:1.3;color:var(--text-mid);margin-top:3px}
   @media (max-width:640px){.storysteps{overflow-x:auto;padding:2px 2px 8px;-webkit-overflow-scrolling:touch}.storysteps a{flex:0 0 132px}}
 </style>
@@ -265,9 +269,9 @@
     <span class="storynav-title">The whole story, in five steps</span>
     <div class="storysteps">
       <a href="#part1"><b>&minus;$1.56B</b><span>already on the books</span></a>
-      <a href="#part2"><b>$1.24B</b><span>of it: retiree health care</span></a>
-      <a href="#part3"><b>$1.7&ndash;2.2B</b><span>repairs the books skip</span></a>
-      <a href="#part4"><b>&asymp;$3.5B</b><span>the full picture</span></a>
+      <a class="sub" href="#part2"><b>&minus;$1.24B</b><span>of it: retiree health care</span></a>
+      <a href="#part3"><b>&minus;$1.9B</b><span>repairs the books skip (est.)</span></a>
+      <a class="sum" href="#part4"><b>&asymp;&minus;$3.5B</b><span>the full picture: 1&#8201;+&#8201;3</span></a>
       <a href="#part5"><b>3 asks</b><span>the way out</span></a>
     </div>
   </div>
@@ -389,6 +393,7 @@
     </div></details>
     <p class="perhh" style="color:var(--coral-deep)">Per household, that's another <strong style="color:var(--coral-deep)">$14,000 to $18,000</strong>, on top of what's already owed.</p>
     <p style="font-size:.98rem;">This is a back-of-the-envelope range, on purpose. The exact figure matters less than two things: it's <strong>large</strong>, and nobody publishes it.</p>
+<details class="more"><summary>Bond analysts now track this number nationally; cities still don't publish it</summary><div class="more-body"><p>Buffalo isn't unusual. In May 2026 the bond-research firm Investortools put this same unmeasured repair burden across all U.S. cities at about <strong>$1 trillion</strong>, 2.6 times their bonded debt and 4 times their unfunded pensions, derived with <a class="il" href="https://www.investortools.com/news-insights/new-report-finds-u-s-cities-face-1-trillion-infrastructure-replacement-obligation/" target="_blank" rel="noopener">the same accumulated-depreciation method</a> this page uses. The people who trade municipal bonds now price this in; the cities they lend to still don't publish it.</p></div></details>
 <p><strong>Buffalo has seen this movie before:</strong> twice in the last decade, an accounting rule forced a long-owed cost onto the books overnight. The repair bill is the next one, except this time the city doesn't have to wait for a rule to publish it.</p>
 <details class="more"><summary>The last two times the books caught up</summary>
 <div class="more-body">
@@ -402,7 +407,7 @@
   <div class="wrap">
     <div class="part"><span class="pnum">Part 4 of 5</span><span class="ptext">Add them together</span><span class="pline"></span></div>
     <h2>Put them next to each other</h2>
-    <div class="bignum big-sec count" role="img" aria-label="about 3.5 billion dollars" style="color:#ff8a8a" data-tpl="&asymp;$@B" data-n="3.5" data-dp="1">&asymp;$3.5B</div>
+    <div class="bignum big-sec count" role="img" aria-label="about negative 3.5 billion dollars" style="color:#ff8a8a" data-tpl="&asymp;&minus;$@B" data-n="3.5" data-dp="1">&asymp;&minus;$3.5B</div>
     <p class="take">Together, that's roughly $3.5 billion, about $30,000 per household, and most of it doesn't appear in the figure the city normally reports.</p>
     <figure class="fade">
 <svg viewBox="0 0 820 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Per household, three bars side by side: about 13,400 dollars already owed, plus 14 to 18 thousand dollars in delayed repairs, adding up to roughly 27 to 31 thousand dollars combined.">
@@ -428,7 +433,7 @@
       <figcaption>What the city's audit already points to, what it leaves out, and the two added together, roughly $30,000 per household.</figcaption>
     </figure>
     <p class="punch" style="margin-top:16px">Buffalo's recovery is real, and its leaders point to genuine progress. But these costs are real too: one already sits in the city's audit, the other in no report at all.</p>
-<p style="margin-top:14px">That $30,000 isn't a bill in your mailbox; it's your household's share of what the city has promised, or let wear out, and hasn't paid for. It comes due anyway: higher taxes, thinner services, or rougher roads. Getting ahead of it is how Buffalo keeps that share from growing.</p>
+<p style="margin-top:14px">No one will mail your household a $30,000 bill. It is still your share of what the city has promised, or let wear out, and hasn't paid for, and it comes due anyway: higher taxes, thinner services, or rougher roads. Getting ahead of it is how Buffalo keeps that share from growing.</p>
   </div>
 </section>
 <!-- NOT DOOM -->
@@ -464,7 +469,7 @@
     <h2>Questions &amp; objections</h2>
     <details class="more"><summary>What about borrowing? Should the city take on more?</summary>
       <div class="more-body">
-    <p class="lead">It's a fair question, and a genuinely complicated one, not something this project takes a position on. Whether a city should borrow more depends on what the money buys, the terms, and whether it can keep up the things it builds. The narrower, factual point is this: what drives Buffalo's gap isn't debt. It's promises with no money behind them (the retiree-health gap above) and upkeep that keeps getting put off (the repair bill above).</p>
+    <p class="lead">It's a fair question, and a genuinely complicated one, not something this project takes a position on. Whether a city should borrow more depends on what the money buys, the terms, and whether it can keep up the things it builds. The narrower, factual point: Buffalo's gap is driven far less by debt than by promises with no money behind them (the retiree-health gap above) and upkeep that keeps getting put off (the repair bill above).</p>
     <p>That distinction is playing out in Buffalo right now. Mayor Sean Ryan has said the city could responsibly borrow more for capital projects. The City Comptroller, Barbara Miller-Williams, declined to issue about <strong>$110&nbsp;million</strong> in capital bonds the Common Council had approved, citing the city's tight finances. The Mayor's office and Council took her to court, and judges at both the trial and appellate levels ruled that issuing the bonds is a <strong>ministerial duty</strong> she cannot refuse. She has continued to appeal, and the standoff has added to project costs.</p>
     <p>Reasonable people disagree about who's right. But notice what no one in that fight can answer: is $110&nbsp;million the right amount, aimed at the right projects? <strong>You can't tell without knowing what good repair would cost</strong>, which is the one number that turns "borrow more or less" into "borrow the right amount, for the right things."</p>
       </div></details>
@@ -512,7 +517,7 @@
 <rect x="606" y="266" width="146" height="30" rx="15" fill="#f9dada"/>
 <text x="679" y="285" text-anchor="middle" font-family="Raleway,sans-serif" font-weight="800" font-size="11.5" fill="#c23434">✗  Pure cost</text>
 </svg>
-      <figcaption>Illustrative of the pattern, not measured Buffalo parcels. Forms that produce high value on little infrastructure tend to pay for themselves; land-heavy, auto-oriented, or tax-exempt land frequently doesn't, once you count the roads, pipes, and services the city maintains forever. The fix isn't to rank these by hand, it's to run the math on each project. (Value-per-acre pattern documented by Strong Towns and Urban3.)</figcaption>
+      <figcaption>Illustrative of the pattern, not measured Buffalo parcels. Forms that produce high value on little infrastructure tend to pay for themselves; land-heavy, auto-oriented, or tax-exempt land frequently doesn't, once you count the roads, pipes, and services the city maintains forever. Rather than ranking these by hand, the fix is to run the math on each project. (Value-per-acre pattern documented by Strong Towns and Urban3.)</figcaption>
     </figure>
     <div class="aside">
       <div class="who">This isn't an argument against growth</div>

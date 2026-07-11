@@ -133,6 +133,10 @@
   .storysteps a::before{content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Raleway',sans-serif;font-weight:800;font-size:.72rem;margin-bottom:7px}
   .storysteps a b{display:block;font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(.92rem,2.4vw,1.14rem);color:var(--coral-deep);white-space:nowrap}
   .storysteps a:last-child b{color:var(--teal)}
+  .storysteps a.sub b{color:var(--coral);opacity:.85}
+  .storysteps a.sub::before{background:#8d9db4}
+  .storysteps a.sum{background:#fff4dc;border-color:var(--gold)}
+  .storysteps a.sum:hover{border-color:var(--gold-dim,#b87d00)}
   .storysteps a span{display:block;font-size:.74rem;line-height:1.3;color:var(--text-mid);margin-top:4px}
   @media (max-width:640px){.storysteps{overflow-x:auto;padding:2px 2px 8px;-webkit-overflow-scrolling:touch}.storysteps a{flex:0 0 138px}}
   a.q{display:block;color:inherit;text-decoration:none;transition:transform .15s,box-shadow .15s,border-left-color .15s}
@@ -173,7 +177,7 @@
     <p class="sub">Buffalo's finances are more understandable, and more fixable, than they look. Here's the honest picture in plain English, and the small first step anyone can push for.</p>
     <div class="answer-card">
       <div class="num" id="num" role="img" aria-label="negative 1.56 billion dollars">&minus;$1.56B</div>
-      <div class="cap" id="cap">owed beyond what’s in the bank, mostly unfunded retiree benefits: about $13,400 per household</div>
+      <div class="cap" id="cap">owed beyond what’s in the bank (about $13,400 per household), mostly unfunded retiree benefits</div>
       <label class="toggle-row" for="t">
         <span class="switch"><input type="checkbox" id="t" aria-describedby="cap"><span class="track"><span class="thumb"></span></span></span>
         <span class="tlabel">Add the repairs the books leave out</span>
@@ -202,9 +206,9 @@
     <p class="storysub">Tap any step to jump into the plain-English explainer, about four minutes end to end.</p>
     <div class="storysteps">
       <a href="finances-explained.html#part1"><b>&minus;$1.56B</b><span>already on the books</span></a>
-      <a href="finances-explained.html#part2"><b>$1.24B</b><span>of it: retiree health care</span></a>
-      <a href="finances-explained.html#part3"><b>$1.7&ndash;2.2B</b><span>repairs the books skip</span></a>
-      <a href="finances-explained.html#part4"><b>&asymp;$3.5B</b><span>the full picture</span></a>
+      <a class="sub" href="finances-explained.html#part2"><b>&minus;$1.24B</b><span>of it: retiree health care</span></a>
+      <a href="finances-explained.html#part3"><b>&minus;$1.9B</b><span>repairs the books skip (est.)</span></a>
+      <a class="sum" href="finances-explained.html#part4"><b>&asymp;&minus;$3.5B</b><span>the full picture: 1&#8201;+&#8201;3</span></a>
       <a href="finances-explained.html#part5"><b>3 asks</b><span>the way out</span></a>
     </div>
     <p class="storygo"><a href="finances-explained.html">Or read the whole story from the start &#8594;</a></p>
@@ -244,7 +248,7 @@
     </a>
   </div>
   <div class="getinvolved">
-    <p>Buffalo's turning a corner, and the to-do list is clear: keep our promises, care for what we own, and grow so new things pay for themselves. The goal isn't zero debt. It's a Buffalo that can <strong>afford good things</strong>, good parks, open libraries, clean water, reliable services, and keep affording them for the long haul. <a href="https://www.strongtownsbuffalo.com" target="_blank">Get involved with Strong Towns Buffalo &#8594;</a></p>
+    <p>Buffalo's turning a corner, and the to-do list is clear: keep our promises, care for what we own, and grow so new things pay for themselves. Zero debt was never the goal. What matters is a Buffalo that can <strong>afford good things</strong>, good parks, open libraries, clean water, reliable services, and keep affording them for the long haul. <a href="https://www.strongtownsbuffalo.com" target="_blank">Get involved with Strong Towns Buffalo &#8594;</a></p>
   </div>
 </main>
 <footer>
@@ -254,8 +258,8 @@
 (function(){
   var t=document.getElementById('t'),num=document.getElementById('num'),
       cap=document.getElementById('cap'),reveal=document.getElementById('reveal');
-  var ON={n:'≈ −$3.5B',a:'about negative 3.5 billion dollars',c:'with the road-and-pipe repairs added in: about $30,000 per household'},
-      OFF={n:'−$1.56B',a:'negative 1.56 billion dollars',c:"owed beyond what’s in the bank, mostly unfunded retiree benefits: about $13,400 per household"};
+  var ON={n:'≈ −$3.5B',a:'about negative 3.5 billion dollars',c:'with the road-and-pipe repairs added in (about $30,000 per household in total)'},
+      OFF={n:'−$1.56B',a:'negative 1.56 billion dollars',c:"owed beyond what’s in the bank (about $13,400 per household), mostly unfunded retiree benefits"};
   t.addEventListener('change',function(){
     var on=t.checked;
     num.classList.add('flip');

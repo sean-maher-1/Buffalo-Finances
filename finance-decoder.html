@@ -452,6 +452,7 @@
         <div class="stat-number" role="img" aria-label="1.2 billion dollars">$1.2B</div>
         <div class="stat-label">Unfunded retiree healthcare</div>
         <div class="stat-context">Buffalo's unfunded retiree-healthcare obligation (OPEB) is the single biggest driver of the city's negative net position.</div>
+        <div class="stat-spark" data-series="opeb" data-from="2018"></div>
       </div>
       <div class="stat-card stat-amber">
         <div class="stat-number" data-count-down="100">50%</div>
@@ -470,6 +471,7 @@
     <div class="outside-review">
       <details class="context-expand" style="margin-top:0"><summary>We're not the only ones doing this math</summary>
       <p style="margin-top:10px">In <a class="il" href="https://www.osc.ny.gov/press/releases/2026/05/dinapoli-releases-budget-review-city-buffalo" target="_blank">May 2026</a> the New York State Comptroller flagged a structural gap in Buffalo's 2026-27 budget and noted the city had long leaned on non-recurring revenue, including <strong>$331 million</strong> of federal stimulus since 2020-21. The city took that seriously: its adopted 2026-27 budget closes the gap largely through a <strong>19% property-tax levy increase</strong> (trimmed from a proposed 25.8%) and added state aid, a hard step toward what the administration calls &ldquo;returning to fiscal stability.&rdquo; Earlier, in <a class="il" href="https://www.buffalocomptroller.com/DocumentCenter/View/1019/SP-Ratings-for-Buffalo-NY-September-2025" target="_blank">September 2025</a>, months before this budget, S&amp;P had cut its outlook on Buffalo's investment-grade bonds to <strong>Negative</strong> (from Stable), citing the reserve drawdown and continued reliance on one-time revenue. The long-term obligations on this page are why steps this hard keep being necessary, and why getting ahead of them matters.</p>
+      <p>The pattern is national, too: in May 2026 the bond-analytics firm <a class="il" href="https://www.investortools.com/news-insights/new-report-finds-u-s-cities-face-1-trillion-infrastructure-replacement-obligation/" target="_blank" rel="noopener">Investortools</a> quantified the unmeasured repair burden across U.S. cities at about <strong>$1.03 trillion</strong>, 2.6 times their bonded debt and 4 times their unfunded pensions, derived the same way this page derives Buffalo's: from accumulated depreciation in the audited statements.</p>
       </details>
     </div>
   </div>
@@ -695,7 +697,7 @@
     <p>Buffalo shows real progress, new investment, rising property values, and growing revenue. But the charts above also show a city carrying about <strong>$1.2 billion</strong> in unfunded retiree healthcare, half its infrastructure value used up, and more than 40% of its budget riding on aid it doesn't control.</p>
     <details class="context-expand">
       <summary>How this year's budget fits in</summary>
-      <p>With pandemic stimulus now spent, the city's 2026-27 budget closed a roughly $100 million structural gap, largely through a <a class="il" href="https://www.osc.ny.gov/press/releases/2026/05/dinapoli-releases-budget-review-city-buffalo" target="_blank">19% property-tax increase</a> (trimmed from a proposed 25.8%) and added state aid. Read in good faith, that's an opportunity as much as a burden: it's revenue the city controls, and spent on funding promises and maintaining what Buffalo owns, it's how the city pays for its future instead of patching its present. The goal isn't austerity; it's building budgets on revenue Buffalo can count on and getting ahead of the long-term obligations, so the city keeps affording the parks, libraries, clean water, and services that make it worth living in.</p>
+      <p>With pandemic stimulus now spent, the city's 2026-27 budget closed a roughly $100 million structural gap, largely through a <a class="il" href="https://www.osc.ny.gov/press/releases/2026/05/dinapoli-releases-budget-review-city-buffalo" target="_blank">19% property-tax increase</a> (trimmed from a proposed 25.8%) and added state aid. Read in good faith, that's an opportunity as much as a burden: it's revenue the city controls, and spent on funding promises and maintaining what Buffalo owns, it's how the city pays for its future instead of patching its present. None of this requires austerity. Budgets built on revenue Buffalo can count on, with the long-term obligations funded on a schedule, are how the city keeps affording the parks, libraries, clean water, and services that make it worth living in.</p>
     </details>
     <div class="next-step">
       <div class="ns-label">The next smallest step</div>
@@ -758,6 +760,7 @@ const data = {
   interestToRev:   [6.87,5.52,4.87,4.68,4.51,4.54,3.98,3.93,3.19,2.64,2.80,2.53,2.39,2.03,1.85,1.90,1.25,1.18,1.17,1.25],
   netBookToTCA:    [64.18,63.57,62.62,61.60,60.39,58.74,58.02,56.78,55.86,55.28,54.48,53.59,51.83,51.16,50.11,49.02,48.61,48.09,49.29,50.41],
   netDebtToRev:    [0.642,0.494,0.500,0.542,0.604,0.775,0.878,0.797,0.984,0.981,1.149,1.343,2.873,2.633,2.810,2.391,2.182,2.035,1.917,1.874],
+  opeb:            [1255.0,1129.1,1228.4,1384.0,1312.3,1181.6,1169.3,1237.5], // FY2018-2025, GASB 75 basis, $M
   netFinPosition:  [-319.18,-280.98,-274.21,-303.99,-337.55,-417.82,-473.80,-491.50,-571.21,-605.01,-668.15,-780.99,-1652.60,-1571.38,-1603.89,-1558.12,-1500.03,-1531.64,-1556.23,-1563.47]
 };
 // ===== CHART DEFAULTS =====
@@ -1097,7 +1100,7 @@ function openShareEmail() {
     var pts = s.map(function(v, i){
       return (i / (s.length - 1) * w).toFixed(1) + ',' + (h - 2 - ((v - min) / rng * (h - 4))).toFixed(1);
     }).join(' ');
-    el.innerHTML = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="' + w + '" height="' + h + '" aria-hidden="true"><polyline points="' + pts + '" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>2006 &rarr; 2025</span>';
+    el.innerHTML = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="' + w + '" height="' + h + '" aria-hidden="true"><polyline points="' + pts + '" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>' + (el.dataset.from || '2006') + ' &rarr; 2025</span>';
   });
 })();
 </script>
