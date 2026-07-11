@@ -16,7 +16,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="What does Buffalo, NY owe and why? The $1.56 billion gap in the city's audited reports, the unfunded retiree-health promise, the infrastructure repair backlog, and the one number to ask for, in plain English.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%230c2240%22/><path fill=%22%23FFA800%22 d=%22M8 51h48v6H8zM14 41h36v8H14zM22 29h20v10H22zM27 15h10v22H27zM32 6l5 9H27z%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
   p strong{color:var(--navy)}
   .lead{font-size:1.22rem}
   a.il{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:2px}
-  .kicker{display:inline-block;font-family:'Raleway',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:14px}
+  .kicker{display:inline-block;font-family:'Raleway',sans-serif;font-weight:800;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px}
   .kicker.good{color:var(--teal)}
   .kicker.bad{color:var(--coral-deep)}
   .hero{background:var(--navy);color:var(--cream);padding:104px 0 80px;position:relative;overflow:hidden}
@@ -171,7 +171,7 @@
   .sitenav{position:sticky;top:0;z-index:300;background:var(--navy);border-bottom:2px solid var(--gold)}
   .sitenav-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:9px 24px}
   .sitenav-brand{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);text-decoration:none;white-space:nowrap}
-  .sitenav-brand svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .sitenav-brand svg{width:15px;height:15px;fill:var(--gold);flex-shrink:0}
   .sitenav-brand:hover{color:#fff}
   .sitenav-links{margin-left:auto;display:flex;gap:3px;flex-wrap:wrap;justify-content:flex-end}
   .sitenav-links a{font-family:'Raleway',sans-serif;font-weight:700;font-size:.72rem;color:var(--sky,#c5dffc);text-decoration:none;padding:6px 12px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
@@ -189,7 +189,7 @@
   section[id]{scroll-margin-top:58px}
   .part{display:flex;align-items:center;gap:12px;margin-bottom:16px}
   .part .pnum{flex-shrink:0;font-family:'Raleway',sans-serif;font-weight:900;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;background:var(--navy);color:var(--gold);padding:5px 12px;border-radius:999px}
-  .part .ptext{font-family:'Raleway',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral-deep)}
+  .part .ptext{font-family:'Raleway',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-deep)}
   .part .ptext.good{color:var(--teal)}
   .part .pline{flex:1;height:2px;border-radius:2px;background:linear-gradient(90deg,#e4dcc4,transparent)}
   .band-navy .part .pnum{background:var(--gold);color:var(--navy)}
@@ -210,6 +210,13 @@
   .storysteps a.sum:hover{border-color:var(--gold-dim,#b87d00)}
   .storysteps a span{display:block;font-size:.7rem;line-height:1.3;color:var(--text-mid);margin-top:3px}
   @media (max-width:640px){.storysteps{overflow-x:auto;padding:2px 2px 8px;-webkit-overflow-scrolling:touch}.storysteps a{flex:0 0 132px}}
+  .skyline{position:absolute;left:0;right:0;bottom:-2px;width:100%;height:110px;fill:rgba(197,223,252,.08);pointer-events:none}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+  details>*:not(summary){animation:dOpen .28s ease}
+  @keyframes dOpen{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){details>*:not(summary){animation:none}}
+  details.more.win>summary{color:var(--teal)}
+  details.more.win>summary::before{background:var(--teal)}
 </style>
 <link rel="canonical" href="https://buffalofinances.org/finances-explained.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Buffalo's finances, in plain English", "description": "A five-part plain-English walkthrough of what the City of Buffalo owes, built from its own audited reports.", "url": "https://buffalofinances.org/finances-explained.html", "image": "https://buffalofinances.org/og-explained.png", "author": {"@type": "Organization", "name": "Strong Towns Buffalo · #DoTheMath", "url": "https://www.strongtownsbuffalo.com"}, "publisher": {"@type": "Organization", "name": "Strong Towns Buffalo · #DoTheMath", "url": "https://www.strongtownsbuffalo.com"}, "datePublished": "2026-06-28", "dateModified": "2026-07-10"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What about borrowing? Should the city of Buffalo take on more debt?", "acceptedAnswer": {"@type": "Answer", "text": "That depends on what the money builds and whether the city maintains it; this project takes no side. The factual point: Buffalo's gap is driven far less by debt (about $326 million, modest and well managed) than by unfunded retiree health care and an unmeasured repair backlog. A published repair number is what turns 'borrow more or less' into 'borrow the right amount, for the right things.'"}}, {"@type": "Question", "name": "Can't Buffalo just grow its way out of its budget problems?", "acceptedAnswer": {"@type": "Answer", "text": "Growth helps only if it pays for itself. Most of the shortfall is retiree-health and pension promises that growth can't shrink, and Buffalo already maintains far more infrastructure than its population supports. Incremental infill on streets the city already serves adds taxpayers without adding much new cost; subsidized or land-heavy development on the edges usually adds more liability than revenue."}}, {"@type": "Question", "name": "Shouldn't the state or federal government just bail Buffalo out?", "acceptedAnswer": {"@type": "Answer", "text": "Buffalo already leans on outside help more than most cities: more than 40% of its revenue is state and federal aid, and roughly $331 million in federal stimulus since 2020 is now spent. One-time help buys time but can't fund the retiree-health promise or fix roads on a schedule. The most useful next step is one the city can take itself: publish the cost-of-good-repair number."}}, {"@type": "Question", "name": "Why should I trust these numbers about Buffalo's finances?", "acceptedAnswer": {"@type": "Answer", "text": "Every figure comes from the City of Buffalo's audited Annual Comprehensive Financial Reports and is published with sources at buffalofinances.org/data-sources.html. The NYS Comptroller and S&P have flagged the same problems."}}, {"@type": "Question", "name": "Isn't Buffalo's negative net position just an accounting technicality?", "acceptedAnswer": {"@type": "Answer", "text": "No. The big numbers are real promises to real people: retirees owed health care, workers owed pensions, lenders owed principal. The accounting rules (GASB 68 and GASB 75) didn't create those debts; they forced the city to show them."}}, {"@type": "Question", "name": "Doesn't every city have unfunded retiree health care?", "acceptedAnswer": {"@type": "Answer", "text": "Many do, but size is what matters. Buffalo's roughly $1.24 billion retiree-health (OPEB) liability is larger than its pensions and debt combined, because the promise is paid year to year with almost nothing set aside."}}, {"@type": "Question", "name": "Is Buffalo about to go bankrupt?", "acceptedAnswer": {"@type": "Answer", "text": "No. Buffalo pays its bills today and holds an A+ bond rating; this is about long-term structural health, not imminent insolvency. The likelier risk is quieter: trimmed services, rougher roads, and higher taxes for less in return."}}]}]}</script>
@@ -219,7 +226,7 @@
 <nav class="sitenav">
   <div class="sitenav-inner">
     <a class="sitenav-brand" href="index.html" aria-label="Home">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18v2.2H3zM5.5 16h13v3h-13zM8.5 11h7v4h-7zM10.5 5h3v11h-3zM12 1.6l2 3.4h-4z"/></svg>
       <span class="brandtxt">Buffalo · #DoTheMath</span>
     </a>
     <div class="sitenav-links">
@@ -233,6 +240,7 @@
 </nav>
 <!-- HERO -->
 <header class="hero">
+<svg class="skyline" viewBox="0 0 1200 140" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><path d="M0 140 L0 96 L36 96 L36 74 L84 74 L84 108 L130 108 L130 60 L142 60 L142 50 L178 50 L178 60 L190 60 L190 108 L240 108 L240 84 L300 84 L300 118 L356 118 L356 66 L410 66 L410 96 L468 96 L468 108 L500 108 L500 88 L560 88 L560 74 L576 74 L576 40 L590 40 L590 22 L596 22 L600 8 L604 22 L610 22 L610 40 L624 40 L624 74 L640 74 L640 88 L700 88 L700 108 L740 108 L740 70 L796 70 L796 96 L860 96 L860 54 L872 54 L872 44 L908 44 L908 54 L920 54 L920 96 L980 96 L980 116 L1040 116 L1040 80 L1100 80 L1100 100 L1160 100 L1160 90 L1200 90 L1200 140 Z"/></svg>
   <div class="wrap">
     <span class="badge">#DoTheMath · Plain-English Edition</span>
     <h1>Buffalo's finances, in <span>plain English</span></h1>
@@ -401,7 +409,7 @@
 <div class="more-body">
 <p>In 2015, a new rule (GASB&nbsp;68) put the city's full pension promise on the books. In 2018, another (GASB&nbsp;75) added retiree health care, and roughly <strong>$877&nbsp;million</strong> appeared almost overnight. Neither was new spending; the money had always been owed. The rules just made the city show it, and before 2018 Buffalo's books looked far healthier than they were. The repair bill is the next cost like that, still waiting to surface.</p>
 </div></details>
-    <details class="more"><summary>The head start Buffalo already has</summary><div class="more-body"><p><strong>Buffalo has started.</strong> In 2026 the city moved to <a class="il" href="https://www.buffalony.gov/m/newsflash/home/detail/1617" target="_blank">data-driven, needs-based paving</a>, exactly the right instinct. The ask is to extend it from roads to water mains and buildings, and turn the paving list into one published dollar figure for the whole repair bill.</p></div></details>
+    <details class="more win"><summary>The head start Buffalo already has</summary><div class="more-body"><p><strong>Buffalo has started.</strong> In 2026 the city moved to <a class="il" href="https://www.buffalony.gov/m/newsflash/home/detail/1617" target="_blank">data-driven, needs-based paving</a>, exactly the right instinct. The ask is to extend it from roads to water mains and buildings, and turn the paving list into one published dollar figure for the whole repair bill.</p></div></details>
   </div>
 </section>
 <!-- SIDE BY SIDE -->

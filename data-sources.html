@@ -15,7 +15,7 @@
 <meta name="color-scheme" content="light only">
 <title>Buffalo City Finance Data, 2006&ndash;2025: Sources &amp; Downloads (CSV/JSON) · #DoTheMath</title>
 <meta name="description" content="Download 20 years of City of Buffalo finance data (CSV/JSON): audited ACFR balance-sheet and revenue inputs, seven Strong Towns Finance Decoder indicators, OPEB liability, method notes, and a plain-English glossary.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%230c2240%22/><path fill=%22%23FFA800%22 d=%22M8 51h48v6H8zM14 41h36v8H14zM22 29h20v10H22zM27 15h10v22H27zM32 6l5 9H27z%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
   .sitenav{position:sticky;top:0;z-index:300;background:var(--navy);border-bottom:2px solid var(--gold)}
   .sitenav-inner{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:9px 22px}
   .sitenav-brand{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);text-decoration:none;white-space:nowrap}
-  .sitenav-brand svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .sitenav-brand svg{width:15px;height:15px;fill:var(--gold);flex-shrink:0}
   .sitenav-brand:hover{color:#fff}
   .sitenav-links{margin-left:auto;display:flex;gap:3px;flex-wrap:wrap;justify-content:flex-end}
   .sitenav-links a{font-family:'Raleway',sans-serif;font-weight:700;font-size:.72rem;color:var(--sky);text-decoration:none;padding:6px 12px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
@@ -38,7 +38,7 @@
   .hd{background:var(--navy);color:var(--cream);padding:64px 24px 52px;position:relative;overflow:hidden}
   .hd::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(197,223,252,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(197,223,252,.045) 1px,transparent 1px);background-size:46px 46px}
   .hd-in{max-width:880px;margin:0 auto;position:relative;z-index:1}
-  .kick{display:inline-block;font-family:'Raleway',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .kick{display:inline-block;font-family:'Raleway',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
   .hd h1{font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:14px}
   .hd p{font-size:1.08rem;color:var(--sky);max-width:640px}
   main{max-width:880px;margin:0 auto;padding:44px 24px 8px}
@@ -93,6 +93,11 @@
   details.yrtable summary::-webkit-details-marker{display:none}
   details.yrtable summary::before{content:'+';display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:.85rem;line-height:1;flex-shrink:0}
   details.yrtable[open] summary::before{content:'\2212'}
+  .skyline{position:absolute;left:0;right:0;bottom:-2px;width:100%;height:110px;fill:rgba(197,223,252,.08);pointer-events:none}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+  details>*:not(summary){animation:dOpen .28s ease}
+  @keyframes dOpen{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){details>*:not(summary){animation:none}}
 </style>
 <link rel="canonical" href="https://buffalofinances.org/data-sources.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Dataset", "name": "City of Buffalo Finance Decoder Dataset, FY2006-FY2025", "description": "Twenty years of audited City of Buffalo (NY) financial data: raw balance-sheet and revenue inputs, the seven Strong Towns Finance Decoder indicators, and total OPEB liability, compiled from the city's Annual Comprehensive Financial Reports.", "url": "https://buffalofinances.org/data-sources.html", "creator": {"@type": "Organization", "name": "Strong Towns Buffalo · #DoTheMath", "url": "https://www.strongtownsbuffalo.com"}, "isAccessibleForFree": true, "temporalCoverage": "2006/2025", "spatialCoverage": {"@type": "Place", "name": "Buffalo, New York, United States"}, "keywords": ["municipal finance", "Buffalo NY", "city budget", "ACFR", "OPEB", "GASB 75", "net financial position", "infrastructure", "Strong Towns Finance Decoder"], "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://buffalofinances.org/buffalo-finance-data.csv"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://buffalofinances.org/buffalo-finance-data.json"}]}, {"@type": "DefinedTermSet", "name": "Plain-English glossary of municipal finance terms", "url": "https://buffalofinances.org/data-sources.html#glossary", "hasDefinedTerm": [{"@type": "DefinedTerm", "name": "Net financial position", "description": "A city's money-like assets (cash, investments, receivables) minus everything it owes. Below zero means it owes more than it holds. Equals audited net position minus net capital assets."}, {"@type": "DefinedTerm", "name": "OPEB (other post-employment benefits)", "description": "Mostly retiree health care promised to city employees. Buffalo funds it pay-as-you-go, so the unfunded promise (~$1.24B) sits on the books as a long-term liability."}, {"@type": "DefinedTerm", "name": "Net pension liability", "description": "The gap between pensions promised and assets set aside. Buffalo's is relatively small because New York State runs and funds the plans."}, {"@type": "DefinedTerm", "name": "GASB 68 / GASB 75", "description": "Accounting rules that first required cities to report full pension promises (GASB 68, FY2015) and retiree-health promises (GASB 75, FY2018). They made existing debts visible; they didn't create them."}, {"@type": "DefinedTerm", "name": "AIM (Aid and Incentives for Municipalities)", "description": "New York State's general operating aid to cities. Buffalo's (~$161M) is one of the largest in the state and has been flat for over a decade."}, {"@type": "DefinedTerm", "name": "Accumulated depreciation", "description": "The share of the original cost of a city's infrastructure that the audit records as already used up by age and wear. A balance-sheet figure, not the cost to repair it."}, {"@type": "DefinedTerm", "name": "Deferred outflows / inflows", "description": "Accounting items (mostly pension- and OPEB-related) that aren't yet revenues or expenses but affect net position."}, {"@type": "DefinedTerm", "name": "Total Primary Government", "description": "The city as a whole: tax-supported governmental activities plus enterprise funds (water, parking, solid waste)."}, {"@type": "DefinedTerm", "name": "BFSA (Buffalo Fiscal Stability Authority)", "description": "The state control board imposed on Buffalo in 2003; hard control until 2012, advisory since."}]}]}</script>
@@ -101,7 +106,7 @@
 <nav class="sitenav">
   <div class="sitenav-inner">
     <a class="sitenav-brand" href="index.html" aria-label="Home">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18v2.2H3zM5.5 16h13v3h-13zM8.5 11h7v4h-7zM10.5 5h3v11h-3zM12 1.6l2 3.4h-4z"/></svg>
       <span class="brandtxt">Buffalo · #DoTheMath</span>
     </a>
     <div class="sitenav-links">
@@ -114,6 +119,7 @@
   </div>
 </nav>
 <header class="hd">
+<svg class="skyline" viewBox="0 0 1200 140" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><path d="M0 140 L0 96 L36 96 L36 74 L84 74 L84 108 L130 108 L130 60 L142 60 L142 50 L178 50 L178 60 L190 60 L190 108 L240 108 L240 84 L300 84 L300 118 L356 118 L356 66 L410 66 L410 96 L468 96 L468 108 L500 108 L500 88 L560 88 L560 74 L576 74 L576 40 L590 40 L590 22 L596 22 L600 8 L604 22 L610 22 L610 40 L624 40 L624 74 L640 74 L640 88 L700 88 L700 108 L740 108 L740 70 L796 70 L796 96 L860 96 L860 54 L872 54 L872 44 L908 44 L908 54 L920 54 L920 96 L980 96 L980 116 L1040 116 L1040 80 L1100 80 L1100 100 L1160 100 L1160 90 L1200 90 L1200 140 Z"/></svg>
   <div class="hd-in">
     <span class="kick">Behind the numbers</span>
     <h1>Data &amp; Sources</h1>

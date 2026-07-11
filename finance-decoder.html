@@ -15,7 +15,7 @@
 <meta property="og:title" content="Buffalo's Fiscal Health: Decoded">
 <meta property="og:description" content="Seven indicators from twenty years of Buffalo's audited reports. The recovery is real, but the balance sheet carries $1.2 billion in unfunded retiree health care, and about half the city's infrastructure value is used up on the books.">
 <meta property="og:type" content="article">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%230c2240%22/><path fill=%22%23FFA800%22 d=%22M8 51h48v6H8zM14 41h36v8H14zM22 29h20v10H22zM27 15h10v22H27zM32 6l5 9H27z%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -180,9 +180,9 @@
   #fd .chart-body { display: grid; grid-template-columns: 1fr; gap: 20px; }
   #fd .acct-title { display: block; font-size: 0.7em; font-weight: 400; color: #6b7280; letter-spacing: 0.02em; margin-top: 2px; }
   #fd .chart-section.layout-wide .chart-canvas-wrap { max-width: none; }
-  #fd .chart-what { font-size: 0.95rem; color: var(--text-mid); line-height: 1.55; }
+  #fd .chart-what { font-size: 1rem; color: var(--text-mid); line-height: 1.55; }
   #fd .chart-what strong { color: var(--navy); }
-  #fd .chart-takeaway { background: var(--cream); border-radius: 6px; padding: 20px; font-size: 0.92rem; line-height: 1.55; }
+  #fd .chart-takeaway { background: var(--cream); border-radius: 6px; padding: 20px; font-size: 0.95rem; line-height: 1.55; }
   #fd .chart-takeaway .takeaway-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
   /* ===== BIG TAKEAWAY ===== */
   #fd .big-takeaway { background: var(--navy) !important; color: var(--cream) !important; padding: 48px 24px; position: relative; overflow: hidden; }
@@ -350,6 +350,13 @@
   @media (prefers-reduced-motion: reduce) {
     #fd .chart-section.will-animate { opacity: 1; transform: none; transition: none; }
   }
+  .skyline{position:absolute;left:0;right:0;bottom:-2px;width:100%;height:110px;fill:rgba(197,223,252,.08);pointer-events:none}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+  details>*:not(summary){animation:dOpen .28s ease}
+  @keyframes dOpen{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){details>*:not(summary){animation:none}}
+  #fd .toc-brand{display:inline-flex;align-items:center;gap:7px}
+  #fd .toc-brand svg{width:14px;height:14px;fill:var(--gold);flex-shrink:0}
 </style>
 <link rel="canonical" href="https://buffalofinances.org/finance-decoder.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Buffalo's Fiscal Health: Decoded", "description": "Seven indicators from twenty years of the City of Buffalo's audited financial reports, following the Strong Towns Finance Decoder method.", "url": "https://buffalofinances.org/finance-decoder.html", "image": "https://buffalofinances.org/og-deepdive.png", "author": {"@type": "Organization", "name": "Strong Towns Buffalo · #DoTheMath", "url": "https://www.strongtownsbuffalo.com"}, "publisher": {"@type": "Organization", "name": "Strong Towns Buffalo · #DoTheMath", "url": "https://www.strongtownsbuffalo.com"}, "datePublished": "2026-06-28", "dateModified": "2026-07-10"}</script>
@@ -360,7 +367,7 @@
 <!-- STICKY NAV -->
 <nav class="toc">
   <div class="toc-inner">
-    <a class="toc-brand" href="index.html">Buffalo · #DoTheMath</a>
+    <a class="toc-brand" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18v2.2H3zM5.5 16h13v3h-13zM8.5 11h7v4h-7zM10.5 5h3v11h-3zM12 1.6l2 3.4h-4z"/></svg>Buffalo · #DoTheMath</a>
     <div class="toc-divider"></div>
     <div class="toc-links">
       <a class="pg" href="index.html">Start Here</a>
@@ -381,6 +388,7 @@
 </nav>
 <!-- HERO -->
 <header class="hero">
+<svg class="skyline" viewBox="0 0 1200 140" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><path d="M0 140 L0 96 L36 96 L36 74 L84 74 L84 108 L130 108 L130 60 L142 60 L142 50 L178 50 L178 60 L190 60 L190 108 L240 108 L240 84 L300 84 L300 118 L356 118 L356 66 L410 66 L410 96 L468 96 L468 108 L500 108 L500 88 L560 88 L560 74 L576 74 L576 40 L590 40 L590 22 L596 22 L600 8 L604 22 L610 22 L610 40 L624 40 L624 74 L640 74 L640 88 L700 88 L700 108 L740 108 L740 70 L796 70 L796 96 L860 96 L860 54 L872 54 L872 44 L908 44 L908 54 L920 54 L920 96 L980 96 L980 116 L1040 116 L1040 80 L1100 80 L1100 100 L1160 100 L1160 90 L1200 90 L1200 140 Z"/></svg>
   <div class="hero-inner">
     <div class="hero-badge">Finance Decoder Report</div>
     <h1>Buffalo's Fiscal<br>Health: <span>Decoded</span></h1>
@@ -774,6 +782,8 @@ const navy = '#0c2240';
 const gold = '#FFA800';
 const coral = '#fd6262';
 const sky  = '#c5dffc';
+const teal = '#1a7a5a';
+const tealPale = 'rgba(26,122,90,0.10)';
 const skyPale = 'rgba(197,223,252,0.15)';
 const coralPale = 'rgba(253,98,98,0.12)';
 const goldPale = 'rgba(255,168,0,0.12)';
@@ -840,7 +850,7 @@ const chartConfigs = {
     yOpts: { min: 0, max: 50, ticks: { callback: v => v + '%' } }
   },
   chart4: {
-    dataKey: 'interestToRev', type: 'line', color: navy, fill: skyPale,
+    dataKey: 'interestToRev', type: 'line', color: teal, fill: tealPale,
     fmt: v => v.toFixed(1) + '% of revenue',
     yTitle: '% of Total Revenue',
     annotations: {},

@@ -90,3 +90,9 @@ All underlying data (FY2006–2025 ACFR figures, the 7 Decoder indicators, CSV/J
 - **Canonical tags** on all five pages (home canonicalizes to buffalofinances.org/ fixing the /index.html duplicate).
 - **Titles/descriptions retuned** for real search phrases ("Buffalo city budget", "how much debt", "property tax increase", "ACFR", "download CSV") without changing page content or og: tags.
 - Still on Sean: register Google Search Console + Bing Webmaster and submit the sitemap; pursue backlinks (Strong Towns decoder map, strongtownsbuffalo.com, local press).
+
+## Design & feel pass (July 10, 2026)
+- **Brand mark:** a stepped City Hall tower SVG replaces the per-page emoji favicons and the house icon in every nav (including the decoder's, which had no mark). One mark, everywhere.
+- **Buffalo skyline:** a low-opacity (8%) SVG silhouette band, City Hall centered, along the bottom of every hero.
+- **Color semantics:** coral = unfunded/unmeasured, teal = wins, gold = the ask. Decoder's interest chart (the clear win) is now teal; Explained's "head start" collapsible is teal-marked.
+- **Polish:** kicker labels normalized to .7rem/.12em across pages; consistent gold focus rings for keyboard users; collapsibles get a soft open animation (reduced-motion aware); index footer unified to the navy gold-topped style; Take Action's askbox now tucks up into the hero like the homepage answer card; decoder body text bumped for readability.
