@@ -83,3 +83,10 @@ All underlying data (FY2006–2025 ACFR figures, the 7 Decoder indicators, CSV/J
 - **Strip sign consistency:** step 2 now −$1.24B everywhere (pages, og-explained, handout), matching steps 1/3/4.
 - **"Not x, it's y" de-tic pass:** rewrote six instances across all four pages; kept the two GASB clarifications and the growth aside where the contrast frame carries real meaning.
 - Investortools ICA Burden ($1.03T national) added to Explained (collapsed), decoder's outside-review box, and data-sources method notes.
+
+## SEO pass (July 10, 2026)
+- **JSON-LD structured data:** WebSite+Organization (home), Article + 7-question FAQPage (Explained), Article (decoder), Dataset with CSV/JSON DataDownload entries + DefinedTermSet glossary (data-sources).
+- **New files:** sitemap.xml (5 pages) and robots.txt pointing to it.
+- **Canonical tags** on all five pages (home canonicalizes to buffalofinances.org/ fixing the /index.html duplicate).
+- **Titles/descriptions retuned** for real search phrases ("Buffalo city budget", "how much debt", "property tax increase", "ACFR", "download CSV") without changing page content or og: tags.
+- Still on Sean: register Google Search Console + Bing Webmaster and submit the sitemap; pursue backlinks (Strong Towns decoder map, strongtownsbuffalo.com, local press).
