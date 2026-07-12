@@ -96,3 +96,9 @@ All underlying data (FY2006–2025 ACFR figures, the 7 Decoder indicators, CSV/J
 - **Buffalo skyline:** a low-opacity (8%) SVG silhouette band, City Hall centered, along the bottom of every hero.
 - **Color semantics:** coral = unfunded/unmeasured, teal = wins, gold = the ask. Decoder's interest chart (the clear win) is now teal; Explained's "head start" collapsible is teal-marked.
 - **Polish:** kicker labels normalized to .7rem/.12em across pages; consistent gold focus rings for keyboard users; collapsibles get a soft open animation (reduced-motion aware); index footer unified to the navy gold-topped style; Take Action's askbox now tucks up into the hero like the homepage answer card; decoder body text bumped for readability.
+
+## The lens: converting the "already knew" reader (July 10, 2026)
+New content on `finances-explained.html` aimed at visitors who nod at the problem and leave with their old frame intact:
+- **"Already knew Buffalo had money problems?" section** between Parts 4 and 5, carrying the two Strong Towns insights the site had kept in collapsibles: (1) the geometry argument, with a new three-bar chart (580,132 residents at the 1950 peak / ~278,000 today / roughly the same network to maintain); (2) the value-per-acre argument, with a new chart from Urban3's 2014 "Dollars & Sense" Buffalo Niagara study (county house $1 baseline: Buffalo house $3, mall $7, six-story mixed use $36, Guaranty Building $136), clearly dated-flagged, with the United Office Building vs. Eastern Hills Mall and transit-corridor findings in a collapsible. Ends by connecting both shapes to the repair-number ask and the infill test.
+- **Identity offramp** before the objections: "This way of seeing a city has a name," linking the Growth Ponzi Scheme essay, the free Strong Towns 101 course, and Strong Towns Buffalo.
+- data-sources.html method notes now cite the Urban3 study with its dated-values caveat. No em dashes; no "not x, it's y" constructions.

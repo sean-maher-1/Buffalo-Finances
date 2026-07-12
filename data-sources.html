@@ -15,7 +15,7 @@
 <meta name="color-scheme" content="light only">
 <title>Buffalo City Finance Data, 2006&ndash;2025: Sources &amp; Downloads (CSV/JSON) · #DoTheMath</title>
 <meta name="description" content="Download 20 years of City of Buffalo finance data (CSV/JSON): audited ACFR balance-sheet and revenue inputs, seven Strong Towns Finance Decoder indicators, OPEB liability, method notes, and a plain-English glossary.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%230c2240%22/><path fill=%22%23FFA800%22 d=%22M8 51h48v6H8zM14 41h36v8H14zM22 29h20v10H22zM27 15h10v22H27zM32 6l5 9H27z%22/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%23FFA800%22/><text x=%2232%22 y=%2246%22 font-size=%2244%22 text-anchor=%22middle%22>🦬</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -70,6 +70,7 @@
   .keyfig li:last-child{margin-bottom:0}
   .keyfig b{color:var(--navy)}
   footer{background:var(--navy);color:rgba(197,223,252,.7);padding:34px 24px;border-top:3px solid var(--gold);font-size:.82rem;line-height:1.6}
+  footer p{color:rgba(197,223,252,.7)}
   footer .w{max-width:880px;margin:0 auto}
   footer a{color:var(--gold);font-weight:700;text-decoration:none}
   @media (max-width:560px){.sitenav-inner{padding:8px 14px;gap:8px} .sitenav-brand .brandtxt{display:none} .sitenav-links a{font-size:.66rem;padding:5px 9px}}
@@ -82,6 +83,7 @@
   .kp{font-size:.85rem;color:var(--text-mid);font-variant-numeric:tabular-nums}
   .kp b{color:var(--coral-deep)}
   .kp .good{color:var(--teal);font-weight:700}
+  .kp .allyrs{display:block;margin-top:5px;font-size:.78rem;color:var(--text-mid);opacity:.8;font-variant-numeric:tabular-nums}
   tbody tr:nth-child(even) td{background:#fbf8f0}
   tbody tr:nth-child(even) td:first-child{background:#fbf8f0}
   tbody tr:hover td{background:#f4eeda}
@@ -226,7 +228,7 @@
       <div class="r" id="ind-nbv"><div class="n">Net book value &divide; cost (% infrastructure remaining)</div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,3.0 26.9,4.4 50.8,6.8 74.7,9.1 98.6,12.0 122.5,16.0 146.4,17.6 170.3,20.5 194.2,22.6 218.1,24.0 241.9,25.9 265.8,28.0 289.7,32.3 313.6,33.7 337.5,36.3 361.4,38.9 385.3,39.8 409.2,41.0 433.1,38.2 457.0,35.6" fill="none" stroke="#d23b3b" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="35.6" r="2.8" fill="#d23b3b"/></svg><div class="kp">2006: 64.2% of value left &middot; <b>2023 low: 48.1%</b> &middot; 2025: 50.4%</div></div>
       <div class="r" id="ind-interest"><div class="n">Interest &divide; revenue (%)</div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,3.0 26.9,12.0 50.8,16.3 74.7,17.6 98.6,18.7 122.5,18.5 146.4,22.3 170.3,22.6 194.2,27.5 218.1,31.2 241.9,30.1 265.8,31.9 289.7,32.9 313.6,35.3 337.5,36.5 361.4,36.1 385.3,40.5 409.2,40.9 433.1,41.0 457.0,40.5" fill="none" stroke="#1a7a5a" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="40.5" r="2.8" fill="#1a7a5a"/></svg><div class="kp">2006: 6.9&cent; of every revenue dollar &middot; 2025: 1.25&cent; <span class="good">(the clearest win on the page)</span></div></div>
       <div class="r" id="ind-transfers"><div class="n">Government transfers &divide; revenue (%)</div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,31.6 26.9,31.4 50.8,32.5 74.7,27.0 98.6,17.6 122.5,27.6 146.4,28.1 170.3,20.8 194.2,14.4 218.1,19.1 241.9,20.8 265.8,21.4 289.7,23.2 313.6,30.8 337.5,41.0 361.4,30.2 385.3,24.6 409.2,10.3 433.1,3.0 457.0,9.7" fill="none" stroke="#d23b3b" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="9.7" r="2.8" fill="#d23b3b"/></svg><div class="kp">2006: 34.9% of revenue &middot; <b>2024 peak: 44.7%</b> &middot; 2025: 42.4%</div></div>
-      <div class="r" id="ind-opeb"><div class="n">Unfunded retiree health care ($M) <span style="font-weight:400;color:var(--text-mid)">total OPEB liability, on the books since FY2018</span></div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,22.2 67.9,41.0 132.7,26.2 197.6,3.0 262.4,13.7 327.3,33.2 392.1,35.0 457.0,24.8" fill="none" stroke="#d23b3b" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="24.8" r="2.8" fill="#d23b3b"/></svg><div class="kp">2018: $1,255M &middot; <b>2021 peak: $1,384M</b> &middot; 2025: $1,237M &middot; full series: 1,255.0, 1,129.1, 1,228.4, 1,384.0, 1,312.3, 1,181.6, 1,169.3, 1,237.5</div></div>
+      <div class="r" id="ind-opeb"><div class="n">Unfunded retiree health care ($M) <span style="font-weight:400;color:var(--text-mid)">total OPEB liability, on the books since FY2018</span></div><svg class="spark" viewBox="0 0 460 44" preserveAspectRatio="none" aria-hidden="true"><polyline points="3.0,22.2 67.9,41.0 132.7,26.2 197.6,3.0 262.4,13.7 327.3,33.2 392.1,35.0 457.0,24.8" fill="none" stroke="#d23b3b" stroke-width="2" stroke-linejoin="round"/><circle cx="457.0" cy="24.8" r="2.8" fill="#d23b3b"/></svg><div class="kp">2018: $1,255M &middot; <b>2021 peak: $1,384M</b> &middot; 2025: $1,237M<span class="allyrs">All years: 2018 $1,255M &middot; 2019 $1,129M &middot; 2020 $1,228M &middot; 2021 $1,384M &middot; 2022 $1,312M &middot; 2023 $1,182M &middot; 2024 $1,169M &middot; 2025 $1,237M</span></div></div>
     </div>
     <details class="yrtable">
       <summary>Show all seven, year by year</summary>
@@ -270,6 +272,7 @@
       <li><strong>Interest</strong> is all interest expense on the Total Primary Government basis: governmental interest and fiscal charges plus the enterprise funds' interest (water system and parking) from the proprietary-fund statements, matching the rest of the page. Most of the decline since 2006 is in the city's tax-supported governmental interest; what remains is largely the self-supporting water system covering its own bonds. Enterprise interest (the self-supporting water and parking systems) comes from the audited proprietary-fund statements; FY2020, which has no standalone report, is taken from the FY2021 report's comparative column.</li>
       <li><strong>Total revenue</strong> is computed as total program revenues plus governmental general revenues, excluding interfund transfers (within ~0.1% of the MD&amp;A "Total revenues" line each year).</li>
       <li><strong>The repair-bill estimate</strong> restates the audit's accumulated depreciation ($957.7M in 2025) to today's construction prices (&times;1.75 to &times;2.25), giving a deliberately rough $1.7B&ndash;$2.2B range. The same accounting-based approach underpins the &ldquo;ICA Burden&rdquo; framework published by <a class="il" href="https://www.investortools.com/news-insights/new-report-finds-u-s-cities-face-1-trillion-infrastructure-replacement-obligation/" target="_blank" rel="noopener">Investortools</a> (May 2026), which puts the equivalent burden across all U.S. cities at about $1.03 trillion.</li>
+      <li><strong>Value-per-acre comparisons</strong> (Guaranty Building &asymp;136&times; a county house, transit corridor &asymp;3&times; Transit Road, United Office Building vs. Eastern Hills Mall) come from Urban3's <em>The Dollars &amp; Sense of Development Patterns: Buffalo Niagara Regional Report</em> (2014, prepared for One Region Forward). The assessed values are a decade old and are cited for the pattern, which Urban3 has since documented in hundreds of regions.</li>
       <li><strong>Per-household figures</strong> use about 117,000 Buffalo households (U.S. Census, ACS).</li>
     </ul>
   </section>

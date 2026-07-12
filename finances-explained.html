@@ -16,7 +16,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="What does Buffalo, NY owe and why? The $1.56 billion gap in the city's audited reports, the unfunded retiree-health promise, the infrastructure repair backlog, and the one number to ask for, in plain English.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%230c2240%22/><path fill=%22%23FFA800%22 d=%22M8 51h48v6H8zM14 41h36v8H14zM22 29h20v10H22zM27 15h10v22H27zM32 6l5 9H27z%22/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%23FFA800%22/><text x=%2232%22 y=%2246%22 font-size=%2244%22 text-anchor=%22middle%22>🦬</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -109,6 +109,7 @@
   .btn-line{border:2px solid var(--navy);color:var(--navy)}
   .btn-line:hover{background:var(--navy);color:#fff}
   footer{background:var(--navy);color:rgba(197,223,252,.7);padding:40px 0;border-top:3px solid var(--gold);font-size:.85rem;line-height:1.6}
+  footer p{color:rgba(197,223,252,.7)}
   footer .wrap{max-width:760px}
   footer strong{color:var(--cream)}
   footer a{color:var(--gold);text-decoration:none;font-weight:700}
@@ -217,6 +218,13 @@
   @media (prefers-reduced-motion:reduce){details>*:not(summary){animation:none}}
   details.more.win>summary{color:var(--teal)}
   details.more.win>summary::before{background:var(--teal)}
+  details.big{margin-top:24px;background:#fff;border:1px solid #ece4cf;border-radius:14px;box-shadow:0 4px 18px rgba(12,34,64,.08)}
+  details.big>summary{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.08rem;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;padding:18px 22px}
+  details.big>summary::-webkit-details-marker{display:none}
+  details.big>summary::before{content:'+';display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:900;font-size:1.25rem;line-height:1;flex-shrink:0}
+  details.big[open]>summary::before{content:'\2212'}
+  details.big>summary:hover{background:#fffbf0;border-radius:14px}
+  details.big .big-body{padding:2px 22px 22px}
 </style>
 <link rel="canonical" href="https://buffalofinances.org/finances-explained.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Buffalo's finances, in plain English", "description": "A five-part plain-English walkthrough of what the City of Buffalo owes, built from its own audited reports.", "url": "https://buffalofinances.org/finances-explained.html", "image": "https://buffalofinances.org/og-explained.png", "author": {"@type": "Organization", "name": "Strong Towns Buffalo · #DoTheMath", "url": "https://www.strongtownsbuffalo.com"}, "publisher": {"@type": "Organization", "name": "Strong Towns Buffalo · #DoTheMath", "url": "https://www.strongtownsbuffalo.com"}, "datePublished": "2026-06-28", "dateModified": "2026-07-10"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What about borrowing? Should the city of Buffalo take on more debt?", "acceptedAnswer": {"@type": "Answer", "text": "That depends on what the money builds and whether the city maintains it; this project takes no side. The factual point: Buffalo's gap is driven far less by debt (about $326 million, modest and well managed) than by unfunded retiree health care and an unmeasured repair backlog. A published repair number is what turns 'borrow more or less' into 'borrow the right amount, for the right things.'"}}, {"@type": "Question", "name": "Can't Buffalo just grow its way out of its budget problems?", "acceptedAnswer": {"@type": "Answer", "text": "Growth helps only if it pays for itself. Most of the shortfall is retiree-health and pension promises that growth can't shrink, and Buffalo already maintains far more infrastructure than its population supports. Incremental infill on streets the city already serves adds taxpayers without adding much new cost; subsidized or land-heavy development on the edges usually adds more liability than revenue."}}, {"@type": "Question", "name": "Shouldn't the state or federal government just bail Buffalo out?", "acceptedAnswer": {"@type": "Answer", "text": "Buffalo already leans on outside help more than most cities: more than 40% of its revenue is state and federal aid, and roughly $331 million in federal stimulus since 2020 is now spent. One-time help buys time but can't fund the retiree-health promise or fix roads on a schedule. The most useful next step is one the city can take itself: publish the cost-of-good-repair number."}}, {"@type": "Question", "name": "Why should I trust these numbers about Buffalo's finances?", "acceptedAnswer": {"@type": "Answer", "text": "Every figure comes from the City of Buffalo's audited Annual Comprehensive Financial Reports and is published with sources at buffalofinances.org/data-sources.html. The NYS Comptroller and S&P have flagged the same problems."}}, {"@type": "Question", "name": "Isn't Buffalo's negative net position just an accounting technicality?", "acceptedAnswer": {"@type": "Answer", "text": "No. The big numbers are real promises to real people: retirees owed health care, workers owed pensions, lenders owed principal. The accounting rules (GASB 68 and GASB 75) didn't create those debts; they forced the city to show them."}}, {"@type": "Question", "name": "Doesn't every city have unfunded retiree health care?", "acceptedAnswer": {"@type": "Answer", "text": "Many do, but size is what matters. Buffalo's roughly $1.24 billion retiree-health (OPEB) liability is larger than its pensions and debt combined, because the promise is paid year to year with almost nothing set aside."}}, {"@type": "Question", "name": "Is Buffalo about to go bankrupt?", "acceptedAnswer": {"@type": "Answer", "text": "No. Buffalo pays its bills today and holds an A+ bond rating; this is about long-term structural health, not imminent insolvency. The likelier risk is quieter: trimmed services, rougher roads, and higher taxes for less in return."}}]}]}</script>
@@ -381,7 +389,7 @@
 </svg>
       <figcaption>The three big pieces of what Buffalo owes. The unfunded retiree-health promise is larger than pensions and debt combined.</figcaption>
     </figure>
-    <p style="margin-top:24px">Like most New York governments, Buffalo pays retiree health benefits year to year rather than setting money aside, so the promise piled up. <strong>The gap is mostly an unfunded promise, not borrowing</strong>: debt is the smallest piece of all.</p>
+    <p style="margin-top:24px">Like most New York governments, Buffalo pays retiree health benefits year to year rather than setting money aside, so the promise piled up. <strong>The gap is mostly an unfunded promise, not borrowing</strong>: the retiree-health promise alone is nearly four times the city's bonded debt.</p>
   </div>
 </section>
 <!-- THE HIDDEN BILL -->
@@ -403,7 +411,7 @@
     </div></details>
     <p class="perhh" style="color:var(--coral-deep)">Per household, that's another <strong style="color:var(--coral-deep)">$14,000 to $18,000</strong>, on top of what's already owed.</p>
     <p style="font-size:.98rem;">This is a back-of-the-envelope range, on purpose. The exact figure matters less than two things: it's <strong>large</strong>, and nobody publishes it.</p>
-<details class="more"><summary>Bond analysts now track this number nationally; cities still don't publish it</summary><div class="more-body"><p>Buffalo isn't unusual. In May 2026 the bond-research firm Investortools put this same unmeasured repair burden across all U.S. cities at about <strong>$1 trillion</strong>, 2.6 times their bonded debt and 4 times their unfunded pensions, derived with <a class="il" href="https://www.investortools.com/news-insights/new-report-finds-u-s-cities-face-1-trillion-infrastructure-replacement-obligation/" target="_blank" rel="noopener">the same accumulated-depreciation method</a> this page uses. The people who trade municipal bonds now price this in; the cities they lend to still don't publish it.</p></div></details>
+<details class="more"><summary>Bond analysts have started measuring this number; cities still don't publish it</summary><div class="more-body"><p>Buffalo isn't unusual. In May 2026 the bond-research firm Investortools put this same unmeasured repair burden across all U.S. cities at about <strong>$1 trillion</strong>, 2.6 times their bonded debt and 4 times their unfunded pensions, derived with <a class="il" href="https://www.investortools.com/news-insights/new-report-finds-u-s-cities-face-1-trillion-infrastructure-replacement-obligation/" target="_blank" rel="noopener">the same accounting-based approach</a> this page uses. The analysts who study municipal credit have begun measuring this number. Credit ratings themselves mostly look past it, and that is worth understanding: a rating answers a narrow question, whether bondholders will be repaid, and they almost always are, because debt service gets paid first from a city with taxing power. The burden lands on residents instead, as thinner services and higher taxes. An A+ city can still fall steadily behind on its pipes.</p></div></details>
 <p><strong>Buffalo has seen this movie before:</strong> twice in the last decade, an accounting rule forced a long-owed cost onto the books overnight. The repair bill is the next one, except this time the city doesn't have to wait for a rule to publish it.</p>
 <details class="more"><summary>The last two times the books caught up</summary>
 <div class="more-body">
@@ -446,6 +454,43 @@
 <p style="margin-top:14px">No one will mail your household a $30,000 bill. It is still your share of what the city has promised, or let wear out, and hasn't paid for, and it comes due anyway: higher taxes, thinner services, or rougher roads. Getting ahead of it is how Buffalo keeps that share from growing.</p>
   </div>
 </section>
+<!-- THE LENS -->
+<section class="band-off" id="lens">
+  <div class="wrap">
+    <span class="kicker">The part most people miss</span>
+    <h2>Already knew Buffalo had money problems?</h2>
+    <p class="lead">Most people file this story under waste, corruption, or bad luck, then go back to their day. Two shapes matter more. The problem: a network built for <strong>580,132</strong> residents, now carried by about <strong>278,000</strong>. The fix: compact mixed-use blocks that produce up to <strong>136&times;</strong> the tax value per acre of spread-out land.</p>
+    <details class="big">
+      <summary>See both shapes, with the charts</summary>
+      <div class="big-body">
+    <p class="take">1. The problem has a shape.</p>
+    <p>Buffalo peaked at <strong>580,132 residents</strong> just after World War II. About <strong>278,000</strong> remain, and they maintain roughly the same grid of streets, water mains, and sewers. No scandal is required to explain the repair backlog: a tax base half the size is carrying a network built for the whole.</p>
+    <figure class="fade">
+<svg viewBox="0 0 760 214" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three bars: residents at the 1950 peak, 580,132, a full-width bar. Residents today, about 278,000, a bar less than half as wide. Streets, pipes, and sewers to maintain: roughly the same network, a full-width bar.">
+<text x="12" y="24" font-family="Raleway,sans-serif" font-weight="800" font-size="12.5" fill="#0c2240" letter-spacing="0.05em">RESIDENTS AT THE PEAK (1950)</text>
+<rect x="12" y="32" width="700" height="28" rx="4" fill="#8fb0d4"/>
+<text x="700" y="51" text-anchor="end" font-family="Raleway,sans-serif" font-weight="900" font-size="14" fill="#0c2240">580,132</text>
+<text x="12" y="96" font-family="Raleway,sans-serif" font-weight="800" font-size="12.5" fill="#0c2240" letter-spacing="0.05em">RESIDENTS TODAY</text>
+<rect x="12" y="104" width="335" height="28" rx="4" fill="#8fb0d4"/>
+<text x="357" y="123" font-family="Raleway,sans-serif" font-weight="900" font-size="14" fill="#0c2240">&asymp;278,000</text>
+<text x="12" y="168" font-family="Raleway,sans-serif" font-weight="800" font-size="12.5" fill="#c23434" letter-spacing="0.05em">STREETS, WATER MAINS &amp; SEWERS TO MAINTAIN</text>
+<rect x="12" y="176" width="700" height="28" rx="4" fill="#d23b3b" opacity="0.88"/>
+<text x="700" y="195" text-anchor="end" font-family="Raleway,sans-serif" font-weight="800" font-size="13" fill="#fff">roughly the same network</text>
+</svg>
+      <figcaption>Half the payers, the whole network. That ratio, more than any single decision or administration, is why upkeep fell behind.</figcaption>
+    </figure>
+    <p class="take" style="margin-top:30px">2. The fix has a shape too.</p>
+    <p>In 2014, analysts at Urban3 ran the tax math on every parcel in the region for the <em>Dollars &amp; Sense</em> study. For every $1 of value per acre produced by a single-family house in Erie County, a house in Buffalo produced about $3, the average mall $7, a six-story mixed-use building $36, and the Guaranty Building downtown about <strong>$136</strong>. That building opened in 1896 and still tops the list. Compact, durable blocks quietly carry the city, while spread-out single-use land barely covers its own pipes.</p>
+    <figure class="fade">
+<svg viewBox="0 0 760 504" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Value produced per acre for all fourteen property types in the 2014 Urban3 study, indexed to an Erie County single-family house at one dollar. From the top: Guaranty Building 136, six-story mixed use 36, Main Street mixed use 29, large multifamily 18, residential-commercial conversion 13, small multifamily 10, Walden Galleria 9, three-story mixed use 9, average mall 7, Buffalo house 3, big box 3, strip mall 2, county house 1, heavy industry 30 cents. Mixed-use buildings dominate the top of the chart."><rect x="238" y="8" width="13" height="13" rx="3" fill="#1a7a5a"/><text x="256" y="19" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Mixed use</text><rect x="344" y="8" width="13" height="13" rx="3" fill="#d97b6c"/><text x="362" y="19" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Commercial</text><rect x="462" y="8" width="13" height="13" rx="3" fill="#8fb0d4"/><text x="480" y="19" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Residential</text><text x="228" y="54" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Guaranty Building, downtown</text><rect x="238" y="40" width="449" height="19" rx="3" fill="#15634a"/><text x="679" y="54" text-anchor="end" font-family="Raleway,sans-serif" font-weight="900" font-size="13" fill="#fff">$136</text><text x="228" y="87" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Mixed use, 6-story</text><rect x="238" y="73" width="119" height="19" rx="3" fill="#1a7a5a"/><text x="364" y="87" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$36</text><text x="228" y="120" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Main St mixed use, 3-story</text><rect x="238" y="106" width="96" height="19" rx="3" fill="#1a7a5a"/><text x="341" y="120" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$29</text><text x="228" y="153" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Large multifamily</text><rect x="238" y="139" width="59" height="19" rx="3" fill="#8fb0d4"/><text x="304" y="153" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$18</text><text x="228" y="186" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Residential-commercial conversion</text><rect x="238" y="172" width="43" height="19" rx="3" fill="#d97b6c"/><text x="288" y="186" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$13</text><text x="228" y="219" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Small multifamily</text><rect x="238" y="205" width="33" height="19" rx="3" fill="#8fb0d4"/><text x="278" y="219" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$10</text><text x="228" y="252" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Walden Galleria</text><rect x="238" y="238" width="30" height="19" rx="3" fill="#d97b6c"/><text x="275" y="252" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$9</text><text x="228" y="285" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Mixed use, 3-story</text><rect x="238" y="271" width="30" height="19" rx="3" fill="#1a7a5a"/><text x="275" y="285" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$9</text><text x="228" y="318" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Average mall</text><rect x="238" y="304" width="23" height="19" rx="3" fill="#d97b6c"/><text x="268" y="318" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$7</text><text x="228" y="351" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Buffalo single-family house</text><rect x="238" y="337" width="10" height="19" rx="3" fill="#8fb0d4"/><text x="255" y="351" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$3</text><text x="228" y="384" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Average big box</text><rect x="238" y="370" width="10" height="19" rx="3" fill="#d97b6c"/><text x="255" y="384" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$3</text><text x="228" y="417" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Strip mall</text><rect x="238" y="403" width="7" height="19" rx="3" fill="#d97b6c"/><text x="252" y="417" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$2</text><text x="228" y="450" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Erie County single-family house (baseline)</text><rect x="238" y="436" width="3" height="19" rx="3" fill="#8fb0d4"/><text x="248" y="450" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">$1</text><text x="228" y="483" text-anchor="end" font-family="Lato,sans-serif" font-size="11.5" fill="#4a4a4a">Average heavy industry</text><rect x="238" y="469" width="2" height="19" rx="3" fill="#d97b6c"/><text x="247" y="483" font-family="Raleway,sans-serif" font-weight="900" font-size="12.5" fill="#0c2240">30&cent;</text></svg>
+      <figcaption>Value produced per acre, all fourteen property types from the study, indexed to an Erie County single-family house = $1. Every mixed-use type outperforms every single-use type below it. Source: <a class="il" href="https://www.urbanthree.com/" target="_blank" rel="noopener">Urban3</a>, &ldquo;The Dollars &amp; Sense of Development Patterns: Buffalo Niagara&rdquo; (2014, for One Region Forward). Assessments have moved since, and the same pattern shows up in every region Urban3 has mapped.</figcaption>
+    </figure>
+    <details class="more"><summary>Two more findings from the same study</summary><div class="more-body"><p>0.7 acres of downtown Niagara Falls' United Office Building matched the tax value of the entire 102-acre Eastern Hills Mall. And Buffalo's historic transit corridor produced nearly three times the value per acre of the auto-oriented strip along Transit Road, on land that was only 39% taxable.</p></div></details>
+    <p style="margin-top:22px"><strong>Put the two shapes together and the way out gets concrete.</strong> Buffalo already owns thousands of vacant lots wrapped in existing pipe and pavement. Filling them with the compact pattern the city was built for adds taxpayers without adding network. Every new project then faces one simple test: over its whole life, will it produce more than it costs to serve? <a class="il" href="#questions">The growth question below</a> walks through it.</p>
+      </div>
+    </details>
+  </div>
+</section>
 <!-- NOT DOOM -->
 <section class="band-cream" id="part5">
   <div class="wrap">
@@ -464,11 +509,22 @@
       <p class="ask-note">Federal agencies must publish that repair number. New York City's charter requires it. Buffalo can too.</p>
     </div>
     <p><strong>If only one of those happens first, make it the repair number</strong>, the smallest step and the one everything else rests on. The data already exists: the audit records about $958&nbsp;million of Buffalo's infrastructure as used up; it just doesn't yet total what restoring it would cost. A first, rough estimate is cheap to produce from those same figures, and it takes one Council member to ask for it.</p>
-    <p>And anyone can start this conversation: the math is middle-school arithmetic, and every number is the city's own.</p>
+    <p>And anyone can start this conversation: the math is middle-school arithmetic, and <a class="il" href="data-sources.html">every number is the city's own</a>.</p>
     <div class="btns">
       <a class="btn btn-gold" href="take-action.html">Write your Council member</a>
-      <a class="btn btn-line" href="https://www.strongtownsbuffalo.com" target="_blank">Connect with Strong Towns Buffalo</a>
-      <a class="btn btn-line" href="https://www.buffalocomptrollerny.gov/150/Annual-Comprehensive-Financial-Reports-A" target="_blank">Read Buffalo's annual report</a>
+    </div>
+  </div>
+</section>
+<!-- OFFRAMP -->
+<section class="band-white" id="go-deeper" style="padding:46px 0">
+  <div class="wrap" style="text-align:center">
+    <span class="kicker">If this lens clicked</span>
+    <h2 style="margin-bottom:12px">This way of seeing a city has a name</h2>
+    <p style="max-width:580px;margin:0 auto 6px">Strong Towns has spent years mapping why the post-war development pattern quietly drains good cities, and what to build instead. The math gets more interesting the deeper you go.</p>
+    <div class="btns" style="justify-content:center">
+      <a class="btn btn-line" href="https://www.strongtowns.org/journal/2020-5-14-americas-growth-ponzi-scheme-md2020" target="_blank">Read the Growth Ponzi Scheme</a>
+      <a class="btn btn-line" href="https://academy.strongtowns.org/p/principles-of-a-strong-town" target="_blank">Take Strong Towns 101 (free)</a>
+      <a class="btn btn-gold" href="https://www.strongtownsbuffalo.com" target="_blank">Meet Strong Towns Buffalo</a>
     </div>
   </div>
 </section>
